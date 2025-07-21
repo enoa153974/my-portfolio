@@ -1,0 +1,112 @@
+/* スライダーcssの読み込み */
+.gallery .slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 0;
+}
+
+.gallery .slick-slide {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gallery .slider__wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.gallery .slider__track .card {
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+}
+
+.gallery .card__inner {
+    width: 100%;
+    height: auto;
+}
+
+/* ドットコンテナ */
+.gallery .slick-dots {
+    position: absolute;
+    bottom: 5%;
+    gap: 8px;
+    width: 100%;
+}
+
+.gallery .slick-dots li {
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
+/* 各ドットボタン */
+.gallery .slick-dots li button {
+    position: static;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+    appearance: none;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.gallery .slick-dots li.slick-active button {
+    background-color: var(--accent-color);
+}
+
+/* Slickのデフォルトの黒丸を消す */
+.gallery .slick-dots li button::before {
+    display: none;
+    content: none;
+}
+
+/* gifエラー回避用 */
+.gallery .slick-loading .slick-list {
+    background: none !important;
+}
+
+/* レスポンシブ対応（1枚表示） */
+@media (max-width: 767px) {
+    /* ブレイクポイント767px */
+
+    .gallery .slider {
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .gallery .slider__wrapper .slick-slide {
+        width: auto;
+        padding: 0;
+        margin-right: 0.4688rem;
+        margin-left: 7.5008px;
+    }
+
+    .gallery .slider__wrapper {
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+        margin-top: 25px;
+        overflow: visible;
+    }
+
+    .gallery .slick-slide {
+        border-radius: 30px;
+    }
+
+    .gallery .slick-dots {
+        gap: 10px;
+        margin-top: 9px;
+    }
+}

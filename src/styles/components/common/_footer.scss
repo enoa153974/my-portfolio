@@ -1,0 +1,17 @@
+.footer {
+    height: var(--footer-height);
+
+    &__inner {
+        height: 100%;
+
+        p {
+            @media (max-width: 47.9375rem) {
+                font-size: 13px;
+            }
+        }
+    }
+
+    @media (max-width: 47.9375rem) {
+        height: var(--sp-footer-height);
+    }
+}

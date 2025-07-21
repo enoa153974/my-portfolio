@@ -1,0 +1,26 @@
+---
+import Button from '../components/Button';
+interface CtaProps {
+    text: string;
+    buttonLabel: string;
+    buttonHref: string;
+}
+
+const { text, buttonLabel, buttonHref } = Astro.props as CtaProps;
+---
+<!-- 以下で呼び出し
+    <CTA
+        text="ctaキャッチコピーctaキャッチコピーctaキャッチコピー"
+        buttonLabel="ボタン内テキスト"
+        buttonHref="移管先リンク"
+    />
+-->
+<div class="cta l-container-full bg-accent">
+    <div class="l-container flex flex-col items-center text-center py-14 px-8">
+        <p class="mb-6">{text}</p>
+        <Button href="リンク" className="cta__btn" variant="push">
+            <span>ボタンテキスト</span>
+        </Button>
+    </div>
+</div>
+

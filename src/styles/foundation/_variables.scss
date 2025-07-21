@@ -1,0 +1,42 @@
+
+$container-max-width: 1200px !default;
+$container-sub-max-width: 960px !default;
+$base-gap-size: 2rem !default;
+
+/* -------------------------------
+ *  screen size & breakpoint
+ * ---------------------------- */
+$screen-2xl: 1440 !default;
+$screen-xl: 1280 !default;
+$screen-lg: 992 !default;
+$screen-md: 768 !default;
+$screen-sm: 544 !default;
+$screen-xs: 480 !default;
+$screen-2xs: 360 !default;
+$breakpoint-list: (
+    switch: #{$screen-md},
+    2xs: #{$screen-2xs},
+    xs: #{$screen-xs},
+    sm: #{$screen-sm},
+    md: #{$screen-md},
+    lg: #{$screen-lg},
+    xl: #{$screen-xl},
+    2xl: #{$screen-2xl}) !default;
+
+/* -------------------------------
+ *  space size
+ * ---------------------------- */
+$space-6XL: 240px !default;
+$space-5XL: 200px !default;
+$space-4XL: 160px !default;
+$space-3XL: 128px !default;
+$space-2XL: 96px !default;
+$space-XL: 64px !default;
+$space-L: 48px !default;
+$space-M: 32px !default;
+$space-R: 24px !default;
+$space-S: 16px !default;
+$space-XS: 12px !default;
+$space-2XS: 8px !default;
+$space-3XS: 4px !default;
+$space-4XS: 2px !default;

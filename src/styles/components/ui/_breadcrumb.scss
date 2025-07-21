@@ -1,0 +1,28 @@
+.breadcrumb {
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+}
+
+.breadcrumb ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb li + li::before {
+    content: '＞';
+    margin: 0 0.5em;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #333;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.breadcrumb [aria-current='page'] {
+    font-weight: bold;
+}

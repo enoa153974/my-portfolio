@@ -1,0 +1,62 @@
+/* ボタンの上書きデザインを記述 */
+
+/* headerセクションのボタン */
+.btn--primary.header__btn{
+    color: #fff;
+}
+
+/* newsセクションのボタン */
+.btn--push.news__btn.btn {
+    width: 32%;
+    font-size: 18px;
+}
+
+.btn--push.news__btn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66px;
+    background-color: var(--text-color-sub);
+    color: #fff;
+    border-radius: 32px;
+}
+
+.btn--push.news__btn::before {
+    background-color: #066655;
+    top: 4px;
+    left: 0;
+    border-radius: 32px;
+}
+.btn--push.news__btn:hover span {
+    transform: translateY(4px);
+}
+/* contactセクションのボタン */
+.btn--secondary.contact__btn {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    width: 26%;
+    height: 80px;
+    border-radius: 50px;
+    font-size: var(--font-size-lg);
+}
+
+.btn--secondary.contact__btn:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+@media (max-width: 767px) {
+    /* newsセクションのボタン */
+    .btn--push.news__btn.btn {
+        width: 80%;
+    }
+    /* contactセクションのボタン */
+    .btn--secondary.contact__btn {
+        width: 90%;
+    }
+}

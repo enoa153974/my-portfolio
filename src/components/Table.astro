@@ -1,0 +1,91 @@
+---
+/* Component.astroで
+    import Table from './Table.astro';
+    <Table tableData={droneData} /> 
+で表を作成してから、
+    //▼ 以下の表の配列を page.astro のフロントマター内に記述して
+    
+const droneData = [
+    { heading: '見出し１', text: 'テキスト' },
+    { heading: '見出し２', text: 'テキスト' },
+...コピペで行追加可能 →
+
+<Component名 droneData={droneData} /> で呼び出し*/
+
+interface Props {
+    tableData: { heading: string; text: string }[];
+    className?: string;
+}
+
+const { tableData, className = '' } = Astro.props;
+---
+
+<table class={`product-table ${className}`}>
+    <tbody>
+        {
+            tableData.map((row) => (
+                <tr>
+                    <th class="py-4 px-4">{row.heading}</th>
+                    <td class="py-4 px-4">{row.text}</td>
+                </tr>
+            ))
+        }
+    </tbody>
+</table>
+
+<style>
+    .product-table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size:1rem;
+        font-weight: var(--font-weight-bold);
+    }
+
+    .product-table th,
+    .product-table td {
+        border: 1px solid #ccc;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .product-table th {
+        background-color: #f5f5f5;
+        width: 28%;
+        white-space: nowrap;
+        font-weight:var(--font-weight-bold);
+    }
+
+    .product-table td {
+        background-color: #fff;
+    }
+
+    @media screen and (max-width: 767px) {
+        .product-table,
+        .product-table tbody,
+        .product-table tr,
+        .product-table th,
+        .product-table td {
+            display: block;
+            width: 100%;
+        }
+
+        .product-table tr {
+            overflow: hidden;
+            border-top: solid 0.1px #ddd;
+            border-bottom: solid 0.1px #ddd;
+        }
+
+        .product-table th {
+            background-color: #f5f5f5;
+            border-top: none;
+            padding: 6px 16px;
+        }
+
+        .product-table td {
+            background-color: #fff;
+            border-top: none;
+            border-bottom: none;
+            padding: 6px 16px;
+        }
+    }
+</style>

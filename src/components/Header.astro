@@ -1,0 +1,50 @@
+---
+//buttonのインポート
+import Button from '../components/Button';
+
+//meta情報のインポート
+import siteData from '../../siteData.mjs';
+
+//baselayout.astro → currentPathの受け取り
+const { currentPath } = Astro.props;
+---
+
+<header class="l-header flex items-center">
+    <div class="header__container l-container flex items-center px-6">
+        <div class="header__inner flex w-full">
+            <a href="/" class="header__logo block flex items-center"><img src="/assets/image/logo.png" alt="" /></a>
+
+            <!-- ハンバーガーボタン（SP用） -->
+            <button class="hamburger openbtn" aria-label="メニューを開く">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- メニュー -->
+            <!-- PCナビ -->
+            <nav class="header__nav pc-nav">
+                <ul class="header__nav-inner flex items-center font-bold">
+                    <li class="header__text">
+                        <a href={siteData.sample.path} class={currentPath === '/sample' ? 'is-active' : ''}>sample</a>
+                    </li>
+                    <li class="header__text">
+                        <a href={siteData.faq.path} class={currentPath === '/faq' ? 'is-active' : ''}>faq</a>
+                    </li>
+                    <li>
+                        <Button href="リンク" className="header__btn" variant="primary">
+                            <span>ボタンテキスト</span>
+                        </Button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- スマホナビ -->
+            <nav id="global-nav" class="sp-nav font-bold">
+                <ul>
+                    <li><a href="/">トップ</a></li>
+                    <li><a href={siteData.sample.path}>sample</a></li>
+                    <li><a href={siteData.faq.path}>faq</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

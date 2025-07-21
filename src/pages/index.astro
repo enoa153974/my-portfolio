@@ -1,0 +1,192 @@
+---
+import siteData from '../../siteData.mjs';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import CTA from '../components/CTA.astro';
+import FaqSection from '../components/FaqSection.astro';
+import Voices from '../components/Voices.astro';
+import TabbedSection from '../components/TabbedSection.astro';
+
+const pageId = 'home',
+    pageMeta = siteData[pageId],
+    ldJSON = [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            item: {
+                '@id': `${import.meta.env.PUBLIC_ENVURL}`,
+                name: 'HOME'
+            }
+        }
+    ];
+
+const currentPath = '/'; 
+---
+
+<!--BaseLayout.hemlの<slot />内に代入される -->
+<BaseLayout
+    pageName={pageId}
+    title={pageMeta.title}
+    description={pageMeta.description}
+    ogpImage={pageMeta.ogpImage}
+    type={pageMeta.type}
+    path={pageMeta.path}
+    ldJSON={ldJSON}
+    currentPath={currentPath}
+>
+    <Hero />
+
+    <Features
+        title="見出しh2"
+        items={[
+            {
+                image: '/assets/image/sample_img.jpg',
+                alt: 'サンプル画像1',
+                pointNumber: 1,
+                pointTitle: '見出しh3-1',
+                text: 'テキストが入ります。テキストが入ります。...'
+            },
+            {
+                image: '/assets/image/sample_img.jpg',
+                alt: 'サンプル画像2',
+                pointNumber: 2,
+                pointTitle: '見出しh3-2',
+                text: 'テキストが入ります。テキストが入ります。...'
+            },
+            {
+                image: '/assets/image/sample_img.jpg',
+                alt: 'サンプル画像3',
+                pointNumber: 3,
+                pointTitle: '見出しh3-3',
+                text: 'テキストが入ります。テキストが入ります。...'
+            }
+        ]}
+    />
+
+    <CTA
+        text="ctaキャッチコピーctaキャッチコピーctaキャッチコピー"
+        buttonLabel="ボタン内テキスト"
+        buttonHref="/entry"
+    />
+
+    <Voices
+        title="Voices"
+        subtitle="お客様の声"
+        voices={[
+            {
+                name: 'Aさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Bさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Cさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Dさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Eさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Fさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            }
+        ]}
+    />
+
+    <FaqSection
+        title="Q&A"
+        subtitle="よくある質問"
+        items={[
+            {
+                question: '質問テキストはここに記入',
+                answer: '回答テキストはここに記入'
+            },
+            {
+                question: '質問テキストはここに記入',
+                answer: '回答テキストはここに記入'
+            },
+            {
+                question: '質問テキストはここに記入',
+                answer: '回答テキストはここに記入'
+            },
+            {
+                question: '質問テキストはここに記入',
+                answer: '回答テキストはここに記入'
+            },
+            {
+                question: '質問テキストはここに記入',
+                answer: '回答テキストはここに記入'
+            }
+        ]}
+    />
+
+    <TabbedSection
+        title="タイトル"
+        tabData={[
+            {
+                label: 'ラベルテキスト１',
+                items: [
+                    {
+                        img: '/assets/image/sample_img.jpg',
+                        text: 'テキスト',
+                        link: '#'
+                    },
+                    {
+                        img: '/assets/image/sample_img.jpg',
+                        text: 'テキスト',
+                        link: '#'
+                    },
+                    {
+                        img: '/assets/image/sample_img.jpg',
+                        text: 'テキスト',
+                        link: '#'
+                    },
+                    {
+                        img: '/assets/image/sample_img.jpg',
+                        text: 'テキスト',
+                        link: '#'
+                    }
+                ]
+            },
+            {
+                label: 'ラベルテキスト２',
+                items: [
+                    {
+                        img: '/assets/image/test_img01.jpg',
+                        text: 'テキスト',
+                        link: '#'
+                    },
+                    {
+                        img: '/assets/image/test_img01.jpg',
+                        text: 'テキスト',
+                        link: '#'
+                    },
+                    {
+                        img: '/assets/image/test_img01.jpg',
+                        text: 'テキスト',
+                        link: '#'
+                    },
+                    {
+                        img: '/assets/image/test_img01.jpg',
+                        text: 'テキスト',
+                        link: '#'
+                    }
+                ]
+            }
+        ]}
+    />
+</BaseLayout>

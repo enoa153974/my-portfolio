@@ -1,0 +1,228 @@
+@use '../foundation/import' as *;
+
+/* -------------------------------
+ *  config
+ * ---------------------------- */
+$container-gutter:15% !default;
+$base-gap-size: var(--space-R) !default;
+
+/* -------------------------------
+ *  section wrapper & inner
+ * ---------------------------- */
+.l-wrapper {
+    width: 100%;
+}
+
+.l-inner {
+    padding: 0 $container-gutter;
+}
+
+@include media-query(md){
+    .l-inner{
+        padding: 0 1rem;
+    }
+}
+
+/* -------------------------------
+ *  gird system (container)
+ * ---------------------------- */
+.l-container {
+    width: 100%;
+    max-width: calc(var(--screen-xl) * 1px);
+    margin: 0 auto;
+}
+
+.l-container-full {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+@include media-query(2xl) {
+    .l-container {
+        max-width: calc(var(--screen-xl) * 1px);
+    }
+}
+
+@include media-query(xl) {
+    .l-container {
+        max-width: calc(var(--screen-lg) * 1px);
+    }
+}
+
+@include media-query(lg) {
+    .l-container {
+        max-width: calc(var(--screen-md) * 1px);
+    }
+}
+
+@include media-query(md) {
+    .l-container {
+        max-width: 100%;
+    }
+}
+
+@include media-query(sm) {
+    .l-container {
+        max-width: 100%;
+    }
+}
+
+@include media-query(xs) {
+    .l-container {
+        max-width: 100%;
+    }
+}
+
+@include media-query(2xs) {
+    .l-container {
+        max-width: 100%;
+    }
+}
+
+/* -------------------------------
+ *  gird system (row & column)
+ * ---------------------------- */
+.l-row {
+    width: 100%;
+    display: flex;
+
+    &.l-row--gap {
+        gap: $base-gap-size;
+    }
+}
+
+.l-column {
+    &.l-column--1 {
+        width: column-width(1, 0);
+    }
+
+    &.l-column--2 {
+        width: column-width(2, 0);
+    }
+
+    &.l-column--3 {
+        width: column-width(3, 0);
+    }
+
+    &.l-column--4 {
+        width: column-width(4, 0);
+    }
+
+    &.l-column--5 {
+        width: column-width(5, 0);
+    }
+
+    &.l-column--6 {
+        width: column-width(6, 0);
+    }
+
+    &.l-column--7 {
+        width: column-width(7, 0);
+    }
+
+    &.l-column--8 {
+        width: column-width(8, 0);
+    }
+
+    &.l-column--9 {
+        width: column-width(9, 0);
+    }
+
+    &.l-column--10 {
+        width: column-width(10, 0);
+    }
+
+    &.l-column--11 {
+        width: column-width(11, 0);
+    }
+
+    &.l-column--12 {
+        width: column-width(12, 0);
+    }
+
+    &.l-column--gap {
+        &.l-column--1 {
+            width: column-width(1, $base-gap-size);
+        }
+
+        &.l-column--2 {
+            width: column-width(2, $base-gap-size);
+        }
+
+        &.l-column--3 {
+            width: column-width(3, $base-gap-size);
+        }
+
+        &.l-column--4 {
+            width: column-width(4, $base-gap-size);
+        }
+
+        &.l-column--5 {
+            width: column-width(5, $base-gap-size);
+        }
+
+        &.l-column--6 {
+            width: column-width(6, $base-gap-size);
+        }
+
+        &.l-column--7 {
+            width: column-width(7, $base-gap-size);
+        }
+
+        &.l-column--8 {
+            width: column-width(8, $base-gap-size);
+        }
+
+        &.l-column--9 {
+            width: column-width(9, $base-gap-size);
+        }
+
+        &.l-column--10 {
+            width: column-width(10, $base-gap-size);
+        }
+
+        &.l-column--11 {
+            width: column-width(11, $base-gap-size);
+        }
+
+        &.l-column--12 {
+            width: column-width(12, 0);
+        }
+    }
+
+/* ========================================
+    ▼ 画像ラッパー
+======================================== */
+.img-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    &--aspect-16-9 {
+        aspect-ratio: 16 / 9;
+    }
+
+    &--aspect-1-1 {
+        aspect-ratio: 1 / 1;
+    }
+
+    &--rounded {
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+
+    &--shadow {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+}
+}

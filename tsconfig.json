@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "jsxImportSource": "react",
+        "types": ["astro/client"]
+    },
+    "include": ["src", "public/assets/scripts/libs", "public/assets/scripts/behaviors", "public/assets/scripts/ui"]
+}

@@ -1,0 +1,85 @@
+---
+interface Props {
+    title: string;
+    subtitle: string;
+    voices: Voice[];
+}
+interface Voice {
+    name: string;
+    comment: string;
+    image: string;
+}
+
+const { title, subtitle, voices } = Astro.props as Props;
+---
+<!-- 以下で呼び出し
+
+    <Voices
+        title="Voices"
+        subtitle="お客様の声"
+        voices={[
+            {
+                name: 'Aさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Bさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Cさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Dさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Eさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            },
+            {
+                name: 'Fさん',
+                comment: 'ここにテキストが入ります。ここにテキストが入ります。...',
+                image: '/assets/image/enoa_icon.png'
+            }
+        ]}
+    /> -->
+
+<section class="voices l-wrapper flex flex-col">
+    <div class="l-container-full py-10 px-6">
+        <h2 class="voices__heading text-center">
+            <span class="en block">{title}</span>
+            <span class="block font-bold">{subtitle}</span>
+        </h2>
+
+        <div class="slider flex items-center justify-center">
+            <div class="slider__wrapper flex flex-col">
+                <button type="button" class="slick-prev" aria-label="前へ"><i class="fa-solid fa-arrow-left"></i></button>
+
+                <div class="slider__track autoplay sm:justify-center">
+                    {
+                        voices.map((voice: Voice, i: number) => (
+                            <div class="card flex flex-col">
+                                <div class="avatar__wrapper block">
+                                    <img src={voice.image} alt={`お客様${voice.name}の声`} class="avatar-01 block" />
+                                </div>
+                                <p class="text-center">{voice.name}</p>
+                                <p class="text-center">{voice.comment}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+
+                <button type="button" class="slick-next" aria-label="次へ"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="slider__dots flex justify-center items-center"></div>
+        </div>
+    </div>
+</section>

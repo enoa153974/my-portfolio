@@ -1,0 +1,93 @@
+/*========== ボタンをクリックされるとナビが右画面外から中央にスライドしてくる ===============*/
+
+#global-nav {
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position: fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+    top:0;
+    right: -120%;
+    width: 100%;
+    height: 100vh;
+    background: var(--accent-color);
+    transition: all 0.6s;
+    border-radius: 30px;
+    margin-right: 0;
+    opacity: 80%;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#global-nav.panelactive {
+    right: 0;
+}
+
+/*ナビゲーション*/
+#global-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*リストのレイアウト設定*/
+
+#global-nav li {
+    list-style: none;
+    text-align: center;
+}
+
+#global-nav li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/*========== 3本線がクリックされると1本線になるハンバーガーメニューボタン ===============*/
+
+/*ボタン外側*/
+.openbtn {
+    /*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+    position: relative;
+    cursor: pointer;
+    width: 62px;
+    height: 62px;
+    z-index: 2000;
+}
+
+/*ボタン内側*/
+.openbtn span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 10px;
+    height: 2px;
+    border-radius: 2px;
+    background: #000;
+    width: 46%;
+    margin-top: 7px;
+}
+
+.openbtn span:nth-of-type(1) {
+    top: 15px;
+}
+
+.openbtn span:nth-of-type(2) {
+    top: 23px;
+}
+
+.openbtn span:nth-of-type(3) {
+    top: 31px;
+}
+
+/*activeクラスが付与されると1・3番目の要素が2番目の要素と同じ位置になり一本線に*/
+
+.openbtn.active span:nth-of-type(1),
+.openbtn.active span:nth-of-type(3) {
+    top: 23px;
+}

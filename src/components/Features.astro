@@ -1,0 +1,73 @@
+---
+interface FeatureItem {
+    image: string;
+    alt: string;
+    pointNumber: number;
+    pointTitle: string;
+    text: string;
+}
+
+const { title, items } = Astro.props as {
+    title: string;
+    items: FeatureItem[];
+};
+---
+
+<!--以下で呼び出し
+<Features
+        title="見出しh2"
+        items={[
+            {
+                image: '/assets/image/sample_img.jpg',
+                alt: 'サンプル画像1',
+                pointNumber: 1,
+                pointTitle: '見出しh3-1',
+                text: 'テキストが入ります。テキストが入ります。...'
+            }
+        ]}
+    /> -->
+<section id="feature" class="feature__section l-wrapper">
+    <div class="feature__inner l-container bg-sub py-10 px-6">
+        <h2 class="text-center">
+            {title}
+        </h2>
+
+        {
+            items.map((item, index) => (
+                <div
+                    class={[
+                        'feature__item', // 共通のベースクラス
+                        'flex', // Flexbox 有効化
+                        'justify-center', // 水平方向中央寄せ
+                        'flex-row', // 水平方向中央寄せ
+                        'l-inner',
+                        'sm:flex-col-reverse', // スマホ表示で縦並びに
+                        index % 2 === 0 ? 'reverse' : '' // 奇数番目のアイテムだけ reverse クラスを付ける
+                    ].join(' ')}
+                >
+                    <div class="img-wrapper">
+                        <img src={item.image} alt={item.alt} class="item__img block" />
+                    </div>
+                    <div class="item__text sm:text-center">
+                        <h3 class="en">
+                            Point<span>{item.pointNumber}</span>
+                        </h3>
+                        <p class="lead">{item.pointTitle}</p>
+                        <p>{item.text}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>
+<style>
+    .reverse {
+        flex-direction: row-reverse;
+    }
+
+    @media (max-width: 767px) {
+        .reverse{
+        flex-direction: column-reverse;
+        }
+    }
+</style>

@@ -1,0 +1,66 @@
+{
+    "name": "lp-template-ashro",
+    "type": "module",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/enoa153974/lp-template-astro.git"
+    },
+    "author": {
+        "name": "aoi miyake",
+        "email": "aoi@example.com",
+        "url": "https://example.com/"
+    },
+    "scripts": {
+        "dev": "astro dev --port 2000",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview --port 8000",
+        "astro": "astro",
+        "lint": "npm run lint:style && npm run lint:es && npm run lint:html",
+        "lint:style": "stylelint 'src/**/*.{css,scss,astro}'",
+        "lint:es": "eslint 'src/**/*.{astro,tsx,ts}'",
+        "lint:html": "markuplint 'src/**/*.{html,astro,tsx}'",
+        "format": "prettier --ignore-path .prettierignore --write .",
+        "path": "node relativePath.mjs"
+    },
+    "devDependencies": {
+        "@markuplint/astro-parser": "^4.6.2",
+        "@markuplint/jsx-parser": "^4.7.2",
+        "@markuplint/react-spec": "^4.5.2",
+        "@typescript-eslint/eslint-plugin": "^7.9.0",
+        "@typescript-eslint/parser": "^7.9.0",
+        "css-declaration-sorter": "^7.2.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-astro": "^1.2.0",
+        "globals": "^15.2.0",
+        "markuplint": "^4.8.1",
+        "prettier": "^3.2.5",
+        "prettier-plugin-astro": "^0.13.0",
+        "stylelint": "^16.5.0",
+        "stylelint-config-html": "^1.1.0",
+        "stylelint-config-standard-scss": "^13.1.0",
+        "stylelint-prettier": "^5.0.0",
+        "stylelint-scss": "^6.3.0",
+        "typescript-eslint": "^7.14.1"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.5.10",
+        "@astrojs/react": "^4.3.0",
+        "@astrojs/sitemap": "^3.1.6",
+        "@astrojs/vue": "^5.1.0",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "astro": "^5.8.1",
+        "jquery": "^3.7.1",
+        "pinia": "^3.0.2",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "sass": "^1.77.2",
+        "typescript": "^5.4.5"
+    },
+    "browserslist": [
+        "last 2 versions, > 1%"
+    ]
+}

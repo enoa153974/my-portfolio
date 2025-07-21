@@ -1,0 +1,140 @@
+@use 'variables' as *;
+@use 'mixin' as *;
+
+:root {
+    /* メインカラー */
+    --main-color: #fdf0f5;
+    /* サブカラー */
+    --sub-color: #fff1f8;
+    /* アクセントカラー（強調やボタン背景） */
+    --accent-color: #fa7da3;
+    /* 背景色（sab） */
+    --bg-color: #fff;
+    /* 標準テキストの色 */
+    --text-color: #333;
+    /* テキストの色(sub) */
+    --text-color-sub: #09947b;
+
+    /* === フォント設定 === */
+    /* 日本語フォント */
+    --font-jp: 'Noto Sans JP',
+        serif;
+    /* 英語フォント（英字・飾りなど） */
+    --font-en: 'Outfit',
+        serif;
+    /* ロゴ専用フォント */
+    --font-logo: 'Outfit',
+        serif;
+
+    /* === フォントサイズ（可変 / 基準：1440px） === */
+    /* xs: 0.75rem〜0.875rem（12px〜14px） */
+    --font-size-xs: clamp(0.75rem, 0.9vw, 0.875rem);
+
+    /* sm: 0.8125rem〜0.9375rem（13px〜15px） */
+    --font-size-sm: clamp(0.8125rem, 1vw, 0.9375rem);
+
+    /* base: 0.875rem〜1rem（14px〜16px） */
+    --font-size-base: clamp(0.875rem, 1.1vw, 1rem);
+
+    /* lg: 1rem〜1.25rem（16px〜20px） */
+    --font-size-lg: clamp(1rem, 1.5vw, 1.25rem);
+
+    /* xl: 1.125rem〜1.5rem（18px〜24px） */
+    --font-size-xl: clamp(1.125rem, 1.9vw, 1.5rem);
+
+    /* lg2: 1.25rem〜1.75rem（20px〜28px） */
+    --font-size-lg2: clamp(1.25rem, 2.2vw, 1.75rem);
+
+    /* xl2: 1.375rem〜2rem（22px〜32px） */
+    --font-size-xl2: clamp(1.375rem, 2.5vw, 2rem);
+
+    /* 2xl: 1.5rem〜2.25rem（24px〜36px） */
+    --font-size-2xl: clamp(1.5rem, 2.8vw, 2.25rem);
+
+    /* 3xl: 1.875rem〜2.75rem（30px〜44px） */
+    --font-size-3xl: clamp(1.875rem, 3.4vw, 2.75rem);
+
+    /* 4xl: 2.25rem〜3.25rem（36px〜52px） */
+    --font-size-4xl: clamp(2.25rem, 4.2vw, 3.25rem);
+
+    /* 5xl: 3rem〜4.5rem（48px〜72px） */
+    --font-size-5xl: clamp(3rem, 6vw, 4.5rem);
+
+    /* === フォントウェイト === */
+    /* 通常 */
+    --font-weight-normal: 400;
+    /* セミボールド（中太字） */
+    --font-weight-semibold: 500;
+    /* ボールド（太字） */
+    --font-weight-bold: 700;
+
+    // space size
+    --space-6XL: #{$space-6XL};
+    --space-5XL: #{$space-5XL};
+    --space-4XL: #{$space-4XL};
+    --space-3XL: #{$space-3XL};
+    --space-2XL: #{$space-2XL};
+    --space-XL: #{$space-XL};
+    --space-L: #{$space-L};
+    --space-M: #{$space-M};
+    --space-R: #{$space-R};
+    --space-S: #{$space-S};
+    --space-XS: #{$space-XS};
+    --space-2XS: #{$space-2XS};
+    --space-3XS: #{$space-3XS};
+    --space-4XS: #{$space-4XS};
+
+    /* === スペーシング（可変 / 基準：1440px） === */
+
+    /* xs: 0.25rem〜0.5rem（4px〜8px） */
+    --spacing-xs: clamp(0.25rem, 0.56vw, 0.5rem);
+
+    /* xs2: 0.375rem〜0.75rem（6px〜12px） */
+    --spacing-xs2: clamp(0.375rem, 0.83vw, 0.75rem);
+
+    /* sm: 0.5rem〜1rem（8px〜16px）※ベースに使いやすい */
+    --spacing-sm: clamp(0.5rem, 1.11vw, 1rem);
+
+    /* sm2: 0.625rem〜1.25rem（10px〜20px） */
+    --spacing-sm2: clamp(0.625rem, 1.38vw, 1.25rem);
+
+    /* base: 1.125rem〜1.5rem（18px〜24px）※段落間など */
+    --spacing-base: clamp(1.125rem, 1.66vw, 1.5rem);
+
+    /* base2: 0.875rem〜1.75rem（14px〜28px）※段落とセクション内の中間 */
+    --spacing-base2: clamp(0.875rem, 1.94vw, 1.75rem);
+
+    /* lg: 1.125rem〜2rem（18px〜32px）※セクション内余白 */
+    --spacing-lg: clamp(1.125rem, 2.22vw, 2rem);
+
+    /* lg2: 1.25rem〜2.5rem（20px〜40px）※内外間の中間 */
+    --spacing-lg2: clamp(1.25rem, 2.78vw, 2.5rem);
+
+    /* lg3: 1.375rem〜2.625rem（22px〜42px）※やや広めの外枠 */
+    --spacing-lg3: clamp(1.375rem, 2.92vw, 2.625rem);
+
+    /* xl: 1.5rem〜3rem（24px〜48px）※セクション外や明確な区切り */
+    --spacing-xl: clamp(1.5rem, 3.33vw, 3rem);
+
+    /* === 幅（width）・高さ（height） === */
+    /* 最大1200px：コンテナ最大幅 */
+    --container-max-width: 1200px;
+    --container-sub-max-width: 980px;
+
+    /* === ヘッダー・フッターの高さ === */
+    /* PCヘッダーの高さ（約95px） */
+    --header-height: 95px;
+    /* PCフッターの高さ（約128px） */
+    --footer-height: 128px;
+    /* SPヘッダーの高さ（約63px） */
+    --sp-header-height: 63px;
+    /* SPフッターの高さ（約64px） */
+    --sp-footer-height: 64px;
+
+    /* === 装飾系 === */
+    --radius-sm: 4px;
+    --radius: 10px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}

@@ -1,0 +1,61 @@
+---
+import siteData from '../../../siteData.mjs';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSample  from '../../components/HeroSample.astro';
+import Gallery from '../../components/Gallery.astro';
+import FeaturesSpec from '../../components/FeaturesSpec.astro';
+import Contact from '../../components/Contact.astro';
+
+const pageId = 'sample',
+    pageMeta = siteData[pageId],
+    ldJSON = [
+        {
+            '@type': 'ListItem',
+            position: 2,
+            item: {
+                '@id': `${import.meta.env.PUBLIC_ENVURL}${pageMeta.path}`,
+                name: 'sample'
+            }
+        }
+    ];
+
+const currentPath = '/sample'; 
+
+
+---
+
+<!--BaseLayout.hemlの<slot />内に代入される -->
+<BaseLayout
+    pageName={pageId}
+    title={pageMeta.title}
+    description={pageMeta.description}
+    ogpImage={pageMeta.ogpImage}
+    type={pageMeta.type}
+    path={pageMeta.path}
+    ldJSON={ldJSON}
+    currentPath={currentPath}
+>
+    <HeroSample />
+    <Gallery
+        title="ギャラリー"
+        gallerys={[
+            {
+                image: '/assets/image/sample_img.jpg',
+                alt: ''
+            },
+            {
+                image: '/assets/image/sample_img.jpg',
+                alt: ''
+            },
+            {
+                image: '/assets/image/sample_img.jpg',
+                alt: ''
+            }
+        ]}
+    />
+    <FeaturesSpec />
+    <Contact />
+</BaseLayout>
+        <!-- 各jsを初期化するsample.jsの読み込み -->
+        <script type="module" src="/assets/scripts/ui/sample.js"></script>
+

@@ -1,0 +1,88 @@
+// ===============================
+
+// Mixin
+//各sassファイルの冒頭で
+//@use '../../foundation/mixin' as mixin;
+//とすることで使うことができる
+
+// ===============================
+
+
+
+// ブレイクポイントのマップ定義
+$breakpoints: (
+    "2xs": 360px,
+    "xs": 480px,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "2xl": 1400px
+);
+
+// ブレイクポイント名を渡して使う mixin
+@mixin media-query($breakpoint) {
+    $size: map-get($breakpoints, $breakpoint);
+
+    @if $size {
+        @media screen and (max-width: $size) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "指定されたブレイクポイント「#{$breakpoint}」は定義されていません。";
+    }
+}
+
+
+//フルイド(可変)フォント
+@mixin fluid-font($min, $max) {
+    font-size: clamp($min, 1.5vw, $max);
+}
+
+//省略三点リーダー（1行）
+//max-width,widthが必須
+//必ず1行のテキストであること
+@mixin truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+//角丸（可変）
+@mixin radius($size: 10px) {
+    border-radius: $size;
+    overflow: hidden;
+}
+
+//フレックス中央寄せ
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//フレックス上下左右で配置
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//レスポンシブマージン（上下余白）
+@mixin section-space($top, $bottom) {
+    margin-top: clamp($top, 2vw, $top * 1.5);
+    margin-bottom: clamp($bottom, 2vw, $bottom * 1.5);
+}
+
+//汎用ボタンスタイル
+@mixin btn-base {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: var(--radius);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}

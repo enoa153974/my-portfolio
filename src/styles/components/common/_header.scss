@@ -1,0 +1,128 @@
+.l-header {
+    height: var(--header-height);
+
+    // SP用に高さ変更
+    @media (max-width: 47.9375rem) {
+        height: var(--sp-header-height);
+    }
+}
+
+.header {
+    &__logo {
+        img {
+            width: 80%;
+
+            @media (max-width: 47.9375rem) {
+                width: 60%;
+            }
+        }
+    }
+
+    &__nav {
+        margin-left: auto;
+
+        li {
+            white-space: nowrap;
+        }
+
+        @media (max-width: 47.9375rem) {
+            display: none;
+        }
+    }
+
+    &__nav-inner {
+        width: 100%;
+        height: 100%;
+        gap: 2rem;
+
+        .header__text {
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+
+            &.is-active {
+                color: var(--text-color-sub);
+                font-weight: bold;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 2px;
+                background-color: var(--text-color-sub);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover {
+                color: var(--text-color-sub);
+
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    &__container {
+        @media (max-width: 47.9375rem) {
+            padding: 0;
+        }
+    }
+
+    &__inner {
+        @media (max-width: 47.9375rem) {
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+}
+
+.sp-nav {
+    display: none;
+
+    a {
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: var(--text-color-sub);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover {
+            color: var(--text-color-sub);
+
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+
+    @media (max-width: 47.9375rem) {
+        display: block;
+    }
+}
+
+.hamburger {
+    display: none;
+
+    @media (max-width: 47.9375rem) {
+        display: inline-block;
+    }
+}

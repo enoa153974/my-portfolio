@@ -1,0 +1,59 @@
+/* -------------------------------
+ *  file import (base)
+ * ---------------------------- */
+/* 共通スタイル */
+@use 'base/global';
+/* リセットcss */
+@use 'base/reset';
+
+/* -------------------------------
+ *  file import (foundation)
+ * ---------------------------- */
+/* faundation内のファイルをまとめてインポート */
+@use 'foundation/import' as *;
+
+/* -------------------------------
+ *  file import (layout)
+ * ---------------------------- */
+/* レイアウト（構造用のクラス） */
+@use 'layout/module';
+
+/* -------------------------------
+ *  file import (components/common)
+ * ---------------------------- */
+@use 'components/common/header';
+@use 'components/common/footer';
+/* -------------------------------
+ *  file import (components/section)
+ * ---------------------------- */
+@use 'components/sections/hero';
+@use 'components/sections/features';
+@use 'components/sections/voices';
+@use 'components/sections/hero-sample';
+/* -------------------------------
+ *  file import (components/ui)
+ * ---------------------------- */
+/* ハンバーガーメニューcss */
+@use 'components/ui/hamburger';
+/* アコーディオンメニューcss/デザイン-base */
+@use 'components/ui/accordion';
+/* アコーディオンメニューcss/デザイン-caregory */
+@use 'components/ui/accordion-category';
+/* スライダー（カルーセル）css */
+@use 'components/ui/slider-arrow';
+/* スライダー（カルーセル）css */
+@use 'components/ui/gallery-slider';
+/* タブメニューcss */
+@use 'components/ui/tab-menu';
+/* パンくずリストのcss */
+@use 'components/ui/breadcrumb';
+
+/* -------------------------------
+ *  file import (utility)
+ * ---------------------------- */
+/* ユーティリティクラス */
+@use 'utility/utilities';
+/* ボタンのベースデザイン */
+@use 'utility/button';
+/* ボタンの上書きデザイン */
+@use 'utility/button-overrides';

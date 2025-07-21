@@ -1,0 +1,237 @@
+.slider {
+    position: relative;
+    margin: 0 auto;
+    max-width: 75%;
+}
+
+.slick-slide {
+    padding: 0 10px;
+    /* ← 左右の余白になる */
+    box-sizing: border-box;
+}
+
+.slider__wrapper {
+    width: 980px;
+    height: auto;
+    max-height: 26.3125rem;
+    margin-top: 2.5rem;
+    overflow: hidden;
+}
+
+.slider__track .card {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 18.75rem;
+    height: 24.25rem;
+    padding: clamp(1.5rem, 2.667vw, 2.5rem) clamp(0.625rem, 1.067vw, 1rem);
+    text-align: center;
+    background-color: #dbf7f9;
+}
+
+.avatar__wrapper {
+    width: clamp(3.75rem, 6.67vw, 6.25rem);
+    height: clamp(3.75rem, 6.67vw, 6.25rem);
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.avatar-01,
+.avatar-02,
+.avatar-03,
+.avatar-04,
+.avatar-05,
+.avatar-06 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.4) translateX(-10%) translateY(9%);
+
+    /* アップ倍率、画像トリミング位置調整 */
+}
+
+.avatar-02 {
+    transform: scale(1.5) translateX(4%) translateY(13%);
+
+    /* アップ倍率、画像トリミング位置調整 */
+}
+
+.avatar-03 {
+    transform: scale(1.6) translateX(-6%) translateY(10%);
+
+    /* アップ倍率、画像トリミング位置調整 */
+}
+
+.avatar-04 {
+    transform: scale(1.4) translateX(0%) translateY(10%);
+
+    /* アップ倍率、画像トリミング位置調整 */
+}
+
+.avatar-05 {
+    transform: scale(1) translateX(0%) translateY(0%);
+
+    /* アップ倍率、画像トリミング位置調整 */
+}
+
+.avatar-06 {
+    transform: scale(1.5) translateX(0%) translateY(8%);
+
+    /* アップ倍率、画像トリミング位置調整 */
+}
+
+.card p {
+    margin-bottom: 1rem;
+    font-size: 0.9375rem;
+}
+
+.card p:last-child {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.75;
+    text-align: left;
+}
+
+.slider__wrapper .slick-prev,
+.slider__wrapper .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    background: #00acc1;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.slider__wrapper .slick-prev {
+    left: -5rem;
+}
+
+.slider__wrapper .slick-next {
+    right: -5rem;
+}
+
+.slider__wrapper .slick-prev:hover,
+.slider__wrapper .slick-next:hover {
+    opacity: 0.6;
+}
+
+/* slickの矢印用疑似要素を非表示にする */
+.slick-prev::before,
+.slick-next::before {
+    display: none;
+    content: none;
+}
+
+/* ドットコンテナ */
+.slick-dots {
+    position: static;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.slick-dots li {
+    width: auto;
+    height: auto;
+    padding: 0;
+}
+
+/* 各ドットボタン */
+.slick-dots li button {
+    position: static;
+    width: 0.5625rem;
+    height: 0.5625rem;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    line-height: 0;
+    appearance: none;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #00afbf;
+}
+
+/* Slickのデフォルトの黒丸を消す */
+.slick-dots li button::before {
+    display: none;
+    content: none;
+}
+
+/* レスポンシブ対応（1枚表示） */
+@media (width <=47.9375rem) {
+    /* ブレイクポイント767px */
+    .slider__wrapper {
+        max-width: 280px;
+        margin-top: 0;
+    }
+
+    .slick-slide {
+        padding: 0;
+    }
+
+    .card {
+        width: 100%;
+        height: 21.5rem;
+        padding: 1.75rem 0.9375rem;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .card p {
+        margin-top: 0.3125rem;
+    }
+
+    .card p:last-child {
+        font-size: 0.875rem;
+        line-height: 2;
+    }
+
+    .slider__wrapper .slick-prev {
+        transform: translateY(-70%);
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.125rem;
+        line-height: 1.9;
+    }
+
+    .slider__wrapper .slick-next {
+        transform: translateY(-70%);
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.125rem;
+        line-height: 1.9;
+    }
+
+    .slider__wrapper .slick-prev {
+        left: -3.125rem;
+    }
+
+    .slider__wrapper .slick-next {
+        right: -3.125rem;
+    }
+
+    .avatar__wrapper {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .slider__dots {
+        gap: 0.4rem;
+        margin-top: 1rem;
+    }
+}

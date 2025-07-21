@@ -1,0 +1,24 @@
+@use '../../foundation/import.scss' as *;
+
+.hero__text {
+    top:10%;
+    left: 0;
+
+    h1 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 2rem;
+    }
+
+    @include  media-query(md) {
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+    }
+}

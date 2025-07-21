@@ -1,0 +1,49 @@
+---
+interface Props {
+    title: string;
+    items: FaqItem[];
+}
+interface FaqItem {
+    question: string;
+    category01: string;
+    category02: string;
+    answer: string;
+}
+
+const { title, items } = Astro.props as Props;
+
+import AccordionItem from './AccordionItemCategory.astro';
+---
+
+<section class="faq-section l-container pt-16 pb-14 sm:pt-10">
+    <h2 class="faq-section__heading text-center">
+        <span class="en block">{title}</span>
+    </h2>
+
+    <div class="faq-section__inner l-inner">
+        {
+            items.map((item) => (
+                <AccordionItem
+                    question={item.question}
+                    answer={item.answer}
+                    category01={item.category01}
+                    category02={item.category02}
+                />
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .faq-section {
+    }
+    @media (max-width: 767px) {
+        .faq-section__inner {
+            padding: 0;
+        }
+
+        .faq-section {
+            margin-bottom: 120px;
+        }
+    }
+</style>

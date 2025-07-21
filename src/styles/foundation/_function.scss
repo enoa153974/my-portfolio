@@ -1,0 +1,13 @@
+@use "sass:math";
+
+@function column-width($col, $gap: 0) {
+  $columns: 12;
+  $base-width: math.div(100%, $columns) * $col;
+
+  @if $gap == 0 {
+    @return calc(#{$base-width});
+  }
+
+  $total-gap: $gap * ($col - 1);
+  @return calc(#{$base-width} - #{$total-gap});
+}

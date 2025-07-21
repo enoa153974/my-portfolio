@@ -1,0 +1,30 @@
+@use '../../foundation/import.scss' as *;
+
+.hero-sample {
+    width: 100%;
+    height: auto;
+
+    &__text {
+        bottom: 2%;
+        width: 27%;
+        height: 19%;
+        border-top-right-radius: 32px;
+        border-bottom-left-radius: 10px;
+
+        h1 {
+            font-size: clamp(1.25rem, 2.38vw, 2.125rem);
+        }
+    }
+
+    @include media-query(md) {
+
+        &__text {
+            position: static;
+            width: 100%;
+
+            h1 {
+                font-size:2rem;
+            }
+        }
+    }
+}

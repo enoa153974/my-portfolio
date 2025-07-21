@@ -1,0 +1,52 @@
+---
+interface Props {
+    imgSrc: string;
+    alt: string;
+    text: string;
+    className?: string;
+}
+
+const { imgSrc, alt, text, className = '' } = Astro.props;
+---
+
+<div class={`card ${className}`}>
+    <div class="img__wrapper">
+        <img src={imgSrc} alt={alt} class="card__img" />
+    </div>
+    <p class="card__text">{text}</p>
+</div>
+
+<style>
+    .card,
+    .card * {
+        box-sizing: border-box;
+    }
+
+    .card {
+        width: 100%;
+    }
+    .img__wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+    .card__img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .card__text {
+        width: 100%;
+        padding: 1rem;
+        border-bottom-left-radius: 28px;
+        border-bottom-right-radius: 28px;
+    }
+
+    @media (max-width: 767px) {
+        .card__text {
+            padding: 0; /* ←余白をなくす */
+            text-align: center;
+        }
+    }
+</style>
