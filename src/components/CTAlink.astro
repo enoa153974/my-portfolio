@@ -1,0 +1,30 @@
+---
+interface CtaItem {
+    text: string;
+    imgSrc: string;
+    imgAlt: string;
+    buttonHref: string;
+}
+
+interface CtaProps {
+    items: CtaItem[]; // 複数のCTAデータ
+}
+
+const { items } = Astro.props as CtaProps;
+---
+
+<div class="l-container py-10">
+    <h2 class="text-center">SNS</h2>
+    <div class="cta-image-link-group l-row l-inner sm:flex-col">
+        {
+            items.map((item, index) => (
+                <div class="cta-image-link l-colomn l-colomn--6">
+                    <a href={item.buttonHref} class="cta-image-link__wrapper">
+                        <img src={item.imgSrc} alt={item.imgAlt} class="cta-image-link__img" />
+                        <span class="cta-image-link__text">{item.text}</span>
+                    </a>
+                </div>
+            ))
+        }
+    </div>
+</div>

@@ -2,9 +2,10 @@
 
 // Mixin
 //各sassファイルの冒頭で
-//@use '../../foundation/mixin' as mixin;
-//とすることで使うことができる
-
+//@use '../../foundation/import' as *;
+//とすることで以下のように使うことができる
+//@include media-query(md) {
+  // スタイル内容}とする
 // ===============================
 
 

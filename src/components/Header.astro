@@ -1,19 +1,15 @@
 ---
-//buttonのインポート
-import Button from '../components/Button';
 
 //meta情報のインポート
 import siteData from '../../siteData.mjs';
 
 //baselayout.astro → currentPathの受け取り
-const { currentPath } = Astro.props;
+const { class: className, currentPath,isTopPage } = Astro.props;
 ---
 
-<header class="l-header flex items-center">
-    <div class="header__container l-container flex items-center px-6">
+<header  class={`${className} l-header flex ${isTopPage ? 'items-start' : 'items-center'}`}>
+    <div class="header__container l-container flex items-center px-6 bg-sub">
         <div class="header__inner flex w-full">
-            <a href="/" class="header__logo block flex items-center"><img src="/assets/image/logo.png" alt="" /></a>
-
             <!-- ハンバーガーボタン（SP用） -->
             <button class="hamburger openbtn" aria-label="メニューを開く">
                 <span></span><span></span><span></span>
@@ -21,30 +17,37 @@ const { currentPath } = Astro.props;
 
             <!-- メニュー -->
             <!-- PCナビ -->
-            <nav class="header__nav pc-nav">
-                <ul class="header__nav-inner flex items-center font-bold">
-                    <li class="header__text">
-                        <a href={siteData.sample.path} class={currentPath === '/sample' ? 'is-active' : ''}>sample</a>
-                    </li>
-                    <li class="header__text">
-                        <a href={siteData.faq.path} class={currentPath === '/faq' ? 'is-active' : ''}>faq</a>
-                    </li>
-                    <li>
-                        <Button href="リンク" className="header__btn" variant="primary">
-                            <span>ボタンテキスト</span>
-                        </Button>
-                    </li>
-                </ul>
-            </nav>
+                <nav class="header__nav pc-nav">
+                        <ul class="header__nav-inner l-row font-bold w-full">
+                            <div class="l-column l-column--3">
+                                <li><a href={siteData.home.path}><img src="/assets/image/logo_name.png" alt=""  class="header__nav-icon block" /></a></li>
+                            </div>
+                            <div class="l-column l-column--9 l-row text-center items-center">
+                                <li class="header__text l-column l-column--3">
+                                    <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}>HOME</a>
+                                </li>
+                                <li class="header__text l-column l-column--3">
+                                    <a href={siteData.about.path} class={currentPath === '/about' ? 'is-active' : ''}>about</a>
+                                </li>
+                                <li class="header__text l-column l-column--3">
+                                    <a href={siteData.works.path} class={currentPath === '/works' ? 'is-active' : ''}>works</a>
+                                </li>
+                                <li class="header__text l-column l-column--3">
+                                    <a href={siteData.contact.path} class={currentPath === '/contact' ? 'is-active' : ''}>contact</a>
+                                </li>
+                            </div>    
+                        </ul>
+                </nav>
+        </div>
 
             <!-- スマホナビ -->
             <nav id="global-nav" class="sp-nav font-bold">
                 <ul>
-                    <li><a href="/">トップ</a></li>
-                    <li><a href={siteData.sample.path}>sample</a></li>
-                    <li><a href={siteData.faq.path}>faq</a></li>
+                    <li><a href={siteData.home.path}>HOME</a></li>
+                    <li><a href={siteData.about.path}>about</a></li>
+                    <li><a href={siteData.works.path}>works</a></li>
+                    <li><a href={siteData.contact.path}>contact</a></li>
                 </ul>
             </nav>
-        </div>
     </div>
 </header>

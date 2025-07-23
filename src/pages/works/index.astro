@@ -1,0 +1,53 @@
+---
+import siteData from '../../../siteData.mjs';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import FaqSectionCategory from '../../components/FaqSectionCategory.astro';
+
+const pageId = 'works',
+    pageMeta = siteData[pageId],
+    ldJSON = [
+        {
+            '@type': 'ListItem',
+            position: 3,
+            item: {
+                '@id': `${import.meta.env.PUBLIC_ENVURL}${pageMeta.path}`,
+                name: 'works'
+            }
+        }
+    ];
+
+const currentPath = '/works';
+---
+
+<!--BaseLayout.hemlの<slot />内に代入される -->
+<BaseLayout
+    pageName={pageId}
+    title={pageMeta.title}
+    description={pageMeta.description}
+    ogpImage={pageMeta.ogpImage}
+    type={pageMeta.type}
+    path={pageMeta.path}
+    ldJSON={ldJSON}
+    currentPath={currentPath}
+>
+    <Hero />
+
+    <FaqSectionCategory
+        title=""
+        items={[
+            {
+                question: 'テキストquestion？',
+                category01: 'カテゴリー1',
+                category02: '',
+                answer: 'テキストanswer'
+            },
+            {
+                question: 'テキストquestion？',
+                category01: 'カテゴリー1',
+                category02: 'カテゴリー2',
+                answer: 'テキストanswer'
+            },
+        ]}
+    />
+</BaseLayout>

@@ -6,7 +6,7 @@ import Gallery from '../../components/Gallery.astro';
 import FeaturesSpec from '../../components/FeaturesSpec.astro';
 import Contact from '../../components/Contact.astro';
 
-const pageId = 'sample',
+const pageId = 'about',
     pageMeta = siteData[pageId],
     ldJSON = [
         {
@@ -14,12 +14,12 @@ const pageId = 'sample',
             position: 2,
             item: {
                 '@id': `${import.meta.env.PUBLIC_ENVURL}${pageMeta.path}`,
-                name: 'sample'
+                name: 'about'
             }
         }
     ];
 
-const currentPath = '/sample'; 
+const currentPath = '/about'; 
 
 
 ---

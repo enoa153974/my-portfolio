@@ -4,24 +4,31 @@
 
 export default {
     home: {
-        title: 'サイトタイトル',
-        description: 'サイトタイトルの説明文です',
+        title: 'aoi miyake’s Atelier | 三宅葵のポートフォリオサイト',
+        description: '三宅葵のポートフォリオサイトです。デザインを中心にさまざまな作品を掲載しています。',
         ogpImage: '/assets/images/ogp_default.png',
         type: 'website',
         path: '/'
     },
-    sample: {
-        title: '下層サンプルページ１',
-        description: '下層サンプルページの説明文です',
+    about: {
+        title: 'aboutページ',
+        description: 'aboutページの説明文です',
         ogpImage: '/assets/images/ogp_default.png',
         type: 'article',
-        path: '/sample'
+        path: '/about'
     },
-    faq: {
-        title: '下層サンプルページ２',
-        description: '投稿一覧ページの説明文です',
+    works: {
+        title: 'worksページ',
+        description: 'worksページの説明文です',
         ogpImage: '/assets/images/ogp_default.png',
         type: 'article',
-        path: '/faq'
-    }
+        path: '/works'
+    },
+    contact: {
+        title: 'contactページ',
+        description: 'contactページの説明文です',
+        ogpImage: '/assets/images/ogp_default.png',
+        type: 'article',
+        path: '/contact'
+    },
 };
