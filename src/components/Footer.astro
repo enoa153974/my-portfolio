@@ -2,14 +2,16 @@
 import siteData from '../../siteData.mjs';
 ---
 
-<footer class="footer bg-accent">
-    <div class="footer__inner l-container-full flex items-center justify-center">
-        <a href={siteData.home.path}><p class="color-white">home</p></a>
-        <span class="ml-4 mr-4 color-white">|</span>
-        <a href={siteData.about.path}><p class="color-white">about</p></a>
-        <span class="ml-4 mr-4 color-white">|</span>
-        <a href={siteData.works.path}><p class="color-white">works</p></a>
-        <span class="ml-4 mr-4 color-white">|</span>
-        <a href={siteData.contact.path}><p class="color-white">contact</p></a>
-    </div>
+<footer class="footer l-container-full bg-accent  flex flex-col justify-center items-center">
+        <div class="footer__inner flex items-center justify-center pt-4">
+            <a href={siteData.home.path}><p class="color-white">home</p></a>
+            <span class="ml-4 mr-4 color-white">|</span>
+            <a href={siteData.about.path}><p class="color-white">about</p></a>
+            <span class="ml-4 mr-4 color-white">|</span>
+            <a href={siteData.works.path}><p class="color-white">works</p></a>
+<!--             <span class="ml-4 mr-4 color-white">|</span>
+            <a href={siteData.contact.path}><p class="color-white">contact</p></a> -->
+        </div>
+        <p class="footer__copyright text-center color-white pb-4">&copy; aoi miyake’s Atelier. 無断転載を禁じます。</p>
+
 </footer>

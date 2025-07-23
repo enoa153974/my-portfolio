@@ -27,10 +27,11 @@
  *  file import (components/section)
  * ---------------------------- */
 @use 'components/sections/hero';
-@use 'components/sections/features';
+@use 'components/sections/services';
 @use 'components/sections/voices';
 @use 'components/sections/hero-sample';
 @use 'components/sections/cta-image-link';
+@use 'components/sections/gallery';
 /* -------------------------------
  *  file import (components/ui)
  * ---------------------------- */
@@ -40,8 +41,6 @@
 @use 'components/ui/accordion';
 /* アコーディオンメニューcss/デザイン-caregory */
 @use 'components/ui/accordion-category';
-/* スライダー（カルーセル）css */
-@use 'components/ui/slider-arrow';
 /* スライダー（カルーセル）css */
 @use 'components/ui/gallery-slider';
 /* タブメニューcss */

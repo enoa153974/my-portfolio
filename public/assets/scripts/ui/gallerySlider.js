@@ -6,7 +6,7 @@ export function gallerySlider() {
             $target.slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                variableWidth: true,
+                variableWidth: false,
                 autoplay: false,
                 dots: true,
                 arrows: false,

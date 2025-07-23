@@ -37,7 +37,7 @@ const { title, items } = Astro.props as {
                 <div class="l-inner">
                     <div
                         class={[
-                            'Services__item', // 共通のベースクラス
+                            'services__item', // 共通のベースクラス
                             'l-row',
                             'l-row--gap', // Flexbox 有効化
                             'justify-center', // 水平方向中央寄せ
@@ -50,15 +50,15 @@ const { title, items } = Astro.props as {
                             index % 2 === 0 ? 'flex-reverse' : '' // 奇数番目のアイテムだけ flex-reverse クラスを付ける
                         ].join(' ')}
                     >
-                        <div class="img-wrapper l-column l-column--6">
+                        <div class="service__img-wrapper img-wrapper l-column l-column--6">
                             <img src={item.image} alt={item.alt} class="item__img block" />
                         </div>
                         <div class="item__text l-column l-column--6 sm:text-center">
-                            <h3 class="en">
+                            <p class="en font-bold">
                                 service<span>{item.pointNumber}</span>
-                            </h3>
-                            <p class="lead">{item.pointTitle}</p>
-                            <p>{item.text}</p>
+                            </p>
+                            <h3 class="lead font-bold">{item.pointTitle}</h3>
+                            <p class="pt-4">{item.text}</p>
                         </div>
                     </div>
                 </div>

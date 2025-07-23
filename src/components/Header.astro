@@ -32,9 +32,9 @@ const { class: className, currentPath,isTopPage } = Astro.props;
                                 <li class="header__text l-column l-column--3">
                                     <a href={siteData.works.path} class={currentPath === '/works' ? 'is-active' : ''}>works</a>
                                 </li>
-                                <li class="header__text l-column l-column--3">
+<!--                                 <li class="header__text l-column l-column--3">
                                     <a href={siteData.contact.path} class={currentPath === '/contact' ? 'is-active' : ''}>contact</a>
-                                </li>
+                                </li> -->
                             </div>    
                         </ul>
                 </nav>
@@ -46,7 +46,7 @@ const { class: className, currentPath,isTopPage } = Astro.props;
                     <li><a href={siteData.home.path}>HOME</a></li>
                     <li><a href={siteData.about.path}>about</a></li>
                     <li><a href={siteData.works.path}>works</a></li>
-                    <li><a href={siteData.contact.path}>contact</a></li>
+<!--                     <li><a href={siteData.contact.path}>contact</a></li> -->
                 </ul>
             </nav>
     </div>

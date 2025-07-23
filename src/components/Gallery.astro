@@ -32,36 +32,82 @@ const { title, gallerys } = Astro.props as Props;
 ---
 
 <section class="gallery l-wrapper pt-12 sm:pt-8">
+    <!-- カルーセルセクション -->
     <div class="l-container">
-        <div class="slider l-inner">
-            <h2 class="gallery__heading u-heading-line font-bold">{title}</h2>
-            <div class="slider__wrapper flex flex-col pt-8 sm:pt-0">
-                <div class="slider__track autoplay sm:justify-center">
-                    {
-                        gallerys.map((gallerys: gallerys, i: number) => (
-                            <div>
-                                <div class="img__wrapper block">
-                                    <img src={gallerys.image} alt={gallerys.alt} class="block" />
+        <div class="l-inner">
+            <div class="slider">
+                <h2 class="gallery__heading font-bold text-center">{title}</h2>
+                <div class="slider__wrapper flex flex-col pt-2 sm:pt-0">
+                    <div class="slider__track autoplay sm:justify-center">
+                        {
+                            gallerys.map((gallerys: gallerys, i: number) => (
+                                <div>
+                                    <div class="img__wrapper block">
+                                        <img src={gallerys.image} alt={gallerys.alt} class="block" />
+                                    </div>
                                 </div>
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
+                </div>
+
+                <div class="slider__dots flex justify-center items-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- グリッドセクション -->
+    <div class="l-container py-10">
+        <div class="l-inner">
+            <div class="gallery__grid py-6">
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_gallery_01.png" alt="" class="w-full" />
+                </div>
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_gallery_02.png" alt="" class="w-full" />
+                </div>
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_gallery_03.png" alt="" class="w-full" />
+                </div>
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_gallery_04.png" alt="" class="w-full" />
+                </div>
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_gallery_05.png" alt="" class="w-full" />
+                </div>
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_gallery_06.png" alt="" class="w-full" />
+                </div>
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_gallery_07.png" alt="" class="w-full" />
+                </div>
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_gallery_08.png" alt="" class="w-full" />
                 </div>
             </div>
 
-            <div class="slider__dots flex justify-center items-center"></div>
+            <div class="gallery__grid py-6">
+                <div class="img-wrapper img-wrapper--aspect-16-9">
+                    <img src="/assets/image/work_banner_01.png" alt="" class="w-full" />
+                </div>
+                <div class="img-wrapper img-wrapper--aspect-16-9">
+                    <img src="/assets/image/work_banner_02.png" alt="" class="w-full" />
+                </div>
+            </div>
+
+            <div class="gallery__grid py-6">
+                <div class="img-wrapper img-wrapper--aspect-1-1">
+                    <img src="/assets/image/work_banner_03.png" alt="" class="w-full" />
+                </div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="gallery__grid py-6">
+                <div class="img-wrapper img-wrapper--aspect-16-9">
+                    <img src="/assets/image/work_gallery_09.png" alt="" class="w-full" />
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<style>
-    @media screen and (width <=47.9375rem) {
-        .gallery {
-            width: 100%;
-        }
-        .gallery__heading {
-            font-size: 22px;
-            padding-bottom: 0.5rem;
-        }
-    }
-</style>

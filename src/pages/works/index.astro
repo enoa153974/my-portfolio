@@ -3,6 +3,7 @@ import siteData from '../../../siteData.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Hero from '../../components/Hero.astro';
 import FaqSectionCategory from '../../components/FaqSectionCategory.astro';
+import Gallery from '../../components/Gallery.astro';
 
 const pageId = 'works',
     pageMeta = siteData[pageId],
@@ -31,23 +32,22 @@ const currentPath = '/works';
     ldJSON={ldJSON}
     currentPath={currentPath}
 >
-    <Hero />
-
-    <FaqSectionCategory
-        title=""
-        items={[
+        <Gallery
+        title="works"
+        gallerys={[
             {
-                question: 'テキストquestion？',
-                category01: 'カテゴリー1',
-                category02: '',
-                answer: 'テキストanswer'
+                image: '/assets/image/works_web_01.png',
+                alt: ''
             },
             {
-                question: 'テキストquestion？',
-                category01: 'カテゴリー1',
-                category02: 'カテゴリー2',
-                answer: 'テキストanswer'
+                image: '/assets/image/works_web_01.png',
+                alt: ''
             },
+            {
+                image: '/assets/image/works_web_01.png',
+                alt: ''
+            }
         ]}
     />
+
 </BaseLayout>

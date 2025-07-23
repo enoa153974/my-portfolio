@@ -1,0 +1,8 @@
+
+/* ギャラリーのグリッドスタイル */
+    /* 画面幅によって自動で並べてくれる */
+    .gallery__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
