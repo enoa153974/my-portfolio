@@ -1,0 +1,72 @@
+@use '../../foundation/import' as *;
+
+
+/* TOPページのヘッダーのデザイン */
+.header--top .header__container {
+    width: 100%;
+    height: 100vh;
+
+    .header__inner {
+
+        .header__text-box {
+            height: 100%;
+
+            .header__logo {
+                height: 100%;
+                margin-top: 22%;
+            }
+
+            .header__nav {
+                max-height: 50%;
+                margin-top: 1%;
+                padding-right: 30%; //contact用の一時余白
+
+                li:nth-child(1) {
+                    border: red solid 1px;
+                    background: red;
+                    aspect-ratio: 2/1.2;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                }
+
+                li:nth-child(2) {
+                    border: blue solid 1px;
+                    background: blue;
+                    aspect-ratio: 2/1.2;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                }
+
+                li:nth-child(3) {
+                    border: yellow solid 1px;
+                    background: yellow;
+                    aspect-ratio: 2/1.2;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                }
+
+                /*              contact用   
+                li:nth-child(4) {
+                    border: white solid 1px;
+                    background:white;
+                } */
+            }
+
+            .header__brush {
+                width: 100%;
+                margin-top: 28%;
+                transform: rotate(15deg);
+                transition: rotate ease 0.5s;
+            }
+
+            .header__brush:hover{
+                transform: rotate(20deg);
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+}

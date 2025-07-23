@@ -1,23 +1,69 @@
 @use '../../foundation/import' as *;
 
-/* TOPページのヘッダーのデザイン */
-.header--top .header__container{
-    width: 100%;
-    height: 100vh;
-
-    .hamburger{
-        display: none;
-    }
-}
-
 /* TOPページ以外のヘッダーのデザイン */
-.header__container{
+.header .header__container {
     height: var(--header-height);
-        @include media-query(md) {
-            height: var(--sp-header-height);
+    padding: 0;
+
+    @include media-query(md) {
+        height: var(--sp-header-height);
+    }
+
+    .header__inner {
+        padding: 0 5%;
+
+        .header__nav {
+            li:nth-child(3) {
+                aspect-ratio: 2/1.2;
+                max-width: 180px;
+                min-width: 90px;
+                transform: rotate(230deg);
+                transition: rotate ease 0.5s;
+            }
+
+            li:nth-child(3):hover {
+                transform: rotate(210deg);
+            }
+
+            /* homeボタン */
+            li:nth-child(4) {
+                border: red solid 1px;
+                background: red;
+                aspect-ratio: 2/1.2;
+                max-width: 150px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+            }
+
+            /* aboutボタン */
+            li:nth-child(5) {
+                border: blue solid 1px;
+                background: blue;
+                aspect-ratio: 2/1.2;
+                max-width: 150px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+            }
+
+            /* worksボタン */
+            li:nth-child(6) {
+                border: yellow solid 1px;
+                background: yellow;
+                aspect-ratio: 2/1.2;
+                max-width: 150px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+            }
+
+            /*              contact用   
+                    li:nth-child(4) {
+                        border: white solid 1px;
+                        background:white;
+                    } */
         }
-    .hamburger{
+    }
+
+    .hamburger {
         display: none;
     }
 }
-

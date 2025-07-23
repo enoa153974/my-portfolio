@@ -19,9 +19,20 @@
 @use 'layout/module';
 
 /* -------------------------------
+ *  file import (utility)
+ * ---------------------------- */
+/* ユーティリティクラス */
+@use 'utility/utilities';
+/* ボタンのベースデザイン */
+@use 'utility/button';
+/* ボタンの上書きデザイン */
+@use 'utility/button-overrides';
+
+/* -------------------------------
  *  file import (components/common)
  * ---------------------------- */
 @use 'components/common/header';
+@use 'components/common/top-header';
 @use 'components/common/footer';
 /* -------------------------------
  *  file import (components/section)
@@ -39,12 +50,4 @@
 /* パンくずリストのcss */
 @use 'components/ui/breadcrumb';
 
-/* -------------------------------
- *  file import (utility)
- * ---------------------------- */
-/* ユーティリティクラス */
-@use 'utility/utilities';
-/* ボタンのベースデザイン */
-@use 'utility/button';
-/* ボタンの上書きデザイン */
-@use 'utility/button-overrides';
+
