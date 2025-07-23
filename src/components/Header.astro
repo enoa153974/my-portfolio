@@ -1,13 +1,12 @@
 ---
-
 //meta情報のインポート
 import siteData from '../../siteData.mjs';
 
 //baselayout.astro → currentPathの受け取り
-const { class: className, currentPath,isTopPage } = Astro.props;
+const { class: className, currentPath, isTopPage } = Astro.props;
 ---
 
-<header  class={`${className} l-header flex ${isTopPage ? 'items-start' : 'items-center'}`}>
+<header class={`${className} l-header flex ${isTopPage ? 'items-start' : 'items-center'}`}>
     <div class="header__container l-container flex items-center px-6 bg-sub">
         <div class="header__inner flex w-full">
             <!-- ハンバーガーボタン（SP用） -->
@@ -17,37 +16,66 @@ const { class: className, currentPath,isTopPage } = Astro.props;
 
             <!-- メニュー -->
             <!-- PCナビ -->
-                <nav class="header__nav pc-nav">
-                        <ul class="header__nav-inner l-row font-bold w-full">
-                            <div class="l-column l-column--3">
-                                <li><a href={siteData.home.path}><img src="/assets/image/logo_name.png" alt=""  class="header__nav-icon block" /></a></li>
-                            </div>
-                            <div class="l-column l-column--9 l-row text-center items-center">
-                                <li class="header__text l-column l-column--3">
-                                    <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}>HOME</a>
-                                </li>
-                                <li class="header__text l-column l-column--3">
-                                    <a href={siteData.about.path} class={currentPath === '/about' ? 'is-active' : ''}>about</a>
-                                </li>
-                                <li class="header__text l-column l-column--3">
-                                    <a href={siteData.works.path} class={currentPath === '/works' ? 'is-active' : ''}>works</a>
-                                </li>
-<!--                                 <li class="header__text l-column l-column--3">
-                                    <a href={siteData.contact.path} class={currentPath === '/contact' ? 'is-active' : ''}>contact</a>
-                                </li> -->
-                            </div>    
-                        </ul>
-                </nav>
+
+            <div class="header__parette img-wrapper position-relative">
+                <img src="/assets/image/header_palette.png" alt="" />
+            </div>
+            <div class="header__text-box l-row position-absolute">
+                <!-- 横幅5/7レイアウト -->
+                <div class="header__logo flex flex-col items-center l-column l-column--5 pl-10">
+                    <div>
+                        <a href={siteData.home.path}
+                            ><img src="/assets/image/logo_name.png" alt="" class="header__nav-icon block" /></a
+                        >
+                    </div>
+                </div>
+
+                <div class="l-column l-column--7">
+                    <!-- 縦幅1/1のレイアウト -->
+                    <div class="flex flex-col">
+                        <nav class="header__nav pc-nav">
+                            <ul class="header__nav-inner font-bold w-full">
+                                <div class="l-row text-center items-center">
+                                    <li class="l-column l-column--4 flex justify-center items-center mr-6 mt-20">
+                                        <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}
+                                            >HOME</a
+                                        >
+                                    </li>
+                                    <li class="l-column l-column--4 flex justify-center items-center mr-6">
+                                        <a
+                                            href={siteData.about.path}
+                                            class={currentPath === '/about' ? 'is-active' : ''}>about</a
+                                        >
+                                    </li>
+                                    <li class="l-column l-column--4 flex justify-center items-center">
+                                        <a
+                                            href={siteData.works.path}
+                                            class={currentPath === '/works' ? 'is-active' : ''}>works</a
+                                        >
+                                    </li>
+                                    <!--                                 <li class="header__text l-column l-column--3">
+                                                    <a href={siteData.contact.path} class={currentPath === '/contact' ? 'is-active' : ''}>contact</a>
+                                                </li> -->
+                                </div>
+                            </ul>
+                        </nav>
+
+                        <div class="header__brush img-wrapper">
+                            <img src="/assets/image/header_brush.png" alt="" class="header__nav-icon block" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-            <!-- スマホナビ -->
-            <nav id="global-nav" class="sp-nav font-bold">
-                <ul>
-                    <li><a href={siteData.home.path}>HOME</a></li>
-                    <li><a href={siteData.about.path}>about</a></li>
-                    <li><a href={siteData.works.path}>works</a></li>
-<!--                     <li><a href={siteData.contact.path}>contact</a></li> -->
-                </ul>
-            </nav>
+        <!-- スマホナビ -->
+        <nav id="global-nav" class="sp-nav font-bold">
+            <ul>
+                <li><a href={siteData.home.path}>HOME</a></li>
+                <li><a href={siteData.about.path}>about</a></li>
+                <li><a href={siteData.works.path}>works</a></li>
+                <!--                     <li><a href={siteData.contact.path}>contact</a></li> -->
+            </ul>
+        </nav>
     </div>
 </header>
