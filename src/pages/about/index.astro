@@ -1,10 +1,8 @@
 ---
 import siteData from '../../../siteData.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import HeroSample  from '../../components/HeroSample.astro';
-import Gallery from '../../components/Gallery.astro';
-import FeaturesSpec from '../../components/FeaturesSpec.astro';
-import Contact from '../../components/Contact.astro';
+import Aboutprof from '../../components/Aboutprof.astro';
+import Services from '../../components/Services.astro';
 
 const pageId = 'about',
     pageMeta = siteData[pageId],
@@ -19,9 +17,7 @@ const pageId = 'about',
         }
     ];
 
-const currentPath = '/about'; 
-
-
+const currentPath = '/about';
 ---
 
 <!--BaseLayout.hemlの<slot />内に代入される -->
@@ -35,27 +31,40 @@ const currentPath = '/about';
     ldJSON={ldJSON}
     currentPath={currentPath}
 >
-    <HeroSample />
-    <Gallery
-        title="ギャラリー"
-        gallerys={[
+    <Aboutprof />
+    <Services
+        title="service"
+        items={[
             {
                 image: '/assets/image/sample_img.jpg',
-                alt: ''
+                alt: 'サンプル画像1',
+                pointNumber: 1,
+                pointTitle: 'webデザイン',
+                text: 'webページのデザインをします。html、cssでのコーディングを行います。パソコンから見たデザインだけではなく、スマホやタブレットから見ても整った見やすいwebページを作成します。'
             },
             {
                 image: '/assets/image/sample_img.jpg',
-                alt: ''
+                alt: 'サンプル画像1',
+                pointNumber: 2,
+                pointTitle: 'グラフィックデザイン',
+                text: 'ロゴマークやメニューの作成をします。「構想はあるんだけど絵心がなくて実現できない」「こんなイメージのロゴやメニューが作りたい」「おまかせでいい感じのロゴがほしい」などいろんなアプローチで柔軟に制作いたします。'
             },
             {
                 image: '/assets/image/sample_img.jpg',
-                alt: ''
+                alt: 'サンプル画像1',
+                pointNumber: 3,
+                pointTitle: 'イラスト制作',
+                text: '主に名刺やアイコンに使用しやすい似顔絵を作成します。また、店頭やウェディングなどのwelcomeボードに設置しやすい手描き似顔絵も作成できます。似顔絵以外にもワンポイントでイラストを入れたいなど、さまざまなシーンで対応可能ですのでお気軽にご相談ください。'
+            },
+            {
+                image: '/assets/image/sample_img.jpg',
+                alt: 'サンプル画像1',
+                pointNumber: 4,
+                pointTitle: '手書きPOP・ボード作成',
+                text: 'カフェの店頭ボードなど、デジタルにはない手書きならではの味のあるPOPやボードを作成します。通るたびについつい見てしまう・・・お客様の目を引く魅力的なPOPやボードに仕上げます。'
             }
         ]}
     />
-    <FeaturesSpec />
-    <Contact />
 </BaseLayout>
-        <!-- 各jsを初期化するsample.jsの読み込み -->
-        <script type="module" src="/assets/scripts/ui/sample.js"></script>
-
+<!-- 各jsを初期化するsample.jsの読み込み -->
+<script type="module" src="/assets/scripts/ui/sample.js"></script>
