@@ -13,7 +13,7 @@
         padding: 0 5%;
 
         .header__nav {
-            li:nth-child(3) {
+            .header__brush {
                 aspect-ratio: 2/1.2;
                 max-width: 180px;
                 min-width: 90px;
@@ -21,38 +21,41 @@
                 transition: rotate ease 0.5s;
             }
 
-            li:nth-child(3):hover {
+            .header__brush:hover {
                 transform: rotate(210deg);
             }
 
             /* homeボタン */
             li:nth-child(4) {
-                border: red solid 1px;
-                background: red;
+                border: var(--sub-color) solid 1px;
+                background: var(--sub-color);
                 aspect-ratio: 2/1.2;
                 max-width: 150px;
                 border-radius: 50%;
                 font-size: 1.5rem;
+                letter-spacing: 0.08em;
             }
 
             /* aboutボタン */
             li:nth-child(5) {
-                border: blue solid 1px;
-                background: blue;
+                border: var(--main-color) solid 1px;
+                background: var(--main-color);
                 aspect-ratio: 2/1.2;
                 max-width: 150px;
                 border-radius: 50%;
                 font-size: 1.5rem;
+                letter-spacing: 0.08em;
             }
 
             /* worksボタン */
             li:nth-child(6) {
-                border: yellow solid 1px;
-                background: yellow;
+                border: var(--accent-color) solid 1px;
+                background: var(--accent-color);
                 aspect-ratio: 2/1.2;
                 max-width: 150px;
                 border-radius: 50%;
                 font-size: 1.5rem;
+                letter-spacing: 0.08em;
             }
 
             /*              contact用   

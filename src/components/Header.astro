@@ -7,7 +7,7 @@ const { class: className, currentPath, isTopPage } = Astro.props;
 ---
 
 <header class={`l-header flex ${className ?? ''}`}>
-    <div class="header__container l-container flex items-center px-6 bg-sub">
+    <div class="header__container l-container flex items-center px-6">
         <div class="header__inner flex w-full">
             <!-- ハンバーガーボタン（SP用） -->
             <button class="hamburger openbtn" aria-label="メニューを開く">
@@ -25,13 +25,13 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                     <li class="header__brush img-wrapper l-column l-column--1">
                         <img src="/assets/image/header_brush.png" alt="" class="header__nav-icon block" />
                     </li>
-                    <li class="l-column l-column--2 flex justify-center items-center">
-                        <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}>HOME</a>
+                    <li class="l-column l-column--2 flex justify-center items-center en">
+                        <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}>home</a>
                     </li>
-                    <li class="l-column l-column--2 flex justify-center items-center">
+                    <li class="l-column l-column--2 flex justify-center items-center en">
                         <a href={siteData.about.path} class={currentPath === '/about' ? 'is-active' : ''}>about</a>
                     </li>
-                    <li class="l-column l-column--2 flex justify-center items-center">
+                    <li class="l-column l-column--2 flex justify-center items-center en">
                         <a href={siteData.works.path} class={currentPath === '/works' ? 'is-active' : ''}>works</a>
                     </li>
                     <li class="l-column l-column--2"></li>

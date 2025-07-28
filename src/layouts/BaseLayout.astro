@@ -51,7 +51,7 @@ const isTopPage = url.pathname === '/';
         <!-- 日本語フォント -->
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
         <!-- 英語フォント -->
-        <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
         <!-- ライブラリのcss/publicから読み込み -->
         <link rel="stylesheet" href="/assets/style/slick.css" />
@@ -67,7 +67,9 @@ const isTopPage = url.pathname === '/';
             )
         }
         <main>
-            <slot />
+            <div class="main-wrapper">
+                <slot />
+            </div>
         </main>
 
         <Footer currentPath={currentPath} />
