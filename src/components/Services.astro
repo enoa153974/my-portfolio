@@ -26,9 +26,9 @@ const { title, items } = Astro.props as {
             }
         ]}
     /> -->
-<section id="services" class="services__section l-wrapper">
+<section id="services" class="services l-wrapper">
     <div class="l-container py-10 px-6">
-        <h2 class="text-center">
+        <h2 class="en text-center">
             {title}
         </h2>
 
@@ -52,7 +52,7 @@ const { title, items } = Astro.props as {
                         <div class="service__img-wrapper img-wrapper l-column l-column--6">
                             <img src={item.image} alt={item.alt} class="item__img block" />
                         </div>
-                        <div class="item__text l-column l-column--6 sm:text-center">
+                        <div class="service__item-text l-column l-column--6 sm:text-center">
                             <p class="en font-bold">
                                 service<span>{item.pointNumber}</span>
                             </p>

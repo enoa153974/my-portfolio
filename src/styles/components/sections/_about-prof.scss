@@ -1,0 +1,17 @@
+.aboutprof__text{
+        p:nth-of-type(1){
+        letter-spacing: 0.06em;
+    }
+
+    p:nth-of-type(2){
+        font-size: 1.75rem;
+        letter-spacing: 0.08em;
+    }
+}
+
+.aboutprof__desc{
+    p{
+        font-size: 1.25rem;
+        line-height: 1.8;
+    }
+}

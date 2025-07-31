@@ -1,25 +1,27 @@
 ---
+//meta情報のインポート
+import siteData from '../../siteData.mjs';
 import Button from '../components/Button';
 ---
 
-<div class="l-container py-10">
-    <div class="l-inner">
-        <div class="l-row sm:flex-col sm:items-center sm:justify-center sm:flex-col-reverse">
-            <div class="l-column l-column--6">
-                <p>三宅 葵</p>
-                <p>miyake aoi</p>
-                <p>url:</p>
-                <p>mail:</p>
-                <p>お仕事のご依頼やご相談は</p>
-                <div class="flex">
-                    <Button href="リンク" className="上書きしたいクラス名" variant="primary">
+<div class="prof l-container py-10">
+    <div class="prof__inner l-inner">
+        <div class="l-row l-row--gap sm:flex-col sm:items-center sm:justify-center sm:flex-col-reverse">
+            <div class="flex flex-col justify-center l-column l-column--6">
+                <p class="py-1">三宅 葵</p>
+                <p class="py-1">miyake aoi</p>
+                <p class="py-1">url:</p>
+                <p class="py-1">mail:</p>
+                <p class="pt-4 pb-1">お仕事のご依頼やご相談は、</p>
+                <div class="flex items-center">
+                    <Button href="リンク" className="" variant="primary">
                         <span>こちら
                         </span>
                     </Button>
-                    <p>よりお気軽にお問い合わせください。</p>
+                    <p class="ml-4">よりお気軽にお問い合わせください。</p>
                 </div>
-                <div class="flex justify-end">
-                    <Button href="リンク" className="上書きしたいクラス名" variant="primary">
+                <div class="flex justify-end mt-4">
+                    <Button href={siteData.about.path} className="上書きしたいクラス名" variant="primary">
                         <span>プロフィールへ</span>
                     </Button>
                 </div>

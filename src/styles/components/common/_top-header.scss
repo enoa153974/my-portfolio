@@ -4,17 +4,23 @@
 /* TOPページのヘッダーのデザイン */
 .header--top .header__container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: var(--bg-color);
 
     .header__inner {
+        .header__parette {
+            width: 90%;
+            padding: 2% 5% 5%;
+        }
 
         .header__text-box {
-            height: 100%;
+            width: 90%;
+            padding: 2% 9% 7%;
 
             .header__logo {
                 height: 100%;
-                margin-top: 22%;
+                margin-top: 24%;
+
             }
 
             .header__nav {
@@ -29,6 +35,11 @@
                     border-radius: 50%;
                     font-size: 1.5rem;
                     letter-spacing: 0.08em;
+                    transition: border-radius 0.5s ease;
+                }
+
+                li:nth-child(1):hover {
+                    border-radius: 31% 47% 35% 47% / 42% 55% 51% 34%;
                 }
 
                 li:nth-child(2) {

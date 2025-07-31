@@ -37,6 +37,9 @@
 /* -------------------------------
  *  file import (components/section)
  * ---------------------------- */
+@use 'components/sections/intro';
+@use 'components/sections/prof'; 
+@use 'components/sections/about-prof';
 @use 'components/sections/services';
 @use 'components/sections/cta-image-link';
 @use 'components/sections/gallery';

@@ -1,8 +1,6 @@
 ---
 import siteData from '../../../siteData.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Hero from '../../components/Hero.astro';
-import FaqSectionCategory from '../../components/FaqSectionCategory.astro';
 
 const pageId = 'contact',
     pageMeta = siteData[pageId],
@@ -31,23 +29,5 @@ const currentPath = '/contact';
     ldJSON={ldJSON}
     currentPath={currentPath}
 >
-    <Hero />
 
-    <FaqSectionCategory
-        title=""
-        items={[
-            {
-                question: 'テキストquestion？',
-                category01: 'カテゴリー1',
-                category02: '',
-                answer: 'テキストanswer'
-            },
-            {
-                question: 'テキストquestion？',
-                category01: 'カテゴリー1',
-                category02: 'カテゴリー2',
-                answer: 'テキストanswer'
-            },
-        ]}
-    />
 </BaseLayout>
