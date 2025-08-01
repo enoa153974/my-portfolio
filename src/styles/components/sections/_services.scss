@@ -1,6 +1,7 @@
 @use '../../foundation/import.scss' as *;
 
 .service {
+    .l-inner
     &__img-wrapper {
         border: solid 12px #390909;
     }

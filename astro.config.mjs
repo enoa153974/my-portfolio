@@ -19,7 +19,8 @@ export default defineConfig({
         inlineStylesheets: 'never'
     },
     server: {
-        open: true
+        open: true,
+        host: true
     },
     vite: {
         build: {

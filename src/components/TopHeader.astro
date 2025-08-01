@@ -18,8 +18,13 @@ const { class: className, currentPath, isTopPage } = Astro.props;
             <!-- PCナビ -->
 
             <div class="header__parette img-wrapper position-relative">
-                <img src="/assets/image/header_palette.png" alt="" />
+                <picture>
+                    <source media="(max-width: 768px)" srcset="/assets/image/header_bg.jpg" />
+                    <source media="(min-width: 769px)" srcset="/assets/image/header_palette.png" />
+                    <img src="/assets/image/header_palette.png" alt="" />
+                </picture>
             </div>
+
             <div class="header__text-box l-row position-absolute">
                 <!-- 横幅5/7レイアウト -->
                 <div class="header__logo flex flex-col items-center l-column l-column--5 pl-10">
@@ -35,32 +40,40 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                     <div class="flex flex-col">
                         <nav class="header__nav pc-nav">
                             <ul class="header__nav-inner font-bold w-full l-row l-row--gap text-center items-center">
-                                    <li class="l-column l-column--3 flex justify-center items-center mt-20 en hover-opacity">
-                                        <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}
-                                            >home</a
-                                        >
-                                    </li>
-                                    <li class="l-column l-column--3 flex justify-center items-center en hover-opacity">
-                                        <a
-                                            href={siteData.about.path}
-                                            class={currentPath === '/about' ? 'is-active' : ''}>about</a
-                                        >
-                                    </li>
-                                    <li class="l-column l-column--3 flex justify-center items-center en hover-opacity">
-                                        <a
-                                            href={siteData.works.path}
-                                            class={currentPath === '/works' ? 'is-active' : ''}>works</a
-                                        >
-                                    </li>
-                                    <li class="l-column l-column--3 flex justify-center items-center mt-20 en hover-opacity">
-                                        <a
-                                            href={siteData.contact.path}
-                                            class={currentPath === '/contact' ? 'is-active' : ''}>contact</a
-                                        >
-                                    </li>
+                                <li
+                                    class="l-column l-column--3 flex justify-center items-center mt-20 en hover-opacity"
+                                >
+                                    <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}
+                                        >home</a
+                                    >
+                                </li>
+                                <li class="l-column l-column--3 flex justify-center items-center en hover-opacity">
+                                    <a href={siteData.about.path} class={currentPath === '/about' ? 'is-active' : ''}
+                                        >about</a
+                                    >
+                                </li>
+                                <li class="l-column l-column--3 flex justify-center items-center en hover-opacity">
+                                    <a href={siteData.works.path} class={currentPath === '/works' ? 'is-active' : ''}
+                                        >works</a
+                                    >
+                                </li>
+                                <li
+                                    class="l-column l-column--3 flex justify-center items-center mt-20 en hover-opacity"
+                                >
+                                    <a
+                                        href={siteData.contact.path}
+                                        class={currentPath === '/contact' ? 'is-active' : ''}>contact</a
+                                    >
+                                </li>
                             </ul>
                         </nav>
-
+                        <div class="header__sp-logo">
+                            <div>
+                                <a href={siteData.home.path}
+                                    ><img src="/assets/image/logo_name.png" alt="" class="header__nav-icon block" /></a
+                                >
+                            </div>
+                        </div>
                         <div class="header__brush img-wrapper">
                             <img src="/assets/image/header_brush.png" alt="" class="header__nav-icon block" />
                         </div>

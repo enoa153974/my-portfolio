@@ -13,7 +13,7 @@
     transition: all 0.6s;
     border-radius: 30px;
     margin-right: 0;
-    opacity: 80%;
+    opacity: 0.8;
 }
 
 /*アクティブクラスがついたら位置を0に*/
@@ -39,14 +39,33 @@
 }
 
 #global-nav li a {
-    color: #fff;
+    position: relative;
+    color:var(--text-color);
     text-decoration: none;
     padding: 10px;
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    font-weight: var(--font-weight-bold);
+    font-size: 1.5rem;
 }
 
+#global-nav li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: var(--sub-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+#global-nav li a:hover::after {
+    transform: scaleX(1);
+}
 /*========== 3本線がクリックされると1本線になるハンバーガーメニューボタン ===============*/
 
 /*ボタン外側*/

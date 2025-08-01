@@ -67,10 +67,23 @@
                 font-size: 1.5rem;
                 letter-spacing: 0.08em;
             }
+
+                @include media-query(md){
+                    display: none;
+                }
         }
     }
 
     .hamburger {
         display: none;
+        margin-left:auto ;
+
+        @include media-query(md){
+            display: flex;
+        }
+    }
+
+    .sp-nav{
+        color: var(--text-color);
     }
 }

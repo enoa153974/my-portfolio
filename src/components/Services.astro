@@ -27,25 +27,26 @@ const { title, items } = Astro.props as {
         ]}
     /> -->
 <section id="services" class="services l-wrapper">
-    <div class="l-container py-10 px-6">
+    <div class="l-container py-10 px-6 sm:px-0">
         <h2 class="en text-center">
             {title}
         </h2>
 
         {
             items.map((item, index) => (
-                <div class="l-inner">
+                <div class="l-inner sm:px-0">
                     <div
                         class={[
                             'services__item', // 共通のベースクラス
                             'l-row',
-                            'l-row--gap', // Flexbox 有効化
+                            'l-row--gap',
                             'justify-center', // 水平方向中央寄せ
                             'items-center',//水平方向中央寄せ
                             'flex-row', // 水平方向中央寄せ
                             'py-6',
                             'px-6',
                             'sm:flex-col-reverse', // スマホ表示で縦並びに
+                            'sm:px-0', 
                             index % 2 === 0 ? 'flex-reverse' : '' // 奇数番目のアイテムだけ flex-reverse クラスを付ける
                         ].join(' ')}
                     >

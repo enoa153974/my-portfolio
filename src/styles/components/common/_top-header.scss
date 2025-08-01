@@ -7,29 +7,77 @@
     height: auto;
     background-color: var(--bg-color);
 
+    @include media-query(md) {
+        height: 100vh;
+    }
+
     .header__inner {
+        @include media-query(md) {
+            padding: 0;
+        }
+
         .header__parette {
             width: 90%;
             padding: 2% 5% 5%;
+
+            @include media-query(md) {
+                width: 100%;
+                height: auto;
+                padding: 0;
+            }
         }
 
         .header__text-box {
             width: 90%;
             padding: 2% 12% 7% 10%;
 
+            @include media-query(md) {
+                width: 100%;
+                height: auto;
+                padding: 0 2rem;
+
+            }
+
+            .l-column--5 {
+                @include media-query(md) {
+                    width: 0;
+                }
+            }
+
+            .l-column--7 {
+                @include media-query(md) {
+                    width: column-width(12, 0);
+                }
+            }
+
             .header__logo {
                 height: 100%;
                 margin-top: 26%;
 
+                @include media-query(md) {
+                    display: none;
+
+                }
+
+            }
+
+            .header__sp-logo {
+                display: none;
+
+                @include media-query(md) {
+                    display: flex;
+                    padding: 2rem;
+                }
             }
 
             .header__nav {
+                display: flex;
                 max-height: 50%;
                 margin-top: 1%;
 
                 .header__nav-inner {
                     @include media-query(2xl) {
-                        gap:var(--spacing-sm);
+                        gap: var(--spacing-sm);
                         align-items: start;
                         padding-top: var(--spacing-sm);
                     }
@@ -44,6 +92,7 @@
 
                         @include media-query(2xl) {
                             margin-top: var(--spacing-lg3);
+                            font-size: var(--font-size-lg2);
                         }
                     }
 
@@ -55,6 +104,9 @@
                         font-size: 1.5rem;
                         letter-spacing: 0.08em;
 
+                        @include media-query(2xl) {
+                            font-size: var(--font-size-lg2);
+                        }
                     }
 
                     li:nth-child(3) {
@@ -64,6 +116,10 @@
                         border-radius: 50%;
                         font-size: 1.5rem;
                         letter-spacing: 0.08em;
+
+                        @include media-query(2xl) {
+                            font-size: var(--font-size-lg2);
+                        }
                     }
 
                     li:nth-child(4) {
@@ -76,6 +132,7 @@
 
                         @include media-query(2xl) {
                             margin-top: var(--spacing-lg3);
+                            font-size: var(--font-size-lg2);
                         }
                     }
                 }
@@ -87,10 +144,21 @@
                 margin-left: 15%;
                 transform: rotate(15deg);
                 transition: rotate ease 0.5s;
+
+                @include media-query(md) {
+                    margin-top: 0;
+                    margin-left: 0;
+                    transform: rotate(20deg);
+                }
             }
 
             .header__brush:hover {
                 transform: rotate(20deg);
+
+                @include media-query(md) {
+                    margin-top: 0;
+                    transform: rotate(30deg);
+                }
             }
         }
     }
