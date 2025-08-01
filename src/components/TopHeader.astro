@@ -34,32 +34,30 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                     <!-- 縦幅1/1のレイアウト -->
                     <div class="flex flex-col">
                         <nav class="header__nav pc-nav">
-                            <ul class="header__nav-inner font-bold w-full">
-                                <div class="l-row l-row--gap text-center items-center">
-                                    <li class="l-column l-column--3 flex justify-center items-center mt-20 en">
+                            <ul class="header__nav-inner font-bold w-full l-row l-row--gap text-center items-center">
+                                    <li class="l-column l-column--3 flex justify-center items-center mt-20 en hover-opacity">
                                         <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}
                                             >home</a
                                         >
                                     </li>
-                                    <li class="l-column l-column--3 flex justify-center items-center en">
+                                    <li class="l-column l-column--3 flex justify-center items-center en hover-opacity">
                                         <a
                                             href={siteData.about.path}
                                             class={currentPath === '/about' ? 'is-active' : ''}>about</a
                                         >
                                     </li>
-                                    <li class="l-column l-column--3 flex justify-center items-center en">
+                                    <li class="l-column l-column--3 flex justify-center items-center en hover-opacity">
                                         <a
                                             href={siteData.works.path}
                                             class={currentPath === '/works' ? 'is-active' : ''}>works</a
                                         >
                                     </li>
-                                    <li class="l-column l-column--3 flex justify-center items-center mt-20 en">
+                                    <li class="l-column l-column--3 flex justify-center items-center mt-20 en hover-opacity">
                                         <a
                                             href={siteData.contact.path}
                                             class={currentPath === '/contact' ? 'is-active' : ''}>contact</a
                                         >
                                     </li>
-                                </div>
                             </ul>
                         </nav>
 

@@ -1,6 +1,7 @@
 @use '../../foundation/import' as *;
+
 /* インスタグラムとXのボタン */
-.cta-image-link-group{
+.cta-image-link-group {
     padding: 0 25%;
 
     .cta-image-link {
@@ -13,7 +14,11 @@
             position: relative;
             text-decoration: none;
             color: inherit;
-            
+            transition: opacity ease 0.3s;
+        }
+
+        &__wrapper:hover {
+            opacity: 0.6;
         }
 
         &__img {
@@ -21,6 +26,7 @@
             width: 100%;
             height: auto;
         }
+
         /*  各ボタンテキスト */
         &__text {
             position: absolute;
@@ -33,7 +39,7 @@
             font-size: var(--font-size-lg);
             pointer-events: none;
 
-            @include media-query(lg){
+            @include media-query(lg) {
                 font-size: var(--font-size-base);
                 transform: translate(-50%, -5%);
             }

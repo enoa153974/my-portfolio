@@ -5,34 +5,21 @@
 //@use '../../foundation/import' as *;
 //とすることで以下のように使うことができる
 //@include media-query(md) {
-  // スタイル内容}とする
+// スタイル内容}とする
 // ===============================
-
-
-
-// ブレイクポイントのマップ定義
-$breakpoints: (
-    "2xs": 360px,
-    "xs": 480px,
-    "sm": 576px,
-    "md": 768px,
-    "lg": 992px,
-    "xl": 1200px,
-    "2xl": 1400px
-);
-
+@use './variables' as *;
 // ブレイクポイント名を渡して使う mixin
 @mixin media-query($breakpoint) {
-    $size: map-get($breakpoints, $breakpoint);
+    $size: map-get($breakpoint-list, $breakpoint);
 
     @if $size {
-        @media screen and (max-width: $size) {
+        @media screen and (max-width: #{$size}px) {
             @content;
         }
     }
 
     @else {
-        @warn "指定されたブレイクポイント「#{$breakpoint}」は定義されていません。";
+        @warn "指定されたブレイクポイント「#{$breakpoint}」は $breakpoint-list に存在しません。";
     }
 }
 

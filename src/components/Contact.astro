@@ -4,21 +4,17 @@ import Button from '../components/Button';
 
 <div class="contact">
     <div class="l-wrapper">
-        <div class="l-container-full position-relative">
-            <Button
-                href="リンク"
-                className="contact__btn position-absolute top-50p left-50p translate-center"
-                variant="secondary"
-            >
-                <span>お問い合わせ</span>
-            </Button>
-
-            <picture>
-                    <!-- スマホ（767px以下）のときに読み込む画像 -->
-                    <source srcset="/assets/image/sample_img.jpg" media="(max-width: 767px)" />
-                    <!-- 通常（PC）表示 -->
-                    <img src="/assets/image/sample_img.jpg" alt="" class="contact__img mb-auto" />
-            </picture>
+        <div class="l-container-full">
+            <div class="contact__form l-inner">
+                <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfPPDYmey6H_EYnD00wgRvIcC-CBoANhByhJm2oHhzvRWARGA/viewform?embedded=true"
+                    width="100%"
+                    height="900"
+                    style="border: none;"
+                    loading="lazy"
+                    >読み込んでいます…</iframe
+                >
+            </div>
         </div>
     </div>
 </div>

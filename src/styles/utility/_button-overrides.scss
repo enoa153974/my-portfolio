@@ -1,13 +1,31 @@
 /* ボタンの上書きデザインを記述 */
 
 /*profセクションのボタン */
-.btn--primary.prof__btn {
+.btn--push.contact__link span {
     background-color: var(--main-color);
+    color: #fff;
+}
+
+/* 影の装飾 */
+.btn--push.contact__link:before {
+    background-color: #4A4A4A;
+}
+
+/* 押し込みエフェクト */
+.btn--push.contact__link:hover span {
+    background-color: #4A4A4A;
+}
+
+.btn--primary.prof__btn {
+    background-color: var(--accent-color);
     border-radius: 0 5px 5px 0;
     position: relative;
     font-size: 1rem;
 }
 
+.btn--primary.prof__btn span {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 .btn--primary.prof__btn::after {
     content: "";
@@ -19,7 +37,7 @@
     height: 0;
     border-top: 1.7em solid transparent;
     border-bottom: 1.7em solid transparent;
-    border-left: 1.8em solid var(--main-color);
+    border-left: 1.8em solid var(--accent-color);
 }
 
 /* about-profボタンのデザイン */
@@ -28,4 +46,5 @@
 .btn--primary.illust__btn span,
 .btn--primary.pop__btn span {
     font-size: var(--font-size-lg);
+
 }

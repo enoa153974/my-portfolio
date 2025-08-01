@@ -1,6 +1,7 @@
 ---
 import siteData from '../../../siteData.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Contact from '../../components/Contact.astro';
 
 const pageId = 'contact',
     pageMeta = siteData[pageId],
@@ -29,5 +30,5 @@ const currentPath = '/contact';
     ldJSON={ldJSON}
     currentPath={currentPath}
 >
-
+    <Contact />
 </BaseLayout>
