@@ -58,11 +58,15 @@
                 letter-spacing: 0.08em;
             }
 
-            /*              contact用   
-                    li:nth-child(4) {
-                        border: white solid 1px;
-                        background:white;
-                    } */
+            li:nth-child(7) {
+                border:#f6f5ef solid 1px;
+                background: #f6f5ef;
+                aspect-ratio: 2/1.2;
+                max-width: 150px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+                letter-spacing: 0.08em;
+            }
         }
     }
 

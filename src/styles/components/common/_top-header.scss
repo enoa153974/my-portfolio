@@ -15,18 +15,17 @@
 
         .header__text-box {
             width: 90%;
-            padding: 2% 9% 7%;
+            padding: 2% 12% 7%;
 
             .header__logo {
                 height: 100%;
-                margin-top: 24%;
+                margin-top: 26%;
 
             }
 
             .header__nav {
                 max-height: 50%;
                 margin-top: 1%;
-                padding-right: 30%; //contact用の一時余白
 
                 li:nth-child(1) {
                     border: var(--sub-color) solid 1px;
@@ -59,19 +58,23 @@
                     border-radius: 50%;
                     font-size: 1.5rem;
                     letter-spacing: 0.08em;
-
                 }
 
-                /*              contact用   
                 li:nth-child(4) {
-                    border: white solid 1px;
-                    background:white;
-                } */
+                    border:#f6f5ef solid 1px;
+                    background:#f6f5ef;
+                    aspect-ratio: 2/1.2;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                    letter-spacing: 0.08em;
+                    transition: border-radius 0.5s ease;
+                }
             }
 
             .header__brush {
                 width: 100%;
-                margin-top: 28%;
+                margin-top: 45%;
+                margin-left: 15%;
                 transform: rotate(15deg);
                 transition: rotate ease 0.5s;
             }

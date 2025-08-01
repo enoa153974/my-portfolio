@@ -8,20 +8,19 @@ import Button from '../components/Button';
     <div class="prof__inner l-inner">
         <div class="l-row l-row--gap sm:flex-col sm:items-center sm:justify-center sm:flex-col-reverse">
             <div class="flex flex-col justify-center l-column l-column--6">
-                <p class="py-1">三宅 葵</p>
-                <p class="py-1">miyake aoi</p>
-                <p class="py-1">url:</p>
-                <p class="py-1">mail:</p>
-                <p class="pt-4 pb-1">お仕事のご依頼やご相談は、</p>
+                <p class="pt-1 font-semibold">三宅 葵</p>
+                <p class="pb-1 font-semibold">miyake aoi</p>
+                <span class="py-1 font-semibold">mail : <a href="contactリンク" class="prof__mail hover-underline pb-1">eno.creative153974@gmail.com</a></span>
+                <p class="pt-4 pb-1 font-bold">お仕事のご依頼やご相談は、</p>
                 <div class="flex items-center">
-                    <Button href="リンク" className="" variant="primary">
+                    <Button href="contactリンク" className="contact__link" variant="primary">
                         <span>こちら
                         </span>
                     </Button>
-                    <p class="ml-4">よりお気軽にお問い合わせください。</p>
+                    <p class="ml-4 font-bold">よりお気軽にお問い合わせください！</p>
                 </div>
-                <div class="flex justify-end mt-4">
-                    <Button href={siteData.about.path} className="上書きしたいクラス名" variant="primary">
+                <div class="flex justify-end mt-4 mr-10">
+                    <Button href={siteData.about.path} className="prof__btn" variant="primary">
                         <span>プロフィールへ</span>
                     </Button>
                 </div>

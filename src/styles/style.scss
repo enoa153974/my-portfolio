@@ -23,10 +23,13 @@
  * ---------------------------- */
 /* ユーティリティクラス */
 @use 'utility/utilities';
+/* 装飾系ユーティリティクラス */
+@use 'utility/decoration';
 /* ボタンのベースデザイン */
 @use 'utility/button';
 /* ボタンの上書きデザイン */
 @use 'utility/button-overrides';
+
 
 /* -------------------------------
  *  file import (components/common)

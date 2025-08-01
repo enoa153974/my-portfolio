@@ -1,0 +1,89 @@
+/* 見出しにアンダーラインを引くクラス */
+.u-heading-line {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+/* 先頭の色だけ別色 */
+.u-heading-line::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 13%;
+    background: var(--accent-color);
+    z-index: 1;
+}
+
+/* 末尾の色だけ別色 */
+.u-heading-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: #ddd;
+}
+
+/* 見出しの先頭に縦線を入れるクラス */
+.u-border-left {
+    position: relative;
+    padding-left: 0.75rem;
+}
+
+.u-border-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4px;
+    background-color: var(--accent-color);
+}
+
+/* ホバーしたら下線が左から右に流れるクラス */
+.hover-underline {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    transform: scaleX(1);
+}
+
+/* ホバーしたら色が変わるクラス */
+.hover-color-change {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.hover-color-change:hover {
+    color: #fff;
+    /* 好きな色に変更 */
+}
+
+/* ホバーしたら不透明度が変わるクラス */
+.hover-opacity {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.hover-opacity:hover {
+    opacity: 0.6;
+}

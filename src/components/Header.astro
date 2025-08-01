@@ -34,10 +34,10 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                     <li class="l-column l-column--2 flex justify-center items-center en">
                         <a href={siteData.works.path} class={currentPath === '/works' ? 'is-active' : ''}>works</a>
                     </li>
-                    <li class="l-column l-column--2"></li>
-                    <!--                                 <li class="header__text l-column l-column--3">
-                                            <a href={siteData.contact.path} class={currentPath === '/contact' ? 'is-active' : ''}>contact</a>
-                                        </li> -->
+                    <li class="l-column l-column--2 flex justify-center items-center en">
+                        <a href={siteData.contact.path} class={currentPath === '/contact' ? 'is-active' : ''}>contact</a
+                        >
+                    </li>
                 </ul>
             </nav>
         </div>

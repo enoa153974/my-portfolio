@@ -767,48 +767,6 @@
     white-space: pre-line;
 }
 
-/* === heading-line === */
-.u-heading-line {
-    position: relative;
-    padding-bottom: 1.5rem;
-}
-
-.u-heading-line::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    width: 13%;
-    background: var(--accent-color);
-    z-index: 1;
-}
-
-.u-heading-line::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background: #ddd;
-}
-
-.u-border-left {
-    position: relative;
-    padding-left: 0.75rem;
-}
-
-.u-border-left::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 4px;
-    background-color: var(--accent-color);
-}
-
 @media screen and (max-width: 767px) {
     /* ブレイクポイント767px */
 
