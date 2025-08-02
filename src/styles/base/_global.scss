@@ -5,6 +5,9 @@
 @use '../layout/module' as *;
 @use '../foundation/import' as *;
 /* ベース */
+html{
+    scroll-behavior: smooth;
+}
 body {
     font-family: var(--font-jp);
     font-size: var(--font-size-base);

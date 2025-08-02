@@ -2,7 +2,7 @@
 interface ServicesItem {
     image: string;
     alt: string;
-    pointNumber: number;
+    id: string;
     pointTitle: string;
     text: string;
 }
@@ -26,8 +26,8 @@ const { title, items } = Astro.props as {
             }
         ]}
     /> -->
-<section id="services" class="services l-wrapper">
-    <div class="l-container py-10 px-6 sm:px-0">
+<section class="services l-wrapper">
+    <div class="l-container py-10 px-6 sm:px-10">
         <h2 class="en text-center">
             {title}
         </h2>
@@ -35,7 +35,7 @@ const { title, items } = Astro.props as {
         {
             items.map((item, index) => (
                 <div class="l-inner sm:px-0">
-                    <div
+                    <div id={item.id}
                         class={[
                             'services__item', // 共通のベースクラス
                             'l-row',
@@ -54,9 +54,6 @@ const { title, items } = Astro.props as {
                             <img src={item.image} alt={item.alt} class="item__img block" />
                         </div>
                         <div class="service__item-text l-column l-column--6 sm:text-center">
-                            <p class="en font-bold">
-                                service<span>{item.pointNumber}</span>
-                            </p>
                             <h3 class="lead font-bold">{item.pointTitle}</h3>
                             <p class="pt-4">{item.text}</p>
                         </div>

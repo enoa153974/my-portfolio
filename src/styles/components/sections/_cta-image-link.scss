@@ -38,10 +38,17 @@
             padding: 1rem 2rem;
             font-size: var(--font-size-lg);
             pointer-events: none;
+            text-shadow: (2px 2px 0 #fff);
 
+            
             @include media-query(lg) {
-                font-size: var(--font-size-base);
-                transform: translate(-50%, -5%);
+                font-size: var(--font-size-lg);
+                transform: translate(-50%, -15%);
+            }
+
+            @include media-query(md) {
+                font-size: var(--font-size-lg);
+                transform: translate(-50%, -20%);
             }
         }
     }

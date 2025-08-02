@@ -16,6 +16,10 @@
         span:nth-child(3),
         p:nth-child(4) {
             font-size: 1.25rem;
+
+            @include media-query(md) {
+                font-size: 1rem;
+            }
         }
 
         .prof__mail {
@@ -32,8 +36,8 @@
             }
         }
 
-        .img-wrapper{
-            max-width:400px ;
+        .img-wrapper {
+            max-width: 400px;
         }
     }
 }

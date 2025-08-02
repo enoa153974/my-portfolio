@@ -2,31 +2,31 @@
 import Button from '../components/Button';
 ---
 
-<div class="aboutprof l-container pt-14 pb-10">
+<div class="aboutprof l-container pt-14">
     <div class="aboutprof__inner l-inner sm:px-0">
         <div class="l-row sm:flex-col sm:items-center sm:justify-center sm:flex-col-reverse">
-            <div class="img-wrapper flex items-center l-column l-column--5 sm:l-column--12">
+            <div class="img-wrapper flex items-center l-column l-column--5 sm:px-10">
                 <img src="/assets/image/about_icon.png" alt="" class="rounded-lg" />
             </div>
 
-            <div class="aboutprof__text flex flex-col items-center justify-center l-column l-column--7 sm:l-column--12">
+            <div class="aboutprof__text flex flex-col items-center justify-center l-column l-column--7 sm:px-10">
                 <h2 class="en">about</h2>
                 <p>miyake aoi</p>
                 <p>三宅 葵</p>
                 <div class="aboutprof__item w-full py-10 px-10 sm:px-0">
-                        <Button href="リンク" className="web__btn" variant="primary">
-                            <span>webデザイン</span>
-                        </Button>
-                        <Button href="リンク" className="graphic-btn" variant="primary">
-                            <span>グラフィック</span>
-                        </Button>
+                    <Button href="#web-design" className="web__btn" variant="primary">
+                        <span>webデザイン</span>
+                    </Button>
+                    <Button href="#graphic-design" className="graphic-btn" variant="primary">
+                        <span>グラフィック</span>
+                    </Button>
 
-                        <Button href="リンク" className="illust__btn" variant="primary">
-                            <span>イラスト</span>
-                        </Button>
-                        <Button href="リンク" className="pop__btn" variant="primary">
-                            <span>手書きPOP</span>
-                        </Button>
+                    <Button href="#illust" className="illust__btn" variant="primary">
+                        <span>イラスト</span>
+                    </Button>
+                    <Button href="#pop" className="pop__btn" variant="primary">
+                        <span>手書きPOP</span>
+                    </Button>
                 </div>
             </div>
         </div>
@@ -42,6 +42,21 @@ import Button from '../components/Button';
                 元々クリエイティブな趣味が多かったので、デジタル～アナログまで様々なスキルを磨き、
                 現在はマルチクリエイターとして活動しています。
             </p>
+        </div>
+    </div>
+
+    <div class="l-inner py-10">
+        <div class="aboutprof__skills-list">
+            <h2 class="en text-center">skills & tools</h2>
+
+            <ul class="skills-list pt-4 text-center">
+                <li>HTML / CSS /JavaScript</li>
+                <li>Astro / Vite</li>
+                <li>Figma / Adobe XD</li>
+                <li>Adobe Photoshop / Adobe Illustrator</li>
+                <li>Git / GitHub</li>
+                <li>Adobe Premiere Pro / CLIP STUDIO PAINT</li>
+            </ul>
         </div>
     </div>
 </div>
