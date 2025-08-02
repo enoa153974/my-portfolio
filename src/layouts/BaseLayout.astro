@@ -4,6 +4,7 @@ import TopHeader from '../components/TopHeader.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import type { siteDataType } from '../types/siteData';
+import AOSInit from '../components/AOSInit.jsx';
 import '../styles/style.scss';
 
 const siteData: siteDataType = {
@@ -51,14 +52,15 @@ const isTopPage = url.pathname === '/';
         <!-- 日本語フォント -->
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
         <!-- 英語フォント -->
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
         <!-- ライブラリのcss/publicから読み込み -->
         <link rel="stylesheet" href="/assets/style/slick.css" />
         <link rel="stylesheet" href="/assets/style/slick-theme.css" />
     </head>
 
     <body class="has-fixed-header">
+        <!-- AOSの初期化 -->
+        <AOSInit client:load />
         {
             isTopPage ? (
                 <TopHeader currentPath={currentPath} class="header header--top" />

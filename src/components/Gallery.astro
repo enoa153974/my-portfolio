@@ -31,13 +31,18 @@ interface gallerys {
 const { title, gallerys } = Astro.props as Props;
 ---
 
-<section class="gallery l-wrapper pt-12 sm:pt-8">
+<section class="gallery l-wrapper pt-12 sm:pt-8" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
     <!-- カルーセルセクション -->
     <div class="l-container">
         <div class="l-inner">
             <div class="slider">
                 <h2 class="gallery__heading font-bold text-center en pt-10">{title}</h2>
-                <span>大阪府香里園にある<a href="https://machikado-cafe-kourien.com/" class="machikado__url font-bold hover-underline hover-color-change">machikado cafe様</a>のHPを作成いたしました。</span>
+                <span
+                    >大阪府香里園にある<a
+                        href="https://machikado-cafe-kourien.com/"
+                        class="machikado__url font-bold hover-underline hover-color-change">machikado cafe様</a
+                    >のHPを作成いたしました。</span
+                >
                 <p>□ html / css / javascript / Adobeillustrator / AdobePhotoshop 使用</p>
 
                 <div class="slider__wrapper flex flex-col pt-2 sm:pt-0">

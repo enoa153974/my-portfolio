@@ -3,6 +3,9 @@ interface ServicesItem {
     image: string;
     alt: string;
     id: string;
+    aos:string;
+    delay:number;
+    duration:number;
     pointTitle: string;
     text: string;
 }
@@ -35,7 +38,7 @@ const { title, items } = Astro.props as {
         {
             items.map((item, index) => (
                 <div class="l-inner sm:px-0">
-                    <div id={item.id}
+                    <div id={item.id} data-aos={item.aos} data-aos-delay={item.delay} data-aos-duration={item.duration}
                         class={[
                             'services__item', // 共通のベースクラス
                             'l-row',
