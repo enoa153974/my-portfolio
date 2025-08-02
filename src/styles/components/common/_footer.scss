@@ -1,15 +1,27 @@
+@use '../../foundation/import' as *;
+
 .footer {
     height: var(--footer-height);
 
-    &__inner {
-        height: 100%;
-    }
-
-            .footer__copyright{
-            font-size: 0.75rem;
-        }
-
-    @media (max-width: 47.9375rem) {
+    @include media-query(md) {
         height: var(--sp-footer-height);
     }
+
+    &__inner {
+        height: 100%;
+
+        .hover-color-change {
+            color: #fff;
+        }
+
+        .hover-color-change:hover {
+            color: var(--accent-color);
+        }
+    }
+
+    .footer__copyright {
+        font-size: 0.75rem;
+    }
+
+
 }

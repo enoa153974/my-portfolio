@@ -6,3 +6,11 @@
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 1.5rem;
     }
+
+    .machikado__url{
+        letter-spacing: 0.05em;
+    }
+
+    .machikado__url.hover-color-change:hover{
+        color: var(--main-color);
+    }

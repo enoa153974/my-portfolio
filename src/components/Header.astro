@@ -25,16 +25,16 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                     <li class="header__brush img-wrapper l-column l-column--1">
                         <img src="/assets/image/header_brush.png" alt="" class="header__nav-icon block" />
                     </li>
-                    <li class="l-column l-column--2 flex justify-center items-center en">
+                    <li class="l-column l-column--2 flex justify-center items-center en hover-opacity">
                         <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}>home</a>
                     </li>
-                    <li class="l-column l-column--2 flex justify-center items-center en">
+                    <li class="l-column l-column--2 flex justify-center items-center en hover-opacity">
                         <a href={siteData.about.path} class={currentPath === '/about' ? 'is-active' : ''}>about</a>
                     </li>
-                    <li class="l-column l-column--2 flex justify-center items-center en">
+                    <li class="l-column l-column--2 flex justify-center items-center en hover-opacity">
                         <a href={siteData.works.path} class={currentPath === '/works' ? 'is-active' : ''}>works</a>
                     </li>
-                    <li class="l-column l-column--2 flex justify-center items-center en">
+                    <li class="l-column l-column--2 flex justify-center items-center en hover-opacity">
                         <a href={siteData.contact.path} class={currentPath === '/contact' ? 'is-active' : ''}>contact</a
                         >
                     </li>
