@@ -1,0 +1,8 @@
+---
+// これは全ページで使いたいstyle.scssを明示的にビルド対象に含めるための中継コンポーネント
+import '../styles/style.scss';
+---
+
+<style is:global>
+    @import '../styles/style.scss';
+</style>

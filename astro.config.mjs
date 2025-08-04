@@ -19,11 +19,11 @@ export default defineConfig({
         inlineStylesheets: 'never'
     },
     server: {
-        open: true,
-        host: true
+        open: true
     },
     vite: {
         build: {
+            cssCodeSplit: false,
             rollupOptions: {
                 output: {
                     entryFileNames: 'assets/scripts/main.min.js',
@@ -31,7 +31,7 @@ export default defineConfig({
                     assetFileNames: (assetFile) => {
                         if (assetFile.name !== undefined) {
                             if (/\.css$/.test(assetFile.name)) {
-                                return 'assets/style/style.min.[ext]';
+                                return 'assets/styles/style.min.[ext]';
                             } else if (/\.( gif|jpeg|jpg|png|svg|webp| )$/.test(assetFile.name)) {
                                 return 'assets/images/[name].min.[ext]';
                             } else if (/\.( ttf|otf|eot|woff|woff2| )$/.test(assetFile.name)) {
