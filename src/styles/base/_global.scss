@@ -1,7 +1,4 @@
-/* === デバッグ用各要素アウトライン
-* {
-    outline: 1px solid red;
-} === */
+
 @use '../layout/module' as *;
 @use '../foundation/import' as *;
 /* ベース */
@@ -14,6 +11,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: var(--bg-color);
+    overflow-x: hidden; 
 }
 body.no-scroll {
     overflow: hidden;
