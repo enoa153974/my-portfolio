@@ -56,7 +56,6 @@
 
                 @include media-query(md) {
                     display: none;
-
                 }
 
             }
@@ -67,6 +66,7 @@
                 @include media-query(md) {
                     display: flex;
                     padding: 2rem;
+                    width: 70%;
                 }
             }
 
