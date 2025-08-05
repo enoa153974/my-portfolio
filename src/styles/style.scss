@@ -23,12 +23,21 @@
  * ---------------------------- */
 /* ユーティリティクラス */
 @use 'utility/utilities';
-/* 装飾系ユーティリティクラス */
-@use 'utility/decoration';
 /* ボタンのベースデザイン */
 @use 'utility/button';
 /* ボタンの上書きデザイン */
 @use 'utility/button-overrides';
+/* marginクラス */
+@use 'utility/margin';
+/* paddingクラス */
+@use 'utility/padding';
+/* 装飾用クラス */
+@use 'utility/decoration';
+/* fontクラス */
+@use 'utility/font';
+/* colorクラス */
+@use 'utility/color';
+
 
 
 /* -------------------------------
