@@ -1,0 +1,76 @@
+
+/* === Font Utilities === */
+.jp {
+    font-family: var(--font-jp);
+}
+
+.en {
+    font-family: var(--font-en);
+}
+
+.font-logo {
+    font-family: var(--font-logo);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.font-normal {
+    font-weight: var(--font-weight-normal);
+}
+
+.font-semibold {
+    font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+@media screen and (max-width: 767px) {
+   /* === フォント・テキスト === */
+    .sm\:jp {
+        font-family: var(--font-jp);
+    }
+
+    .sm\:en {
+        font-family: var(--font-en);
+    }
+
+    .sm\:font-logo {
+        font-family: var(--font-logo);
+    }
+
+    .sm\:text-center {
+        text-align: center;
+    }
+
+    .sm\:text-left {
+        text-align: left;
+    }
+
+    .sm\:text-right {
+        text-align: right;
+    }
+
+    .sm\:font-normal {
+        font-weight: var(--font-weight-normal);
+    }
+
+    .sm\:font-semibold {
+        font-weight: var(--font-weight-semibold);
+    }
+
+    .sm\:font-bold {
+        font-weight: var(--font-weight-bold);
+    }
+}

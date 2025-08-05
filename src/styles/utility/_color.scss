@@ -1,0 +1,33 @@
+
+/* === Color Utilities === */
+.color-main {
+    color: var(--main-color);
+}
+
+.color-sub {
+    color: var(--sub-color);
+}
+
+.color-accent {
+    color: var(--accent-color);
+}
+
+.color-text-sub {
+    color: var(--text-color-sub);
+}
+
+.color-white {
+    color: #fff;
+}
+
+.bg-sub {
+    background-color: var(--sub-color);
+}
+
+.bg-accent {
+    background-color: var(--accent-color);
+}
+
+.bg-white {
+    background-color: #fff;
+}
