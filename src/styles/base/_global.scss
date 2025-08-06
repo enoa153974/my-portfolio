@@ -23,6 +23,9 @@ h1 {
 
 h2 {
     font-size: var(--font-size-2xl);
+    @include media-query(md){
+        font-size: var(--font-size-lg2);
+    }
 }
 
 h3 {
