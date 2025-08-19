@@ -1,6 +1,12 @@
 
 @use '../layout/module' as *;
 @use '../foundation/import' as *;
+
+/* === デバッグ用各要素アウトライン
+* {
+    outline: 1px solid red;
+} === */
+
 /* ベース */
 html{
     scroll-behavior: smooth;

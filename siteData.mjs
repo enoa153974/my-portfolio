@@ -4,30 +4,30 @@
 
 export default {
     home: {
-        title: 'aoi miyake’s Atelier | 三宅葵のポートフォリオサイト',
-        description: '三宅葵のポートフォリオサイトです。デザインを中心にさまざまな作品を掲載しています。',
-        ogpImage: '/assets/images/ogp_default.png',
+        title: 'Aoi Miyake’s Atelier｜三宅葵のポートフォリオ – グラフィック/WEBデザイン',
+        description: '三宅葵のポートフォリオ。ロゴ・バナー・LP・WEBサイト制作、イラスト、動画編集まで一貫対応。顧客のイメージを言語化し、成果につながるデザインをご提案します。',
+        ogpImage: '/assets/images/ogp_img.png',
         type: 'website',
         path: '/'
     },
     about: {
-        title: 'aboutページ',
-        description: 'aboutページの説明文です',
-        ogpImage: '/assets/images/ogp_default.png',
+        title: 'プロフィール｜三宅葵 – デザイナー/マルチクリエイター',
+        description: '三宅葵の自己紹介。飲食×販促の実務経験を活かし、課題の整理からデザイン/実装まで伴走。得意領域：ロゴ、販促物、WEBコーディング(HTML/CSS/JS/Astro)、イラスト、動画編集。',
+        ogpImage: '/assets/images/ogp_img.png',
         type: 'article',
         path: '/about'
     },
     works: {
-        title: 'worksページ',
-        description: 'worksページの説明文です',
-        ogpImage: '/assets/images/ogp_default.png',
+        title: '制作実績｜ロゴ・バナー・LP・WEBサイト・イラスト',
+        description: '制作実績一覧。ロゴ/VI、バナー/サムネ、LP/WEBサイト、イラスト、動画など多ジャンルを掲載。目的と成果、制作プロセス、使用ツール(Photoshop/Illustrator/Figma/HTML/CSS/JS)を明記。',
+        ogpImage: '/assets/images/ogp_img.png',
         type: 'article',
         path: '/works'
     },
     contact: {
-        title: 'contactページ',
-        description: 'contactページの説明文です',
-        ogpImage: '/assets/images/ogp_default.png',
+        title: 'お問い合わせ｜ご相談・お見積り – Aoi Miyake’s Atelier',
+        description: 'デザイン/WEB制作のご相談・お見積りはこちら。用途・納期・ご予算をお知らせください。',
+        ogpImage: '/assets/images/ogp_img.png',
         type: 'article',
         path: '/contact'
     },

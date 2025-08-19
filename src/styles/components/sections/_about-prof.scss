@@ -1,25 +1,35 @@
 @use '../../foundation/import.scss' as *;
-.aboutprof__inner{
-    .img-wrapper{
-        border-radius: 60% 50% 50% 70% / 80% 50% 90% 40%;
+
+.aboutprof__inner {
+    .img-wrapper {
+        img{
+            border-radius: 60% 50% 50% 70% / 80% 50% 90% 40%;
+        }
     }
 
-    .l-column--5{
-        @include media-query(md){
+    .l-column--5 {
+        @include media-query(md) {
             width: 90%;
         }
     }
 
-        .l-column--7{
-        @include media-query(md){
+    .l-column--7 {
+        @include media-query(md) {
             width: 90%;
         }
     }
 
     .aboutprof__text {
-        h2{
+        h2 {
             font-size: var(--font-size-xl);
+
+            @include media-query(md) {
+                font-size: var(--font-size-2xl);
+                width: 8em;
+                margin-bottom: 2rem;
+            }
         }
+
         .aboutprof__item {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

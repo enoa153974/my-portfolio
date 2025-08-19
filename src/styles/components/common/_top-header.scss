@@ -9,6 +9,9 @@
 
     @include media-query(md) {
         height: 100vh;
+        background-image: url(/assets/image/2.png);
+        background-size: cover;
+        background-position: top;
     }
 
     .header__inner {
@@ -94,6 +97,11 @@
                             margin-top: var(--spacing-lg3);
                             font-size: var(--font-size-lg2);
                         }
+
+
+                        @include media-query(sm) {
+                            font-size: var(--font-size-lg);
+                        }
                     }
 
                     li:nth-child(2) {
@@ -106,6 +114,11 @@
 
                         @include media-query(2xl) {
                             font-size: var(--font-size-lg2);
+                        }
+
+
+                        @include media-query(sm) {
+                            font-size: var(--font-size-lg);
                         }
                     }
 
@@ -120,6 +133,11 @@
                         @include media-query(2xl) {
                             font-size: var(--font-size-lg2);
                         }
+
+
+                        @include media-query(sm) {
+                            font-size: var(--font-size-lg);
+                        }
                     }
 
                     li:nth-child(4) {
@@ -133,6 +151,11 @@
                         @include media-query(2xl) {
                             margin-top: var(--spacing-lg3);
                             font-size: var(--font-size-lg2);
+                        }
+
+
+                        @include media-query(sm) {
+                            font-size: var(--font-size-lg);
                         }
                     }
                 }
