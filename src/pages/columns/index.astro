@@ -1,0 +1,35 @@
+---
+import siteData from '../../../siteData.mjs';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ColumnsPage from '../../components/ColumnsPage.astro';
+import { getColumnsItems } from '../../lib/columns';
+
+const pageId = 'columns',
+    pageMeta = siteData[pageId],
+    ldJSON = [
+        {
+            '@type': 'ListItem',
+            position: 2,
+            item: {
+                '@id': `${import.meta.env.PUBLIC_ENVURL}${pageMeta.path}`,
+                name: 'columns'
+            }
+        }
+    ];
+
+const currentPath = '/columns';
+---
+
+<!--BaseLayout.hemlの<slot />内に代入される -->
+<BaseLayout
+    pageName={pageId}
+    title={pageMeta.title}
+    description={pageMeta.description}
+    ogpImage={pageMeta.ogpImage}
+    type={pageMeta.type}
+    path={pageMeta.path}
+    ldJSON={ldJSON}
+    currentPath={currentPath}
+>
+    <ColumnsPage/>
+</BaseLayout>

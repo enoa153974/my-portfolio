@@ -24,6 +24,13 @@ export default {
         type: 'article',
         path: '/works'
     },
+    columns: {
+        title: 'コラム｜記事・まとめ – Aoi Miyake’s Atelier',
+        description: 'コラム、デザインのポイント、まとめなどの記事一覧。趣味などのお話もつれづれなるままに。',
+        ogpImage: '/assets/images/ogp_img.png',
+        type: 'article',
+        path: '/columns'
+    },
     contact: {
         title: 'お問い合わせ｜ご相談・お見積り – Aoi Miyake’s Atelier',
         description: 'デザイン/WEB制作のご相談・お見積りはこちら。用途・納期・ご予算をお知らせください。',

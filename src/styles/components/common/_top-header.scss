@@ -41,13 +41,13 @@
 
             }
 
-            .l-column--5 {
+            .l-column--4 {
                 @include media-query(md) {
                     width: 0;
                 }
             }
 
-            .l-column--7 {
+            .l-column--8 {
                 @include media-query(md) {
                     width: column-width(12, 0);
                 }
@@ -141,6 +141,24 @@
                     }
 
                     li:nth-child(4) {
+                        border: var(--main-color) solid 1px;
+                        background: var(--main-color);
+                        aspect-ratio: 2/1.2;
+                        border-radius: 50%;
+                        font-size: 1.5rem;
+                        letter-spacing: 0.08em;
+
+                        @include media-query(2xl) {
+                            font-size: var(--font-size-lg2);
+                        }
+
+
+                        @include media-query(sm) {
+                            font-size: var(--font-size-lg);
+                        }
+                    }
+
+                    li:nth-child(5) {
                         border: #f6f5ef solid 1px;
                         background: #f6f5ef;
                         aspect-ratio: 2/1.2;

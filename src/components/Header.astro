@@ -16,7 +16,7 @@ const { class: className, currentPath, isTopPage } = Astro.props;
             <!-- PCナビ -->
             <nav class="header__nav pc-nav w-full flex items-center">
                 <ul class="header__nav-inner l-row l-row--gap items-center font-bold justify-end">
-                    <li class="l-column l-column--3 flex justify-center items-center">
+                    <li class="l-column l-column--2 flex justify-center items-center">
                         <a href={siteData.home.path}
                             ><img src="/assets/image/logo_name.png" alt="" class="header__nav-icon block" /></a
                         >
@@ -28,11 +28,15 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                     <li class="l-column l-column--2 flex justify-center items-center en hover-opacity">
                         <a href={siteData.home.path} class={currentPath === '/home' ? 'is-active' : ''}>home</a>
                     </li>
-                    <li class="l-column l-column--2 flex justify-center items-center en hover-opacity">
+                    <li class="l-column l-column--1 flex justify-center items-center en hover-opacity">
                         <a href={siteData.about.path} class={currentPath === '/about' ? 'is-active' : ''}>about</a>
                     </li>
                     <li class="l-column l-column--2 flex justify-center items-center en hover-opacity">
                         <a href={siteData.works.path} class={currentPath === '/works' ? 'is-active' : ''}>works</a>
+                    </li>
+                    <li class="l-column l-column--1 flex justify-center items-center en hover-opacity">
+                        <a href={siteData.columns.path} class={currentPath === '/columns' ? 'is-active' : ''}>columns</a
+                        >
                     </li>
                     <li class="l-column l-column--2 flex justify-center items-center en hover-opacity">
                         <a href={siteData.contact.path} class={currentPath === '/contact' ? 'is-active' : ''}>contact</a
@@ -49,6 +53,7 @@ const { class: className, currentPath, isTopPage } = Astro.props;
             <li><a href={siteData.home.path}>HOME</a></li>
             <li><a href={siteData.about.path}>about</a></li>
             <li><a href={siteData.works.path}>works</a></li>
+            <li><a href={siteData.columns.path}>columns</a></li>
             <li><a href={siteData.contact.path}>contact</a></li>
         </ul>
     </nav>

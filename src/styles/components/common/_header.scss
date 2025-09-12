@@ -11,7 +11,7 @@
 
     .header__inner {
         padding: 0 5%;
-
+        gap: 0.5rem;
         .header__nav {
             .header__brush {
                 aspect-ratio: 2/1.2;
@@ -58,8 +58,20 @@
                 letter-spacing: 0.08em;
             }
 
+            /* columnsボタン */
             li:nth-child(7) {
-                border:#f6f5ef solid 1px;
+                border: var(--main-color) solid 1px;
+                background: var(--main-color);
+                aspect-ratio: 2/1.2;
+                max-width: 150px;
+                border-radius: 50%;
+                font-size: 1.5rem;
+                letter-spacing: 0.08em;
+            }
+
+            /* contactボタン */
+            li:nth-child(8) {
+                border: #f6f5ef solid 1px;
                 background: #f6f5ef;
                 aspect-ratio: 2/1.2;
                 max-width: 150px;
@@ -68,22 +80,22 @@
                 letter-spacing: 0.08em;
             }
 
-                @include media-query(md){
-                    display: none;
-                }
+            @include media-query(md) {
+                display: none;
+            }
         }
     }
 
     .hamburger {
         display: none;
-        margin-left:auto ;
+        margin-left: auto;
 
-        @include media-query(md){
+        @include media-query(md) {
             display: flex;
         }
     }
 
-    .sp-nav{
+    .sp-nav {
         color: var(--text-color);
     }
 }

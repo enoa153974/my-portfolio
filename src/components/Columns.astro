@@ -1,0 +1,23 @@
+---
+import ColumnsItem from './ColumnsItem.astro';
+
+
+interface Props {
+    columnsItems?: {
+        date: string;
+        category: string;
+        title: string;
+        slug?: string;
+    }[];
+}
+
+const {columnsItems = [] } = Astro.props;
+---
+
+<div class="columns l-wrapper items-center mt-20 sm:pt-0 pb-0">
+    <div class="columns__container l-container flex flex-col items-center sm:pt-0">
+        <div class="columns-list w-full mb-8 sm:mb-6">
+            {columnsItems.map((item) => <ColumnsItem {...item} />)}
+        </div>
+    </div>
+</div>

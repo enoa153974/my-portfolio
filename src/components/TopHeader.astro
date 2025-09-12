@@ -26,9 +26,9 @@ const { class: className, currentPath, isTopPage } = Astro.props;
             </div>
 
             <div class="header__text-box l-row position-absolute">
-                <!-- 横幅5/7レイアウト -->
+                <!-- 横幅4/8レイアウト -->
                 <div
-                    class="header__logo flex flex-col items-center l-column l-column--5 pl-10"
+                    class="header__logo flex flex-col items-center l-column l-column--4 pl-10"
                     data-aos="fade"
                     data-aos-delay="200"
                     data-aos-duration="800"
@@ -40,13 +40,13 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                     </div>
                 </div>
 
-                <div class="l-column l-column--7">
+                <div class="l-column l-column--8">
                     <!-- 縦幅1/1のレイアウト -->
                     <div class="flex flex-col">
                         <nav class="header__nav pc-nav">
                             <ul class="header__nav-inner font-bold w-full l-row l-row--gap text-center items-center">
                                 <li
-                                    class="l-column l-column--3 flex justify-center items-center mt-20 en hover-opacity"
+                                    class="l-column l-column--2 flex justify-center items-center mt-20 en hover-opacity"
                                     data-aos="fade"
                                     data-aos-delay="400"
                                     data-aos-duration="800"
@@ -66,7 +66,7 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                                     >
                                 </li>
                                 <li
-                                    class="l-column l-column--3 flex justify-center items-center en hover-opacity"
+                                    class="l-column l-column--2 flex justify-center items-center en hover-opacity mt-4"
                                     data-aos="fade"
                                     data-aos-delay="800"
                                     data-aos-duration="800"
@@ -76,7 +76,17 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                                     >
                                 </li>
                                 <li
-                                    class="l-column l-column--3 flex justify-center items-center mt-20 en hover-opacity"
+                                    class="l-column l-column--3 flex justify-center items-center en hover-opacity"
+                                    data-aos="fade"
+                                    data-aos-delay="800"
+                                    data-aos-duration="800"
+                                >
+                                    <a href={siteData.columns.path} class={currentPath === '/columns' ? 'is-active' : ''}
+                                        >columns</a
+                                    >
+                                </li>
+                                <li
+                                    class="l-column l-column--2 flex justify-center items-center mt-20 en hover-opacity"
                                     data-aos="fade"
                                     data-aos-delay="1000"
                                     data-aos-duration="800"

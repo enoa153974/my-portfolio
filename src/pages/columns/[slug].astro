@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import siteData from '../../../siteData.mjs';
+import { getCollection, getEntryBySlug } from 'astro:content';
+
+// 全 slug を静的生成
+export async function getStaticPaths() {
+    const allColumns = await getCollection('columns');
+    return allColumns.map((entry) => ({ params: { slug: entry.slug } }));
+}
+
+// slug から記事取得
+const { slug } = Astro.params;
+const entry = await getEntryBySlug('columns', slug);
+
+if (!entry) {
+    throw new Error(`記事が見つかりませんでした: ${slug}`);
+}
+
+// ★ ここがポイント：render() して Content を取り出す
+const { Content, headings } = await entry.render();
+// data は entry.data から取る
+const { data } = entry;
+
+// 日付を文字列に統一
+const dateText = typeof data.date === 'string' ? data.date : data.date.toISOString().slice(0, 10);
+---
+
+<BaseLayout title={data.title}>
+    <article class="columns-article l-wrapper py-10 sm:pt-4" data-aos="fade-left" data-aos-delay="200">
+        <div class="l-container">
+            <div class="l-inner">
+                <nav class="breadcrumb flex justify-end my-3 sm:mt-6" aria-label="パンくずリスト">
+                    <ol>
+                        <li><a href={siteData.columns.path}>columns</a></li>
+                        <li><span aria-current="page">{data.title}</span></li>
+                    </ol>
+                </nav>
+
+                <h2 class="font-bold mt-4 mb-2">{data.title}</h2>
+                <p class="font-bold mb-6">{dateText} ／ {data.category}</p>
+
+                {
+                    data.image && (
+                        <figure class="mb-6 img-wrapper w-harf rounded-lg sm:w-full">
+                            <img src={data.image} alt={data.title} loading="lazy" />
+                        </figure>
+                    )
+                }
+
+                <div>
+                    <Content />
+                </div>
+            </div>
+        </div>
+    </article>
+</BaseLayout>
