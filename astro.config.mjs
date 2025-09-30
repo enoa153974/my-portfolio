@@ -16,7 +16,7 @@ export default defineConfig({
     outDir: './dist',
     compressHTML: false,
     build: {
-        format: 'preserve',
+        format: 'directory',
         inlineStylesheets: 'never'
     },
     server: {
