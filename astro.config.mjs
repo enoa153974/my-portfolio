@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: import.meta.env.MODE === 'production' ? 'https://example.com' : 'http://localhost:2000',
     base: '/',
+    trailingSlash: 'always', 
     trailingSlash: 'ignore',
     output: 'static',
     root: '.',
