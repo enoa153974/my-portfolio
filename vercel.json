@@ -1,3 +1,16 @@
 {
-    "trailingSlash": true
+    "trailingSlash": true,
+    "redirects": [
+        {
+            "source": "/columns/:slug",
+            "destination": "/columns/:slug/",
+            "permanent": true
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/columns/:slug/",
+            "destination": "/columns/:slug/index.html"
+        }
+    ]
 }
