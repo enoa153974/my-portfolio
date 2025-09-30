@@ -20,7 +20,7 @@ export default defineConfig({
         inlineStylesheets: 'never'
     },
     server: {
-        open: true
+        open: false
     },
     vite: {
         build: {
