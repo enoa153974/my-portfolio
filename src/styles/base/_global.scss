@@ -44,6 +44,9 @@ h3 {
 p {
     margin: 0 0 1em;
     line-height: 1.6;
+    @include media-query(md){
+        font-size: 14px;
+    }
 }
 
 img {

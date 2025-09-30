@@ -1,0 +1,28 @@
+@use '../../foundation/import.scss' as *;
+
+.columns-page {
+    @include media-query(md) {
+
+        .l-column--4 {
+            width: 100%;
+        }
+
+        .l-column--2 {
+            width: 60%;
+        }
+
+        .l-column--6 {
+            width: 100%;
+        }
+    }
+
+    .columns-item__inner{
+        @include media-query(md){
+            gap: 1rem;
+        }
+    }
+
+    .columns__btn {
+        display: none;
+    }
+}

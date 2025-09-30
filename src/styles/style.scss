@@ -55,6 +55,7 @@
 @use 'components/sections/services';
 @use 'components/sections/cta-image-link';
 @use 'components/sections/gallery';
+@use 'components/sections/columns-page';
 @use 'components/sections/contact';
 /* -------------------------------
  *  file import (components/ui)
@@ -63,6 +64,8 @@
 @use 'components/ui/hamburger';
 /* スライダー（カルーセル）css */
 @use 'components/ui/gallery-slider';
+/* columns-itemのcss */
+@use 'components/ui/columns-item';
 /* パンくずリストのcss */
 @use 'components/ui/breadcrumb';
 

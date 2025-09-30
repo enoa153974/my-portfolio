@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import siteData from '../../../siteData.mjs';
+import Button from '../../components/Button';
 import { getCollection, getEntryBySlug } from 'astro:content';
 
 // 全 slug を静的生成
@@ -50,6 +51,12 @@ const dateText = typeof data.date === 'string' ? data.date : data.date.toISOStri
 
                 <div>
                     <Content />
+                </div>
+
+                <div class="flex justify-end">
+                    <Button href={siteData.works.path} className="works__btn" variant="push">
+                        <span>その他の制作物はこちら</span>
+                    </Button>
                 </div>
             </div>
         </div>

@@ -8,8 +8,14 @@ interface Props {
     slug?: string;
 }
 
+//columnsページのmdのcategoryに【works/blog/news】と記述することでクラスを変える
 const { date, category, title, image, slug } = Astro.props;
-const categoryClass = category === '新情報' ? 'badge--release' : 'badge--notice';
+const categoryClassMap: Record<string, string> = {
+    works: 'badge--works',
+    blog: 'badge--blog',
+    news: 'badge--news'
+};
+const categoryClass = categoryClassMap[category] ?? 'badge--default';
 ---
 
 <div class="columns-item">
@@ -18,14 +24,14 @@ const categoryClass = category === '新情報' ? 'badge--release' : 'badge--noti
         class="columns-item__inner l-row l-row--gap py-6 px-6 sm:pt-3 sm:pb-3 sm:px-0 sm:flex-col sm:items-center"
     >
         <div class="l-column l-column--4 img-wrapper img-wrapper--aspect-4-3 rounded">
-            <img src={image} alt="" class="rounded"/>
+            <img src={image} alt="" class="rounded" />
         </div>
         <div class="l-column l-column--2 flex flex-col justify-center">
             <div class="columns-date font-bold">{date}</div>
             <span class={`columns-badge text-center ${categoryClass}`}>{category}</span>
         </div>
         <div class="columns-title font-bold l-column l-column--6 flex items-center sm:justify-center">
-            <p class=" hover-letter-spacing hover-underline hover-color-change">{title}</p>
+            <p class="hover-letter-spacing hover-underline hover-color-change">{title}</p>
         </div>
     </a>
 </div>
