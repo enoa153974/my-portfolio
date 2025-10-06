@@ -13,12 +13,13 @@ export async function getStaticPaths() {
 // slug から記事取得
 const { slug } = Astro.params;
 const entry = await getEntryBySlug('columns', slug);
-
+//もし見つからなかったらコメントを返す
 if (!entry) {
     throw new Error(`記事が見つかりませんでした: ${slug}`);
 }
 
-// ★ ここがポイント：render() して Content を取り出す
+
+// render() して Content を取り出す
 const { Content, headings } = await entry.render();
 // data は entry.data から取る
 const { data } = entry;
