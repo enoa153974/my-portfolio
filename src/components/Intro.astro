@@ -1,6 +1,9 @@
 ---
+import { pathHasLocale } from 'astro:i18n';
+import siteData from '../../siteData.mjs';
 import Button from '../components/Button';
 ---
+
 <div class="intro l-container py-10 sm:pt-10 sm:pb-4">
     <div class="intro__inner l-inner flex flex-col justify-center items-center">
         <!-- 導入セクション -->
@@ -11,6 +14,9 @@ import Button from '../components/Button';
             <h3 class="font-copy text-center" data-aos="fade" data-aos-delay="200" data-aos-duration="600">
                 小さなお店や人の想いに寄り添い、 あたたかく伝わるデザインをつくります。
             </h3>
+            <div class="img-wrapper flex items-center w-harf mx-auto py-4 sm:px-4">
+                <img src="/assets/image/intro.jpg" alt="" class="rounded-lg w-full" />
+            </div>
             <p
                 class="intro__inner intro__inner--desc py-6 text-center"
                 data-aos="fade"
@@ -37,7 +43,7 @@ import Button from '../components/Button';
         </div>
 
         <!-- できることの紹介 -->
-        <div>
+        <div class="py-10">
             <h2 class="font-copy text-center" data-aos="fade" data-aos-delay="200" data-aos-duration="600">
                 わたしにできること
             </h2>
@@ -45,18 +51,23 @@ import Button from '../components/Button';
                 想いをかたちにする、あたたかいデザインでweb・ロゴ・メニュー・イラストなど、トータルでお手伝いしています。
             </h3>
             <div class="intro__btn-box flex justify-center items-center py-6 sm:px-6">
-                <Button href="#web-design" className="intro__btn btn--web" variant="primary">
+                <Button href={`${siteData.about.path}#web-design`} className="intro__btn btn--web" variant="primary">
                     <span>webデザイン</span>
                 </Button>
-                <Button href="#graphic-design" className="intro__btn btn--grf" variant="primary">
+                <Button href={`${siteData.about.path}#graphic-design`} className="intro__btn btn--grf" variant="primary">
                     <span>グラフィック</span>
                 </Button>
 
-                <Button href="#illust" className="intro__btn btn--illust" variant="primary">
+                <Button href={`${siteData.about.path}#illust`} className="intro__btn btn--illust" variant="primary">
                     <span>イラスト</span>
                 </Button>
-                <Button href="#pop" className="intro__btn btn--pop" variant="primary">
+                <Button href={`${siteData.about.path}#pop`} className="intro__btn btn--pop" variant="primary">
                     <span>手書きPOP</span>
+                </Button>
+            </div>
+            <div class="flex justify-end">
+                <Button href={siteData.about.path} className="" variant="secondary">
+                    <span>詳しく見る ＞ </span>
                 </Button>
             </div>
         </div>

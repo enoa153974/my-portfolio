@@ -1,0 +1,52 @@
+---
+import Card from './Card.astro';
+import Button from '../components/Button';
+---
+
+<section class="card-box l-wrapper">
+    <div class="l-container px-8 py-10 sm:px-4">
+        <div class="l-inner sm:pt-0 sm:pb-20">
+            <h2 class="text-center font-bold font-copy sm:pb-3">works</h2>
+            <h3 class="text-center font-bold font-copy">ひとつひとつのデザインに、想いを込めて。</h3>
+            <!--制作物１web -->
+
+            <div class="py-20 sm:py-4">
+                <Card
+                    imgSrc="/assets/image/work_web_01.jpg"
+                    alt=""
+                    text="HP制作：明るい印象のカラーリングでシンプルながらも温かみのあるカフェHPを制作しました。"
+                    className="font-copy font-bold "
+                    aos="fade-up"
+                    delay={200}
+                />
+            </div>
+            <div class="l-row l-row--gap pt-6 sm:pt-4 sm:flex-col sm:items-center">
+                <div class="l-column l-column--7">
+                    <Card
+                        imgSrc="/assets/image/work_gallery_06.png"
+                        alt=""
+                        text="ロゴ制作：和のクレープを扱うお店のロゴを制作しました。"
+                        className="font-copy font-bold"
+                        aos="fade-up"
+                        delay={400}
+                    />
+                </div>
+                <div class="l-column l-column--5">
+                    <Card
+                        imgSrc="/assets/image/work_wedding_01.jpg"
+                        alt=""
+                        text="wedding:素敵な結婚式の似顔絵制作をしました。"
+                        className="font-copy font-bold"
+                        aos="fade-up"
+                        delay={600}
+                    />
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <Button href="/menu" className="works__btn" variant="push">
+                    <span>もっとみる</span>
+                </Button>
+            </div>
+        </div>
+    </div>
+</section>

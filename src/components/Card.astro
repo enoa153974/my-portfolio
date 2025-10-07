@@ -4,16 +4,25 @@ interface Props {
     alt: string;
     text: string;
     className?: string;
+    aos?: string;
+    delay?: number;
 }
 
-const { imgSrc, alt, text, className = '' } = Astro.props;
+const { imgSrc, alt, text, className = '', aos = 'fade', delay = 0 } = Astro.props;
+// 念のためガード
+const delayMs = Number.isFinite(delay) ? delay : 0;
 ---
 
-<div class={`card ${className}`}>
-    <div class="img__wrapper">
+<div
+    class={`card flex flex-col items-center rounded ${className} sm:justify-between`}
+    data-aos={aos}
+    data-aos-delay={`${delayMs}`}
+    data-aos-once="true"
+>
+    <div class="img__wrapper img-wrapper">
         <img src={imgSrc} alt={alt} class="card__img" />
     </div>
-    <p class="card__text">{text}</p>
+    <p class="card__text text-center">{text}</p>
 </div>
 
 <style>

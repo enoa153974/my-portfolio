@@ -10,6 +10,7 @@
         p:nth-child(1) {
             font-size: 1.75rem;
             letter-spacing: 0.08em;
+            margin-bottom: 0;
         }
 
         p:nth-child(2) {
@@ -35,7 +36,8 @@
             color: var(--main-color);
         }
 
-        .l-column--6 {
+        .l-column--5,
+        .l-column--7{
             @include media-query(md) {
                 width: 100%;
             }

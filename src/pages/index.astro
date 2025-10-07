@@ -2,9 +2,9 @@
 import siteData from '../../siteData.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Intro from '../components/Intro.astro';
+import IntroCardBox from '../components/IntroCardBox.astro';
 import Prof from '../components/Prof.astro';
 import CTAlink from '../components/CTAlink.astro';
-
 
 const pageId = 'home',
     pageMeta = siteData[pageId],
@@ -34,8 +34,11 @@ const currentPath = '/';
     currentPath={currentPath}
 >
     <Intro />
+    <IntroCardBox />
     <Prof />
     <CTAlink
+        title="SNS"
+        subtitle="日々の制作のことや日常のことなどを発信しています"
         items={[
             {
                 text: 'Instagram',

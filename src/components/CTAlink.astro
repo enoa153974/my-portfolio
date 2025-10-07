@@ -7,19 +7,22 @@ interface CtaItem {
 }
 
 interface CtaProps {
+    title: string;
+    subtitle: string;
     items: CtaItem[]; // 複数のCTAデータ
 }
 
-const { items } = Astro.props as CtaProps;
+const { title, subtitle, items } = Astro.props as CtaProps;
 ---
 
 <div class="l-container py-10">
-    <h2 class="text-center en">SNS</h2>
+    <h2 class="text-center en">{title}</h2>
+    <h3 class="text-center font-copy">{subtitle}</h3>
     <div class="cta-image-link-group l-row l-inner sm:flex-col">
         {
             items.map((item, index) => (
-                <div class="cta-image-link l-colomn l-colomn--6">
-                    <a href={item.buttonHref} class="cta-image-link__wrapper">
+                <div class="cta-image-link l-column l-column--6">
+                    <a href={item.buttonHref} target="_blank" rel="noopener noreferrer" class="cta-image-link__wrapper">
                         <img src={item.imgSrc} alt={item.imgAlt} class="cta-image-link__img" />
                         <span class="cta-image-link__text">{item.text}</span>
                     </a>

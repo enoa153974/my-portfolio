@@ -1,0 +1,14 @@
+@use '../../foundation/import.scss' as *;
+
+.card-box {
+    @include media-query(md) {
+        /* レスポンシブでは縦並び幅100％ */
+        .l-column--7 {
+            width: 100%;
+        }
+
+        .l-column--5 {
+            width: 100%;
+        }
+    }
+}
