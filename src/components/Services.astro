@@ -3,10 +3,11 @@ interface ServicesItem {
     image: string;
     alt: string;
     id: string;
-    aos:string;
-    delay:number;
-    duration:number;
+    aos: string;
+    delay: number;
+    duration: number;
     pointTitle: string;
+    pointSubTitle: string;
     text: string;
 }
 
@@ -30,26 +31,34 @@ const { title, items } = Astro.props as {
         ]}
     /> -->
 <section class="services l-wrapper">
-    <div class="l-container py-10 px-6 sm:px-10">
-        <h2 class="en text-center">
-            {title}
-        </h2>
+    <div class="service__container l-container py-10 px-6 sm:px-10">
+        <!-- serviceタイトル -->
+        <div data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
+            <h2 class="en text-center">
+                {title}
+            </h2>
+        </div>
 
+        <!-- service内容各種（index.astroから呼び出し） -->
         {
             items.map((item, index) => (
                 <div class="l-inner sm:px-0">
-                    <div id={item.id} data-aos={item.aos} data-aos-delay={item.delay} data-aos-duration={item.duration}
+                    <div
+                        id={item.id}
+                        data-aos={item.aos}
+                        data-aos-delay={item.delay}
+                        data-aos-duration={item.duration}
                         class={[
                             'services__item', // 共通のベースクラス
                             'l-row',
                             'l-row--gap',
                             'justify-center', // 水平方向中央寄せ
-                            'items-center',//水平方向中央寄せ
+                            'items-center', //水平方向中央寄せ
                             'flex-row', // 水平方向中央寄せ
                             'py-6',
                             'px-6',
                             'sm:flex-col-reverse', // スマホ表示で縦並びに
-                            'sm:px-0', 
+                            'sm:px-0',
                             index % 2 === 0 ? 'flex-reverse' : '' // 奇数番目のアイテムだけ flex-reverse クラスを付ける
                         ].join(' ')}
                     >
@@ -57,12 +66,23 @@ const { title, items } = Astro.props as {
                             <img src={item.image} alt={item.alt} class="item__img block" />
                         </div>
                         <div class="service__item-text l-column l-column--6 sm:text-center">
-                            <h3 class="lead font-bold">{item.pointTitle}</h3>
+                            <h3 class="font-bold">{item.pointTitle}</h3>
+                            <h4 class="font-bold">{item.pointSubTitle}</h4>
                             <p class="pt-4">{item.text}</p>
                         </div>
                     </div>
                 </div>
             ))
         }
+
+        <!-- service内容まとめ -->
+        <div class="pt-10" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800">
+            <h2 class="text-center font-copy">トータルデザインサポート</h2>
+            <h3 class="text-center font-copy">「ロゴも、サイトも、看板も」――全部まとめておまかせください。</h3>
+            <p class="text-center pt-4">ひとつの世界観で統一することで、お店やブランドの印象がぐっと引き立ちます。</p>
+            <p class="text-center">デザインが苦手でも、想いを話してもらえたら、それを形にします。</p>
+            <p class="text-center">ふんわりしたイメージでも大丈夫。</p>
+            <p class="text-center">一緒に、あなたらしい世界観をつくっていきましょう。</p>
+        </div>
     </div>
 </section>

@@ -22,10 +22,10 @@
     .aboutprof__text {
         h2 {
             font-size: var(--font-size-xl);
+            margin-bottom: 1rem;
 
             @include media-query(md) {
                 font-size: var(--font-size-2xl);
-                width: 8em;
                 margin-bottom: 2rem;
             }
         }
@@ -41,9 +41,10 @@
                 grid-template-rows: repeat(4, 1fr);
             }
         }
-
+        /* miyake aoi */
         p:nth-of-type(1) {
             letter-spacing: 0.06em;
+            margin-bottom: 0;
         }
 
         p:nth-of-type(2) {

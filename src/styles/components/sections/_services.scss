@@ -1,6 +1,7 @@
 @use '../../foundation/import.scss' as *;
 
 .service {
+
     &__img-wrapper {
         border: solid 12px #390909;
     }
@@ -8,18 +9,14 @@
     &__item-text {
         p {
             font-size: 1.25rem;
-            @include media-query(md){
+
+            @include media-query(md) {
                 font-size: 1rem;
             }
         }
 
-        .lead {
-            font-size: 1.5rem;
-            @include media-query(md){
-                font-size: 1.25rem;
-            }
-        }
     }
+
 }
 
 .l-inner {

@@ -1,4 +1,79 @@
+@use '../foundation/import.scss' as *;
+
 /* ボタンの上書きデザインを記述 */
+/*introセクションのボタン */
+.intro__btn-box {
+    gap: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+    @include media-query(md) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .btn--primary.intro__btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+        width: clamp(9.375rem, 5.814rem + 7.43vw, 12.5rem);
+        display: flex;
+        align-items: center;
+        opacity: 0.5;
+        box-shadow: 0 2px 0 rgba(0, 0, 0, .06);
+        transition: opacity .2s ease, transform .2s ease, box-shadow .2s ease;
+        /* 左マージンをマイナスで重なりを作る */
+        margin-left: -15px;
+        color: #333;
+        text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+
+        @include media-query(md) {
+            margin-left: 0;
+            width: 100%;
+            opacity: 1;
+        }
+    }
+
+    /* 先頭のwebデザインボタンだけは重なりマージンを無効化 */
+    .btn--primary.intro__btn:first-child {
+        margin-left: 0;
+    }
+
+
+    /* 通常：α値 0.75 */
+    .btn--web {
+        background-color: rgba(var(--web-base), 0.75);
+    }
+
+    .btn--grf {
+        background-color: rgba(var(--grf-base), 0.75);
+    }
+
+    .btn--illust {
+        background-color: rgba(var(--illust-base), 0.75);
+    }
+
+    .btn--pop {
+        background-color: rgba(var(--pop-base), 0.75);
+    }
+
+    /* hover：共通スタイル */
+    .btn--web:hover,
+    .btn--grf:hover,
+    .btn--illust:hover,
+    .btn--pop:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .08);
+        outline: 3px solid rgba(0, 0, 0, .08);
+        outline-offset: 2px;
+    }
+}
 
 /*profセクションのボタン */
 .btn--push.contact__link span {
@@ -50,7 +125,7 @@
 }
 
 /* worksボタンのデザイン */
-.btn--push.works__btn span{
+.btn--push.works__btn span {
     background-color: var(--main-color);
     color: #fff;
 }

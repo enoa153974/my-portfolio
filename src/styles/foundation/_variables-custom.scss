@@ -15,6 +15,13 @@
     /* テキストの色(sub) */
     --text-color-sub: #09947b;
 
+
+    /* ボタンから―分け */
+    --web-base:  46, 73, 157;
+    --grf-base: 209, 50, 9;
+    --illust-base: 255, 222, 0;
+    --pop-base: 199, 199, 199;
+
     /* === フォント設定 === */
     /* 日本語フォント */
     --font-jp: 'Noto Sans JP',
@@ -23,7 +30,7 @@
     --font-en: 'Pacifico',
         cursive;
     /* キャッチコピー専用フォント */
-    --font-copy:'Klee One',
+    --font-copy: 'Klee One',
         serif;
 
     /* === フォントサイズ（可変 / 基準：1440px） === */
