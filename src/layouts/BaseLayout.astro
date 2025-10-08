@@ -9,23 +9,29 @@ import AOSInit from '../components/AOSInit.jsx';
 
 const siteData: siteDataType = {
     siteName: import.meta.env.PUBLIC_SITENAME,
+    // envはあくまで補助。まずはAstroの値から決める
     siteUrl: import.meta.env.PUBLIC_ENVURL,
     pageName: Astro.props.pageName,
     title: Astro.props.title,
     description: Astro.props.description,
-    ogpImage: Astro.props.ogpImage,
+    ogpImage: Astro.props.ogpImage, // 例: "/assets/images/ogp_image.jpg"（先頭スラッシュ）
     type: Astro.props.type,
-    path: Astro.props.path,
-    ldJSON: {
-        '@context': 'http://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: Astro.props.ldJSON
-    }
+    path: Astro.props.path, // 例: "/works" or "/"
+    ldJSON: { '@context': 'http://schema.org', '@type': 'BreadcrumbList', itemListElement: Astro.props.ldJSON }
 };
 
+// ★ ベースURLの決定（本番: Astro.site / dev・preview: Astro.url.origin）
+// どちらも無ければ env、最後は相対にフォールバック
+const base =
+    (Astro.site && Astro.site.href) ||
+    (typeof Astro.url !== 'undefined' ? Astro.url.origin : '') ||
+    (siteData.siteUrl ?? '');
+
+const absUrl = base ? new URL(siteData.path || '/', base).href : siteData.path || '/';
+const absImg = base ? new URL(siteData.ogpImage, base).href : siteData.ogpImage;
+const isTopPage = new URL(Astro.request.url).pathname === '/';
+
 const { currentPath, ...otherProps } = Astro.props;
-const url = new URL(Astro.request.url);
-const isTopPage = url.pathname === '/';
 ---
 
 <!doctype html>
@@ -36,16 +42,23 @@ const isTopPage = url.pathname === '/';
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!--ページタイトル-->
-        <title>aoi miyake’s Atelier | 三宅葵のポートフォリオサイト</title>
+        <title>{siteData.title}</title>
 
         <!-- ページ個別メタデータ -->
         <meta name="description" content={siteData.description} />
+        <!-- OGP -->
         <meta property="og:title" content={siteData.title} />
         <meta property="og:description" content={siteData.description} />
         <meta property="og:type" content={siteData.type} />
-        <meta property="og:url" content={`${siteData.siteUrl}${siteData.path}`} />
-        <meta property="og:image" content={`${siteData.siteUrl}${siteData.ogpImage}`} />
+        <meta property="og:url" content={absUrl} />
+        <meta property="og:image" content={absImg} />
         <meta property="og:site_name" content={siteData.siteName} />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={siteData.title} />
+        <meta name="twitter:description" content={siteData.description} />
+        <meta name="twitter:image" content={absImg} />
 
         <!-- 外部フォント-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -59,7 +72,7 @@ const isTopPage = url.pathname === '/';
         <link rel="stylesheet" href="/assets/style/slick.css" />
         <link rel="stylesheet" href="/assets/style/slick-theme.css" />
         <!-- ページ全体のcssを読み込み -->
-        <link rel="stylesheet" href="/assets/styles/style.css" /> 
+        <link rel="stylesheet" href="/assets/styles/style.css" />
     </head>
 
     <body class="has-fixed-header">
