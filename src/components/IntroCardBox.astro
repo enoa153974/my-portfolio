@@ -1,6 +1,7 @@
 ---
 import Card from './Card.astro';
 import Button from '../components/Button';
+import siteData from '../../siteData.mjs';
 ---
 
 <section class="card-box l-wrapper">
@@ -45,7 +46,7 @@ import Button from '../components/Button';
                 </div>
             </div>
             <div class="flex justify-end">
-                <Button href="/menu" className="works__btn" variant="push">
+                <Button href={siteData.works.path} className="works__btn" variant="push">
                     <span>もっとみる</span>
                 </Button>
             </div>
