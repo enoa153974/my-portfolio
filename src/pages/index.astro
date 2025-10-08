@@ -5,6 +5,7 @@ import Intro from '../components/Intro.astro';
 import IntroCardBox from '../components/IntroCardBox.astro';
 import Prof from '../components/Prof.astro';
 import CTAlink from '../components/CTAlink.astro';
+import Button from '../components/Button';
 
 const pageId = 'home',
     pageMeta = siteData[pageId],
@@ -54,4 +55,9 @@ const currentPath = '/';
             }
         ]}
     />
+    <div class="flex justify-end l-inner py-10">
+        <Button href={siteData.columns.path} className="columns__btn" variant="secondary">
+            <span>コラムページも！ ＞ </span>
+        </Button>
+    </div>
 </BaseLayout>

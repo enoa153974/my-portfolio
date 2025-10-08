@@ -75,6 +75,14 @@
     }
 }
 
+/* serviceボタンのデザイン (TOPページのできることの部分の詳しく見るボタン)*/
+.btn--secondary.service__btn:hover {
+    background: linear-gradient(135deg, #ffffff, #ffde00);
+    transform: translateY(-2px);
+    background-color: #ffde00;
+    color: #333;
+}
+
 /*profセクションのボタン */
 .btn--push.contact__link span {
     background-color: var(--main-color);
@@ -127,5 +135,19 @@
 /* worksボタンのデザイン */
 .btn--push.works__btn span {
     background-color: var(--main-color);
+    color: #fff;
+}
+
+/* columnsボタンのデザイン */
+.btn--secondary.columns__btn {
+
+    color: var(--sub-color);
+    border: solid 3px var(--sub-color);
+}
+
+.btn--secondary.columns__btn:hover {
+    background: linear-gradient(135deg, #ff754f, #b92b08);
+    transform: translateY(-2px);
+    background-color: var(--sub-color);
     color: #fff;
 }
