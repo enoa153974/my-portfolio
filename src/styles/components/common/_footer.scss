@@ -13,7 +13,13 @@
         p {
             @include media-query(md) {
                 font-size: 0.75rem;
+                margin-bottom: 0;
             }
+        }
+        span{
+            @include media-query(md){
+                display: none;
+            }    
         }
 
         .hover-color-change {

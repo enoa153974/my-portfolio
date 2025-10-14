@@ -3,7 +3,7 @@ import siteData from '../../siteData.mjs';
 ---
 
 <footer class="footer l-container-full bg-main flex flex-col justify-center items-center w-full">
-    <div class="footer__inner flex items-center justify-center pt-4">
+    <div class="footer__inner flex items-center justify-center pt-4 sm:flex-col sm:pt-0">
         <a href={siteData.home.path}><p class="hover-color-change">home</p></a>
         <span class="ml-4 mr-4 color-white">|</span>
         <a href={siteData.about.path}><p class="hover-color-change">about</p></a>
@@ -14,5 +14,5 @@ import siteData from '../../siteData.mjs';
         <span class="ml-4 mr-4 color-white">|</span>
         <a href={siteData.contact.path}><p class="hover-color-change">contact</p></a>
     </div>
-    <p class="footer__copyright text-center color-white pb-4">&copy; aoi miyake’s Atelier. 無断転載を禁じます。</p>
+    <p class="footer__copyright text-center color-white pb-4 sm:pb-0">&copy; aoi miyake’s Atelier. 無断転載を禁じます。</p>
 </footer>
