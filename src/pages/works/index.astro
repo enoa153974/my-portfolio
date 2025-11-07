@@ -1,14 +1,19 @@
 ---
 import siteData from '../../../siteData.mjs';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Gallery from '../../components/Gallery.astro';
+import WebGallery from '../../components/WebGallery.astro';
+import LogoGallery from '../../components/LogoGallery.astro';
+import IllustGallery from '../../components/IllustGallery.astro';
+import WorksNav from '../../components/WorksNav.astro';
+import MenuGallery from '../../components/MenuGallery.astro';
+/* import Gallery from '../../components/Gallery.astro'; */
 
 const pageId = 'works',
     pageMeta = siteData[pageId],
     ldJSON = [
         {
             '@type': 'ListItem',
-            position: 3,
+            position: 2,
             item: {
                 '@id': `${import.meta.env.PUBLIC_ENVURL}${pageMeta.path}`,
                 name: 'works'
@@ -17,12 +22,13 @@ const pageId = 'works',
     ];
 
 const currentPath = '/works';
+const pageTitle = pageMeta.title;
 ---
 
 <!--BaseLayout.hemlの<slot />内に代入される -->
 <BaseLayout
     pageName={pageId}
-    title={pageMeta.title}
+    title={pageTitle}
     description={pageMeta.description}
     ogpImage={pageMeta.ogpImage}
     type={pageMeta.type}
@@ -30,14 +36,30 @@ const currentPath = '/works';
     ldJSON={ldJSON}
     currentPath={currentPath}
 >
-        <Gallery
-        title="works"
-        gallerys={[
-            {
-                image: '/assets/image/work_web_01.jpg',
-                alt: ''
-            }
-        ]}
-    />
+    <!-- サイド -->
+    <Fragment slot="side">
+        <WorksNav active="all" />
+    </Fragment>
 
+    <!-- メインコンテンツ -->
+    <Fragment slot="main">
+        <h2 class="gallery__heading font-bold text-center en pt-10">gallery</h2>
+
+        <section data-gallery-cat="web">
+            <WebGallery />
+        </section>
+
+        <section data-gallery-cat="menu">
+            <MenuGallery />
+        </section>
+
+        <section data-gallery-cat="logo">
+            <LogoGallery />
+        </section>
+
+        <section data-gallery-cat="illust">
+            <IllustGallery />
+        </section>
+
+    </Fragment>
 </BaseLayout>

@@ -1,0 +1,49 @@
+---
+export interface Props {
+    active?: 'all' | 'web' | 'menu' | 'logo' | 'illust';
+}
+
+const { active = 'all' } = Astro.props;
+
+const basePath = '/works';
+
+type NavItem = {
+    key: 'all' | 'web' | 'menu' | 'logo' | 'illust';
+    label: string;
+    href?: string; // あってもなくてもOK
+};
+
+const items: NavItem[] = [
+    { key: 'all', label: 'すべて', href: basePath },
+    { key: 'web', label: 'Web' },
+    { key: 'menu', label: 'メニュー' },
+    { key: 'logo', label: 'ロゴ' },
+    { key: 'illust', label: 'イラスト / その他' }
+];
+
+// keyごとに href を決める
+const buildHref = (item: NavItem) => {
+    if (item.href) return item.href; // all だけ /works
+    return `${basePath}?cat=${item.key}`; // それ以外は ?cat=◯◯
+};
+---
+
+<div class="works__section l-container pl-4">
+    <nav class="c-worksNav works__nav py-20" aria-label="作品カテゴリ">
+        <ul class="c-worksNav__list py-2 px-2 text-center font-copy font-bold">
+            {
+                items.map((i) => (
+                    <li class={`c-worksNav__item ${active === i.key ? 'is-active' : ''}`}>
+                        <a
+                            href={buildHref(i)}
+                            class="c-worksNav__link"
+                            aria-current={active === i.key ? 'page' : undefined}
+                        >
+                            {i.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</div>

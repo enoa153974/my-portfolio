@@ -57,7 +57,8 @@ export default defineConfig({
     markdown: {
         syntaxHighlight: 'shiki',
         gfm: false,
-        remarkPlugins: [],
+        remarkPlugins: ['remark-breaks'], 
+        extendDefaultPlugins: true,
         rehypePlugins: [],
         remarkRehype: {}
     }

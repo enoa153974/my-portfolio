@@ -1,4 +1,7 @@
-
+.works__section{
+    .l-inner{
+        padding-left: 2%;
+    }
 /* ギャラリーのグリッドスタイル */
     /* 画面幅によって自動で並べてくれる */
     .gallery__grid {
@@ -14,3 +17,9 @@
     .machikado__url.hover-color-change:hover{
         color: var(--main-color);
     }
+
+    .works__nav{
+        margin-top: 150px;
+        font-size: 1.25rem;
+    }
+}

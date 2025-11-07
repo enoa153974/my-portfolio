@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import type { siteDataType } from '../types/siteData';
 import AOSInit from '../components/AOSInit.jsx';
-/* import '../styles/style.scss'; */
+import '../styles/style.scss';
 
 const siteData: siteDataType = {
     siteName: import.meta.env.PUBLIC_SITENAME,
@@ -29,8 +29,13 @@ const base =
 
 const absUrl = base ? new URL(siteData.path || '/', base).href : siteData.path || '/';
 const absImg = base ? new URL(siteData.ogpImage, base).href : siteData.ogpImage;
-const isTopPage = new URL(Astro.request.url).pathname === '/';
 
+// 現在のパス取得（dev/previewでも安全）
+const pathname = typeof Astro.url !== 'undefined' ? Astro.url.pathname : new URL(Astro.request.url).pathname;
+
+const isTopPage = pathname === '/';
+// /works と /works/xxx のどちらでも「worksページ」扱い
+const isWorksPage = pathname === '/works' || pathname.startsWith('/works/');
 const { currentPath, ...otherProps } = Astro.props;
 ---
 
@@ -72,7 +77,7 @@ const { currentPath, ...otherProps } = Astro.props;
         <link rel="stylesheet" href="/assets/style/slick.css" />
         <link rel="stylesheet" href="/assets/style/slick-theme.css" />
         <!-- ページ全体のcssを読み込み -->
-        <link rel="stylesheet" href="/assets/styles/style.css" />
+        <!-- <link rel="stylesheet" href="/assets/styles/style.css" /> -->
     </head>
 
     <body class="has-fixed-header">
@@ -85,10 +90,23 @@ const { currentPath, ...otherProps } = Astro.props;
                 <Header currentPath={currentPath} class="header" />
             )
         }
-        <main>
-            <div class="main-wrapper">
-                <slot />
-            </div>
+        <main class={isWorksPage ? 'main main--1col' : 'main main--2col'}>
+            {
+                isWorksPage ? (
+                    <div class="l-row sm:flex-col">
+                        <div class="l-column l-column--2">
+                            <slot name="side" />
+                        </div>
+                        <div class="l-column l-column--10">
+                            <slot name="main" />
+                        </div>
+                    </div>
+                ) : (
+                    <div class="main-wrapper">
+                        <slot />
+                    </div>
+                )
+            }
         </main>
 
         <Footer currentPath={currentPath} />

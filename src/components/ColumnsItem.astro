@@ -4,7 +4,7 @@ interface Props {
     date: string;
     category: string;
     title: string;
-    image?: string;
+    image?: any;
     slug?: string;
 }
 
@@ -16,6 +16,8 @@ const categoryClassMap: Record<string, string> = {
     news: 'badge--news'
 };
 const categoryClass = categoryClassMap[category] ?? 'badge--default';
+
+const imageSrc = typeof image === 'string' ? image : image?.src;
 ---
 
 <!-- columns一覧ページのサムネ画像＋日付・カテゴリ・タイトルの表示 -->
@@ -25,7 +27,7 @@ const categoryClass = categoryClassMap[category] ?? 'badge--default';
         class="columns-item__inner l-row l-row--gap py-6 px-6 sm:pt-3 sm:pb-3 sm:px-0 sm:flex-col sm:items-center"
     >
         <div class="l-column l-column--4 img-wrapper img-wrapper--aspect-4-3 rounded">
-            <img src={image} alt="" class="rounded" />
+            {imageSrc && <img src={imageSrc} alt={title} class="rounded" loading="lazy" />}
         </div>
         <div class="l-column l-column--2 flex flex-col justify-center">
             <div class="columns-date font-bold">{date}</div>
