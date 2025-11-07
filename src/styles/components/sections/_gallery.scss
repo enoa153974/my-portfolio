@@ -1,25 +1,54 @@
-.works__section{
-    .l-inner{
-        padding-left: 2%;
-    }
-/* ギャラリーのグリッドスタイル */
-    /* 画面幅によって自動で並べてくれる */
-    .gallery__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 1.5rem;
+@use '../../foundation/import.scss' as *;
+
+.main--works {
+
+    .l-column--2 {
+        @include media-query(md) {
+            width: 100%;
+        }
     }
 
-    .machikado__url{
-        letter-spacing: 0.05em;
+    
+    .l-column--10 {
+        @include media-query(md) {
+            width: 100%;
+        }
     }
 
-    .machikado__url.hover-color-change:hover{
-        color: var(--main-color);
-    }
+    .works__section {
+        .l-inner {
+            padding-left: 2%;
+        }
 
-    .works__nav{
-        margin-top: 150px;
-        font-size: 1.25rem;
+        /* ギャラリーのグリッドスタイル */
+        /* 画面幅によって自動で並べてくれる */
+        .gallery__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .machikado__url {
+            letter-spacing: 0.05em;
+        }
+
+        .machikado__url.hover-color-change:hover {
+            color: var(--main-color);
+        }
+
+        .works__nav {
+            margin-top: 150px;
+            font-size: 1.25rem;
+            @include media-query(md){
+                margin-top: 0;
+            }
+        }
+
+        .c-worksNav__list {
+            gap: .5rem;
+            overflow-x: auto;
+            padding: .5rem 1rem;
+        }
+
     }
 }

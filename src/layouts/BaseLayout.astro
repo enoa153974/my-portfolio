@@ -90,7 +90,7 @@ const { currentPath, ...otherProps } = Astro.props;
                 <Header currentPath={currentPath} class="header" />
             )
         }
-        <main class={isWorksPage ? 'main main--1col' : 'main main--2col'}>
+        <main class={isWorksPage ? 'main main--works':'main main--default'}>
             {
                 isWorksPage ? (
                     <div class="l-row sm:flex-col">
