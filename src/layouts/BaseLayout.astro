@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import type { siteDataType } from '../types/siteData';
 import AOSInit from '../components/AOSInit.jsx';
-import '../styles/style.scss';
+/* import '../styles/style.scss'; */
 
 const siteData: siteDataType = {
     siteName: import.meta.env.PUBLIC_SITENAME,
@@ -77,7 +77,7 @@ const { currentPath, ...otherProps } = Astro.props;
         <link rel="stylesheet" href="/assets/style/slick.css" />
         <link rel="stylesheet" href="/assets/style/slick-theme.css" />
         <!-- ページ全体のcssを読み込み -->
-        <!-- <link rel="stylesheet" href="/assets/styles/style.css" /> -->
+        <link rel="stylesheet" href="/assets/styles/style.css" />
     </head>
 
     <body class="has-fixed-header">
