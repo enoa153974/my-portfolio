@@ -12,11 +12,18 @@
     .header__inner {
         padding: 0 5%;
         gap: 0.5rem;
+            @include media-query(lg){
+                padding: 0 2%;
+            }
+        
         .header__nav {
+            .header__nav-icon{
+                min-width: 100px;
+            }
             .header__brush {
                 aspect-ratio: 2/1.2;
                 max-width: 180px;
-                min-width: 90px;
+                min-width: 80px;
                 transform: rotate(230deg);
                 transition: rotate ease 0.5s;
             }

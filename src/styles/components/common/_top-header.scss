@@ -55,7 +55,7 @@
 
             .header__logo {
                 height: 100%;
-                margin-top: 26%;
+                margin-top:25%;
 
                 @include media-query(md) {
                     display: none;
@@ -68,8 +68,8 @@
 
                 @include media-query(md) {
                     display: flex;
-                    padding: 2rem;
-                    width: 70%;
+                    padding: 0;
+                    width: 48%;
                 }
             }
 

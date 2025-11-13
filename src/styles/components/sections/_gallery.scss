@@ -3,12 +3,19 @@
 .main--works {
 
     .l-column--2 {
+        position: sticky;
+        top: 2rem;
+        /* ヘッダー分あけるならここ調整 */
+        align-self: flex-start;
+
+        /* 高さ揃え問題の回避に有効 */
         @include media-query(md) {
+            position: static;
             width: 100%;
         }
     }
 
-    
+
     .l-column--10 {
         @include media-query(md) {
             width: 100%;
@@ -39,7 +46,8 @@
         .works__nav {
             margin-top: 150px;
             font-size: 1.25rem;
-            @include media-query(md){
+
+            @include media-query(md) {
                 margin-top: 0;
             }
         }
