@@ -54,9 +54,58 @@
 
         .c-worksNav__list {
             gap: .5rem;
-            overflow-x: auto;
             padding: .5rem 1rem;
+
+            h2 {
+                font-size: 1.75rem;
+                font-weight: bold;
+                background-color: #e1eef5;
+                position: relative;
+                    @include media-query(md){
+                        display: none;
+                    }
+            }
+
+            h2:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                border-width: 0 20px 20px 0;
+                border-style: solid;
+                border-color: var(--main-color) var(--bg-color) var(--main-color);
+                box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+            }
         }
 
+        .c-worksNav__link {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color: #333;
+            padding: 0.2em 1em;
+        }
+
+        /* ホバー時の波紋 */
+        .c-worksNav__link:hover::before {
+            content: "";
+            position: absolute;
+            left: 30%;
+            top: 20%;
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            border: 1px solid var(--sub-color);
+            opacity: 1;
+            animation: nav-ripple .8s ease-out forwards;
+        }
+
+        @keyframes nav-ripple {
+            to {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        }
     }
 }

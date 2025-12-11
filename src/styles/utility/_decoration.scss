@@ -27,6 +27,39 @@
     background: #ddd;
 }
 
+/* 消えていく下線 */
+.heading-gradient {
+    display: inline-block;
+    position: relative;
+    padding: 0.25em 0;
+    --line-height: 8px;
+    /* デフォルトの太さ */
+    --line-color: rgb(230, 90, 90);
+    /* 必要なら色も変数化 */
+}
+
+.heading-gradient::after {
+    content: "";
+    display: block;
+    height: var(--line-height);
+    background: linear-gradient(to right, var(--line-color), transparent);
+    border-radius: 50%;
+}
+
+/* 太さの調整 */
+.heading-gradient--thin {
+    --line-height: 4px;
+}
+
+/* デフォルト */
+.heading-gradient--medium {
+    --line-height: 8px;
+}
+
+.heading-gradient--thick {
+    --line-height: 15px;
+}
+
 /* 見出しの先頭に縦線を入れるクラス */
 .u-border-left {
     position: relative;
@@ -42,6 +75,7 @@
     width: 4px;
     background-color: var(--accent-color);
 }
+
 
 /* ホバーしたら下線が左から右に流れるクラス */
 .hover-underline {
