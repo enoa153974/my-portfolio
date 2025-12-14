@@ -122,6 +122,23 @@
     opacity: 0.6;
 }
 
+/* ホバーしたら上に少し動くクラス */
+.hover-move-up {
+    transition: transform 0.5s;
+}
+.hover-move-up:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ホバーしたら左に少し動くクラス */
+.hover-move-left {
+    transition: transform 0.5s;
+}
+.hover-move-left:hover {
+    transform: translateX(-5px);
+}
+
 /* 付箋風のタグデザイン */
 .tag {
     display: inline-block;

@@ -37,7 +37,7 @@ const buildHref = (item: NavItem) => {
                     <li class={`c-worksNav__item ${active === i.key ? 'is-active' : ''}`}>
                         <a
                             href={buildHref(i)}
-                            class="c-worksNav__link"
+                            class="c-worksNav__link hover-move-left"
                             aria-current={active === i.key ? 'page' : undefined}
                         >
                             {i.label}
