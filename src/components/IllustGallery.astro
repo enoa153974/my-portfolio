@@ -1,8 +1,16 @@
+---
+import Button from '../components/Button';
+---
+
 <div class="works__section l-wrapper">
-    <div class="l-container">
+    <div class="l-container pb-10">
         <div class="l-inner">
             <h3 class="pt-10">似顔絵</h3>
-            <p>□ CLIPSTUDIOPAINT / AdobePhotoshop / canva使用</p>
+            <div class="py-2">
+                <p class="tag">CLIPSTUDIOPAINT</p>
+                <p class="tag">AdobePhotoshop</p>
+                <p class="tag">canva</p>
+            </div>
             <div class="gallery__grid py-6">
                 <div class="img-wrapper img-wrapper--aspect-1-1">
                     <img src="/assets/image/work_illust_02.png" alt="" class="w-full" />
@@ -16,10 +24,22 @@
             </div>
 
             <h3 class="pt-10">アイコンイラスト</h3>
-            <p>□ CLIPSTUDIOPAINT / AdobePhotoshop / canva使用</p>
+            <div class="py-2">
+                <p class="tag">CLIPSTUDIOPAINT</p>
+                <p class="tag">AdobePhotoshop</p>
+                <p class="tag">canva</p>
+            </div>
             <div class="gallery__grid py-6">
-                <div class="img-wrapper img-wrapper--aspect-1-1">
-                    <img src="/assets/image/work_icon_01.jpg" alt="" class="w-full" />
+                <div>
+                    <div class="img-wrapper img-wrapper--aspect-1-1">
+                        <img src="/assets/image/work_icon_01.jpg" alt="" class="w-full" />
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="mt-4">ゆるふわデフォルメキャラのSNSアイコンをご依頼いただきました</p>
+                        <Button href="/columns/2025-11-13-icon" className="work-link" variant="push">
+                            <span><i class="fa-solid fa-pen-to-square"></i> 制作レポを見る</span>
+                        </Button>
+                    </div>
                 </div>
                 <div class="img-wrapper img-wrapper--aspect-1-1">
                     <img src="/assets/image/work_icon_02.jpg" alt="" class="w-full" />
@@ -28,12 +48,23 @@
 
             <!-- その他 -->
             <h3 class="pt-10">ウェディング / その他</h3>
-            <p>□ CLIPSTUDIOPAINT / AdobePhotoshop / canva使用</p>
+            <div class="py-2">
+                <p class="tag">CLIPSTUDIOPAINT</p>
+                <p class="tag">AdobePhotoshop</p>
+                <p class="tag">canva</p>
+            </div>
             <div class="gallery__grid py-6">
-                <div class="img-wrapper">
-                    <img src="/assets/image/work_wedding_01.jpg" alt="" class="w-full" />
+                <div>
+                    <div class="img-wrapper">
+                        <img src="/assets/image/work_wedding_01.jpg" alt="" class="w-full" />
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="mt-4">結婚式の似顔絵 + ムービー作成をご依頼いただきました</p>
+                        <Button href="/columns/2025-08-31-wedding" className="work-link" variant="push">
+                            <span><i class="fa-solid fa-pen-to-square"></i> 制作レポを見る</span>
+                        </Button>
+                    </div>
                 </div>
-
                 <div class="img-wrapper">
                     <img src="/assets/image/work_illust_01.png" alt="" class="w-full" />
                 </div>
