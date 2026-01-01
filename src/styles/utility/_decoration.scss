@@ -139,6 +139,24 @@
     transform: translateX(-5px);
 }
 
+/* hoverでふわっと拡大 */
+.hover-size-up {
+    display: inline-block; /* a, img などにも効かせやすい */
+    transform: translateZ(0); /* チラつき対策 */
+    transition: transform .5s ease, box-shadow .5s ease;
+    will-change: transform;
+}
+
+.hover-size-up:hover,
+.hover-size-up:focus-visible {
+    transform: scale(1.03);
+}
+
+/* クリック時に少し戻す（好みで） */
+.hover-size-up:active {
+    transform: scale(1.01);
+}
+
 /* 付箋風のタグデザイン */
 .tag {
     display: inline-block;
