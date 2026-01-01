@@ -4,6 +4,7 @@ import Button from '../../components/Button';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Aboutprof from '../../components/Aboutprof.astro';
 import Services from '../../components/Services.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
 
 const pageId = 'about',
     pageMeta = siteData[pageId],
@@ -87,4 +88,10 @@ const currentPath = '/about';
             <span>制作物：works はこちら</span>
         </Button>
     </div>
+    <ContactCTA
+        titleLine1="お問い合わせフォームからでも"
+        titleLine2="公式ラインからでもお気軽にどうぞ！"
+        buttonText="お問い合わせ"
+        backgroundImage = "/assets/image/intro.jpg"
+    />
 </BaseLayout>

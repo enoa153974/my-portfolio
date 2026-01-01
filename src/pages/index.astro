@@ -5,6 +5,7 @@ import Intro from '../components/Intro.astro';
 import IntroCardBox from '../components/IntroCardBox.astro';
 import Prof from '../components/Prof.astro';
 import CTAlink from '../components/CTAlink.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 import Button from '../components/Button';
 
 const pageId = 'home',
@@ -60,4 +61,10 @@ const currentPath = '/';
             <span>コラムページも！ ＞ </span>
         </Button>
     </div>
+    <ContactCTA
+        titleLine1="料金のご相談だけでもOK"
+        titleLine2="初めてのご依頼も丁寧に対応します"
+        buttonText="無料で相談する"
+        backgroundImage = "/assets/image/contact_cta_bg.jpg"
+    />
 </BaseLayout>

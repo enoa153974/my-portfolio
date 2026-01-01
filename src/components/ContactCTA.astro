@@ -1,0 +1,45 @@
+---
+import Button from '../components/Button';
+import siteData from '../../siteData.mjs';
+
+const {
+    titleLine1 = 'ご相談だけでもOK',
+    titleLine2 = '初めてのご依頼も丁寧に対応します',
+    buttonText = 'お問い合わせ',
+    backgroundImage = '/assets/image/contact_cta_bg.jpg'
+} = Astro.props;
+---
+
+<section class="contact-cta l-container img-wrapper">
+    <img
+        src={backgroundImage}
+        alt=""
+        class="contact-cta__bg position-absolute"
+        loading="lazy"
+    />
+
+    <div class="contact-cta__overlay position-relative">
+        <div class="contact-cta__inner text-center py-16 px-6">
+            <h2 class="contact-cta__title text-white">
+                <span>{titleLine1}</span><br />
+                <span>{titleLine2}</span>
+            </h2>
+            <div class="flex flex-col">
+                <Button
+                    href={siteData.contact.path}
+                    className="contact-cta__button hover-size-up mx-auto"
+                    variant="secondary"
+                >
+                    <span>{buttonText}</span>
+                </Button>
+                <Button
+                    href="https://lin.ee/ql7rzfC"
+                    className="contact-cta__line-button hover-size-up mx-auto flex justify-center items-center"
+                    variant="secondary"
+                >
+                    <span><i class="fa-brands fa-line"></i></span>
+                </Button>
+            </div>
+        </div>
+    </div>
+</section>
