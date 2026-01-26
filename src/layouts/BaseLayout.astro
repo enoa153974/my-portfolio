@@ -49,6 +49,18 @@ const { currentPath, ...otherProps } = Astro.props;
         <!--ページタイトル-->
         <title>{siteData.title}</title>
 
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4HEYGF36M"></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-V4HEYGF36M');
+        </script>
+
         <!-- ページ個別メタデータ -->
         <meta name="description" content={siteData.description} />
         <!-- OGP -->
@@ -90,7 +102,7 @@ const { currentPath, ...otherProps } = Astro.props;
                 <Header currentPath={currentPath} class="header" />
             )
         }
-        <main class={isWorksPage ? 'main main--works':'main main--default'}>
+        <main class={isWorksPage ? 'main main--works' : 'main main--default'}>
             {
                 isWorksPage ? (
                     <div class="l-row sm:flex-col">
