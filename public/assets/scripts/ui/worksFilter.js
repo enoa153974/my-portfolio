@@ -1,6 +1,6 @@
 
 export function worksFilter(){(() => {
-        const allowed = ['web', 'menu', 'logo', 'illust'];
+        const allowed = ['web', 'menu', 'logo', 'illust','app'];
         const params = new URLSearchParams(window.location.search);
         const cat = params.get('cat');
 

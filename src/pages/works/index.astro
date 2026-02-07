@@ -6,6 +6,7 @@ import LogoGallery from '../../components/LogoGallery.astro';
 import IllustGallery from '../../components/IllustGallery.astro';
 import WorksNav from '../../components/WorksNav.astro';
 import MenuGallery from '../../components/MenuGallery.astro';
+import AppGallery from '../../components/AppGallery.astro';
 /* import Gallery from '../../components/Gallery.astro'; */
 
 const pageId = 'works',
@@ -59,6 +60,10 @@ const pageTitle = pageMeta.title;
 
         <section data-gallery-cat="illust">
             <IllustGallery />
+        </section>
+
+        <section data-gallery-cat="app">
+            <AppGallery />
         </section>
 
     </Fragment>

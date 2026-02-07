@@ -1,0 +1,65 @@
+---
+import Gallery from '../components/Gallery.astro';
+import Button from '../components/Button';
+---
+
+<div class="works__section l-wrapper">
+    <div class="l-container">
+        <div class="l-inner pb-4">
+            <h3 class="pt-10">webアプリケーション開発</h3>
+
+            <div class="mt-10">
+                <h4 class="font-bold py-2">タクシー運行支援アプリケーション / 個人開発</h4>
+
+                <div class="py-2">
+                    <p class="tag">html</p>
+                    <p class="tag">css</p>
+                    <p class="tag">javascript</p>
+                </div>
+            </div>
+
+            <!-- 概要 -->
+            <p class="work-card__lead mt-2">
+                タクシードライバーの実務を想定し、稼働時間・売上・業務ログを
+                一元管理するために開発した個人開発Webアプリです。
+            </p>
+
+            <!-- ポイント -->
+            <ul class="work-card__points mt-4">
+                <li>タクシーメーターを意識した、直感的に操作できるUI</li>
+                <li>日付を跨ぐ勤務にも対応した、稼働時間の自動計算</li>
+                <li>運行中に必要なツールへワンタップでアクセスできる導線設計</li>
+                <li>月別・曜日別に売上を可視化し、振り返りに活用可能</li>
+            </ul>
+
+            <!-- 補足 -->
+            <p class="work-card__note mt-4">
+                ※ 現在は実運用を優先しており、データの編集・削除は管理側から行っています。
+                今後、UI上での編集機能を実装予定です。
+            </p>
+            <Gallery
+                title=""
+                gallerys={[
+                    {
+                        image: '/assets/image/work_app_taxi_01.jpg',
+                        alt: ''
+                    },
+                    {
+                        image: '/assets/image/work_app_taxi_02.jpg',
+                        alt: ''
+                    },
+                    {
+                        image: '/assets/image/work_app_taxi_03.jpg',
+                        alt: ''
+                    }
+                ]}
+            />
+
+            <div class="flex justify-end">
+                <Button href="/columns/2025-12-11-cafe-new" className="app-link ml-6" variant="push">
+                    <span><i class="fa-solid fa-pen-to-square"></i> 詳細を見る</span>
+                </Button>
+            </div>
+        </div>
+    </div>
+</div>

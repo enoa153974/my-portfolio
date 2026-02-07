@@ -1,6 +1,6 @@
 ---
 export interface Props {
-    active?: 'all' | 'web' | 'menu' | 'logo' | 'illust';
+    active?: 'all' | 'web' | 'menu' | 'logo' | 'illust' | 'app';
 }
 
 const { active = 'all' } = Astro.props;
@@ -8,7 +8,7 @@ const { active = 'all' } = Astro.props;
 const basePath = '/works';
 
 type NavItem = {
-    key: 'all' | 'web' | 'menu' | 'logo' | 'illust';
+    key: 'all' | 'web' | 'menu' | 'logo' | 'illust' | 'app';
     label: string;
     href?: string; // あってもなくてもOK
 };
@@ -18,7 +18,8 @@ const items: NavItem[] = [
     { key: 'web', label: 'Web' },
     { key: 'menu', label: 'メニュー' },
     { key: 'logo', label: 'ビジネス' },
-    { key: 'illust', label: 'イラスト' }
+    { key: 'illust', label: 'イラスト' },
+    { key: 'app', label: 'WEBアプリ' }
 ];
 
 // keyごとに href を決める

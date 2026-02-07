@@ -9,13 +9,28 @@ export function gallerySlider() {
                 variableWidth: false,
                 autoplay: false,
                 dots: true,
-                arrows: false,
-                accessibility: false, 
+                arrows: true,
+                accessibility: false,
+
+                prevArrow: `
+                    <button type="button" class="slider__arrow slider__arrow--prev" aria-label="前へ">
+                        <span></span>
+                    </button>
+                `,
+                nextArrow: `
+                    <button type="button" class="slider__arrow slider__arrow--next" aria-label="次へ">
+                        <span></span>
+                    </button>
+                `,
+
+
+
                 responsive: [
                     {
                         breakpoint: 768,
                         settings: {
                             slidesToShow: 1,
+                            arrows: false,
                             variableWidth: false
                         }
                     }

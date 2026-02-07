@@ -1,3 +1,5 @@
+@use '../../foundation/import.scss' as *;
+
 /* スライダーcssの読み込み */
 .gallery .slider {
     position: relative;
@@ -75,6 +77,80 @@
     background: none !important;
 }
 
+.work-card__points {
+    list-style: disc;
+    padding-left: 2rem;
+    font-size: .9rem;
+    font-size: .9rem;
+
+    @include media-query(md) {
+        font-size: .75rem;
+    }
+}
+
+.work-card__note {
+    font-size: .9rem;
+
+    @include media-query(md) {
+        font-size: .75rem;
+    }
+}
+
+
+
+// 矢印
+.slider__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    transition: background .2s ease;
+}
+
+.slider__arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+//⤵左右配置 
+.slider__arrow--prev {
+    left: 12px;
+}
+
+.slider__arrow--next {
+    right: 12px;
+}
+
+// 矢印の中身
+.slider__arrow span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    margin: auto;
+}
+
+.slider__arrow--prev span {
+    transform: rotate(-135deg);
+}
+
+.slider__arrow--next span {
+    transform: rotate(45deg);
+}
+
+//slickのデフォルト矢印を非表示
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+
 /* レスポンシブ対応（1枚表示） */
 @media (max-width: 767px) {
     /* ブレイクポイント767px */
@@ -110,4 +186,9 @@
         gap: 10px;
         margin-top: 9px;
     }
+
+    .slider__arrow {
+        display: none;
+    }
+
 }

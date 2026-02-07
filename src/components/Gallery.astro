@@ -1,0 +1,54 @@
+---
+/* page.astro で以下のように記述して呼び出し
+
+    <Gallery
+        title="ギャラリー"
+        gallerys={[
+            {
+                image: '/assets/image/gallery_pht_01.jpg',
+                alt: ''
+            },
+            {
+                image: '/assets/image/gallery_pht_02.jpg',
+                alt: ''
+            },
+            {
+                image: '/assets/image/gallery_pht_03.jpg',
+                alt: ''
+            }
+        ]}
+    /> */
+
+interface Props {
+    title: string;
+    gallerys: gallerys[];
+}
+interface gallerys {
+    image: string;
+    alt: string;
+}
+
+const { title, gallerys } = Astro.props as Props;
+---
+
+<section class="gallery sm:pt-2">
+        <!-- <h2>{title}</h2> -->
+        <div class="slider l-inner">
+            <div class="slider__wrapper flex flex-col">
+                <div class="slider__track autoplay sm:justify-center">
+                    {
+                        gallerys.map((gallerys: gallerys, i: number) => (
+                            <div>
+                                <div class="img__wrapper block">
+                                    <img src={gallerys.image} alt={gallerys.alt} class="block w-full" />
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="slider__dots flex justify-center items-center"></div>
+        </div>
+</section>
+
