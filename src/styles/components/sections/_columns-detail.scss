@@ -4,26 +4,31 @@
 
     h1 {
         font-size: 1.75rem;
-            @include media-query(md){
-                font-size: 1.5rem;
-            }
+
+        @include media-query(md) {
+            font-size: 1.5rem;
+        }
     }
 
     h1:first-letter {
         font-size: 3rem;
         color: var(--main-color);
-                    @include media-query(md){
-                font-size: 2rem;
-            }
+
+        @include media-query(md) {
+            font-size: 2rem;
+        }
     }
 
     h2 {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
         font-size: 1.75rem;
         position: relative;
         padding-left: 0.75rem;
-                    @include media-query(md){
-                font-size: 1.25rem;
-            }
+
+        @include media-query(md) {
+            font-size: 1.25rem;
+        }
     }
 
     h2:before {
@@ -37,7 +42,8 @@
     }
 
     h3 {
-        margin-top: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
         position: relative;
         padding-bottom: 0.5rem;
     }
