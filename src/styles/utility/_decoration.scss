@@ -1,3 +1,9 @@
+@use '../foundation/import.scss' as *;
+
+// ==================================================
+// ■ 見出しデザイン
+// ==================================================
+
 /* 見出しにアンダーラインを引くクラス */
 .u-heading-line {
     position: relative;
@@ -60,7 +66,10 @@
     --line-height: 15px;
 }
 
-/* 見出しの先頭に縦線を入れるクラス */
+// ------------------------------
+// ◆ 見出しの先頭に縦線を入れるクラス
+// ------------------------------
+
 .u-border-left {
     position: relative;
     padding-left: 0.75rem;
@@ -75,6 +84,42 @@
     width: 4px;
     background-color: var(--accent-color);
 }
+
+// ------------------------------
+// ◆ 見出しの裏に手書き英語で装飾いれるクラス
+// ------------------------------
+.heading-back-text {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    position: relative;
+    @include media-query(md) {
+        margin-top: 1.5em;
+    }
+}
+
+.heading-back-text::before {
+    // 見出し裏の文字は data-bg="文字"でもたせることで任意の文字を表示可能
+    content: attr(data-bg);
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-12deg);
+    color: #c0c0c0;
+    font-size: 3em;
+    font-family: var(--font-en);
+    font-style: italic;
+    z-index: -1;
+    @include media-query(md) {
+        font-size:2.5em;
+        top: -20%;
+        white-space: nowrap;
+    }
+}
+
+// ==================================================
+// ■ ホバー
+// ==================================================
 
 
 /* ホバーしたら下線が左から右に流れるクラス */
@@ -126,6 +171,7 @@
 .hover-move-up {
     transition: transform 0.5s;
 }
+
 .hover-move-up:hover {
     transform: translateY(-5px);
 }
@@ -135,14 +181,17 @@
 .hover-move-left {
     transition: transform 0.5s;
 }
+
 .hover-move-left:hover {
     transform: translateX(-5px);
 }
 
 /* hoverでふわっと拡大 */
 .hover-size-up {
-    display: inline-block; /* a, img などにも効かせやすい */
-    transform: translateZ(0); /* チラつき対策 */
+    display: inline-block;
+    /* a, img などにも効かせやすい */
+    transform: translateZ(0);
+    /* チラつき対策 */
     transition: transform .5s ease, box-shadow .5s ease;
     will-change: transform;
 }
@@ -156,6 +205,10 @@
 .hover-size-up:active {
     transform: scale(1.01);
 }
+
+// ==================================================
+// ■ 装飾デザイン
+// ==================================================
 
 /* 付箋風のタグデザイン */
 .tag {
