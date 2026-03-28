@@ -5,7 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-    site: import.meta.env.PUBLIC_ENVURL,
+    // NOTE:現在はURL手動入力にしてるが、envで管理したい場合、変更の必要あり
+    site: 'https://aoimiyake.com',
     base: '/',
     trailingSlash: 'ignore',
     output: 'static',
