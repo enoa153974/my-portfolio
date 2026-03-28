@@ -5,9 +5,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-    site: import.meta.env.MODE === 'production' ? 'https://example.com' : 'http://localhost:2000',
+    site: import.meta.env.PUBLIC_ENVURL,
     base: '/',
-    trailingSlash: 'always', 
     trailingSlash: 'ignore',
     output: 'static',
     root: '.',
