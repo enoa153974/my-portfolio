@@ -19,9 +19,9 @@ const { class: className, currentPath, isTopPage } = Astro.props;
 
             <div class="header__parette img-wrapper position-relative">
                 <picture>
-                    <source media="(max-width: 768px)" srcset="/assets/image/header_bg.png" />
-                    <source media="(min-width: 769px)" srcset="/assets/image/header_palette.png" />
-                    <img src="/assets/image/header_palette.png" alt="" />
+                    <source media="(max-width: 768px)" srcset="/assets/images/header_bg.png" />
+                    <source media="(min-width: 769px)" srcset="/assets/images/header_palette.png" />
+                    <img src="/assets/images/header_palette.png" alt="" />
                 </picture>
             </div>
 
@@ -36,7 +36,7 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                     <h1>
                         
                         <a href={siteData.home.path}
-                            ><img src="/assets/image/logo.png" alt="" class="header__nav-icon block" />
+                            ><img src="/assets/images/logo.png" alt="" class="header__nav-icon block" />
                             </a
                         >
                     </h1>
@@ -103,12 +103,12 @@ const { class: className, currentPath, isTopPage } = Astro.props;
                         <div class="header__sp-logo">
                             <div>
                                 <a href={siteData.home.path}
-                                    ><img src="/assets/image/logo.png" alt="" class="header__nav-icon block" /></a
+                                    ><img src="/assets/images/logo.png" alt="" class="header__nav-icon block" /></a
                                 >
                             </div>
                         </div>
                         <div class="header__brush img-wrapper">
-                            <img src="/assets/image/header_brush.png" alt="" class="header__nav-icon block" />
+                            <img src="/assets/images/header_brush.png" alt="" class="header__nav-icon block" />
                         </div>
                     </div>
                 </div>
