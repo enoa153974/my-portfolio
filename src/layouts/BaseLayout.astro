@@ -7,7 +7,6 @@ import type { siteDataType } from '../types/siteData';
 import AOSInit from '../components/AOSInit.jsx';
 //import '../styles/style.scss';
 
-
 const siteData: siteDataType = {
     siteName: import.meta.env.PUBLIC_SITENAME,
     // envはあくまで補助。まずはAstroの値から決める
@@ -31,6 +30,26 @@ const base =
 const absUrl = base ? new URL(siteData.path || '/', base).href : siteData.path || '/';
 const absImg = base ? new URL(siteData.ogpImage, base).href : siteData.ogpImage;
 
+//SEO用構造化データの変数
+const structuredData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebSite',
+            name: siteData.siteName,
+            url: base
+        },
+        {
+            '@type': 'Person',
+            name: '三宅葵',
+            url: base,
+            image: absImg
+        }
+    ]
+};
+
+const jsonLd = JSON.stringify(structuredData);
+
 // 現在のパス取得（dev/previewでも安全）
 const pathname = typeof Astro.url !== 'undefined' ? Astro.url.pathname : new URL(Astro.request.url).pathname;
 
@@ -49,6 +68,13 @@ const { currentPath, ...otherProps } = Astro.props;
 
         <!--ページタイトル-->
         <title>{siteData.title}</title>
+        <!-- 
+            canonicalタグ
+            ・ページの正規URLを検索エンジンに伝える
+            ・/about と /about/ やパラメータ付きURLの重複対策
+            ・SEO評価を1つに集約するために必須
+        -->
+        <link rel="canonical" href={absUrl} />
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-V4HEYGF36M"></script>
@@ -91,6 +117,12 @@ const { currentPath, ...otherProps } = Astro.props;
         <link rel="stylesheet" href="/assets/style/slick-theme.css" />
         <!-- ページ全体のcssを読み込み -->
         <link rel="stylesheet" href="/assets/styles/style.css" />
+        <!-- 
+        SEO用構造化データ
+            ・検索エンジンにサイト情報と人物情報を伝える
+            ・JSON-LDは scriptタグ内に文字列として直接出力したいため set:html を使う
+        -->
+        <script type="application/ld+json" set:html={jsonLd} />
     </head>
 
     <body class="has-fixed-header">
