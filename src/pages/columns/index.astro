@@ -17,7 +17,14 @@ const pageId = 'columns',
         }
     ];
 
+//パンくずリストのデータ
+const breadcrumb = [
+    { name: 'TOP', path: '/' },
+    { name: 'columns', path: '/columns' }
+];
+
 const currentPath = '/columns';
+
 ---
 
 <!--BaseLayout.hemlの<slot />内に代入される -->
@@ -30,6 +37,7 @@ const currentPath = '/columns';
     path={pageMeta.path}
     ldJSON={ldJSON}
     currentPath={currentPath}
+    breadcrumb={breadcrumb}
 >
     <ColumnsPage/>
 </BaseLayout>

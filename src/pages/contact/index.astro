@@ -16,6 +16,12 @@ const pageId = 'contact',
         }
     ];
 
+//パンくずリストのデータ
+const breadcrumb = [
+    { name: 'TOP', path: '/' },
+    { name: 'contact', path: '/contact' }
+];
+
 const currentPath = '/contact';
 ---
 
@@ -29,6 +35,7 @@ const currentPath = '/contact';
     path={pageMeta.path}
     ldJSON={ldJSON}
     currentPath={currentPath}
+    breadcrumb={breadcrumb}
 >
     <Contact />
 </BaseLayout>

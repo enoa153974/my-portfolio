@@ -22,6 +22,12 @@ const pageId = 'works',
         }
     ];
 
+//パンくずリストのデータ
+const breadcrumb = [
+    { name: 'TOP', path: '/' },
+    { name: 'works', path: '/works' }
+];
+
 const currentPath = '/works';
 const pageTitle = pageMeta.title;
 ---
@@ -36,6 +42,7 @@ const pageTitle = pageMeta.title;
     path={pageMeta.path}
     ldJSON={ldJSON}
     currentPath={currentPath}
+    breadcrumb={breadcrumb}
 >
     <!-- サイド -->
     <Fragment slot="side">
@@ -65,6 +72,5 @@ const pageTitle = pageMeta.title;
         <section data-gallery-cat="app">
             <AppGallery />
         </section>
-
     </Fragment>
 </BaseLayout>

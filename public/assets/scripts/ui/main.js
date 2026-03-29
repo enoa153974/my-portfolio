@@ -4,6 +4,7 @@
 import { hamburger } from './hamburger.js';
 import { gallerySlider } from './gallerySlider.js';
 import { worksFilter } from './worksFilter.js';
+import { scrollToTopBtn } from '../behaviors/smoothScroll.js';
 
 //ui.jsからハンバーガーメニューのとタブメニューの関数をインポートする
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,5 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('[data-gallery-cat]')) {
         worksFilter(); // このページにギャラリーがあるときだけ実行
     }
+    scrollToTopBtn();
     console.log('jsファイルの読み込みが完了しました！');
 });

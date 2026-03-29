@@ -1,0 +1,25 @@
+---
+const { breadcrumb = [], base } = Astro.props;
+
+---
+
+<!-- UI -->
+<nav class="c-breadcrumb" aria-label="パンくずリスト">
+    <ol class="c-breadcrumb__list">
+        {
+            breadcrumb.map((item, index) => (
+                <li class="c-breadcrumb__item">
+                    {index !== breadcrumb.length - 1 ? (
+                        <a href={item.path} class="c-breadcrumb__link">
+                            {item.name}
+                        </a>
+                    ) : (
+                        <span aria-current="page" class="c-breadcrumb__current">
+                            {item.name}
+                        </span>
+                    )}
+                </li>
+            ))
+        }
+    </ol>
+</nav>

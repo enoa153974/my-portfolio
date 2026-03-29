@@ -19,6 +19,12 @@ const pageId = 'about',
         }
     ];
 
+//パンくずリストのデータ
+const breadcrumb = [
+    { name: 'TOP', path: '/' },
+    { name: 'about', path: '/about' }
+];
+
 const currentPath = '/about';
 ---
 
@@ -32,6 +38,7 @@ const currentPath = '/about';
     path={pageMeta.path}
     ldJSON={ldJSON}
     currentPath={currentPath}
+    breadcrumb={breadcrumb}
 >
     <Aboutprof />
     <Services
@@ -92,6 +99,6 @@ const currentPath = '/about';
         titleLine1="お問い合わせフォームからでも"
         titleLine2="公式ラインからでもお気軽にどうぞ！"
         buttonText="お問い合わせ"
-        backgroundImage = "/assets/images/intro.jpg"
+        backgroundImage="/assets/images/intro.jpg"
     />
 </BaseLayout>

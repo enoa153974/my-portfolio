@@ -1,36 +1,50 @@
 @use '../../foundation/import.scss' as *;
-/* パンくずリスト全体 */
-.breadcrumb {
-    font-size: 12px;
+
+// ========================================
+// Breadcrumb
+// ========================================
+.c-breadcrumb {
+    font-size: .75rem; // 12px
     color: #333;
     font-weight: 500;
-    @include media-query(md){
-        font-size: 11px;
+
+    @include media-query(md) {
+        font-size: .6875rem; // 11px
     }
-}
 
-.breadcrumb ol {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+    &__list {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: .75rem 2rem;
+        margin: 0;
+    }
 
-/* ＞マーク */
-.breadcrumb li + li::before {
-    content: '＞';
-    margin: 0 0.5em;
-    color: #666;
-}
+    &__item {
+        display: flex;
+        align-items: center;
 
-/* 親ページのタイトル */
-.breadcrumb a {
-    color: #333;
-    text-decoration: none;
-    font-weight: normal;
-}
+        // 区切り
+        &:not(:last-child)::after {
+            content: '＞';
+            margin: 0 .5em;
+            color: #666;
+        }
+    }
 
-/* 子ページのタイトル */
-.breadcrumb [aria-current='page'] {
-    font-weight: bold;
+    &__link {
+        color: #333;
+        text-decoration: none;
+        font-weight: normal;
+        transition: opacity .2s;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    &__current {
+        font-weight: bold;
+    }
 }

@@ -1,5 +1,5 @@
-import { qsa } from '../../utils.js';
-import { smoothScrollToTarget } from '../../utils.js';
+import { qsa } from '../ui/utils.js';
+import { smoothScrollToTarget } from '../ui/utils.js';
 
 // ヘッダーアンカーリンクのスムーススクロールの処理
 export function initSmoothAnchorScroll() {
@@ -29,8 +29,19 @@ export function scrollToTopBtn() {
     };
 
     const topButton = document.getElementById('scrollToTopBtn');
+    if (!topButton) return;
 
+    // クリック処理
     topButton.addEventListener('click', () => {
-        smoothScrollToTarget('html', scrollOffset); // ← ページ最上部へスクロール
+        smoothScrollToTarget('html', scrollOffset);
+    });
+
+    // 表示制御
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            topButton.classList.add('is-visible');
+        } else {
+            topButton.classList.remove('is-visible');
+        }
     });
 }

@@ -19,4 +19,8 @@ export type siteDataType = {
             };
         }[];
     };
+    breadcrumb?: {
+        name: string;
+        path: string;
+    }[];
 };

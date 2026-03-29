@@ -113,3 +113,59 @@
     max-width: 100%;
     display: block;
 }
+
+
+/* ページトップにスクロールボタン */
+
+.c-scroll-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+
+    width: 120px;
+    height: 90px;
+
+    border: none;
+    cursor: pointer;
+
+    background: url('/assets/images/palette.png') no-repeat center / contain;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    transform: translateY(10px) rotate(-4deg);
+}
+
+.c-scroll-top.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) rotate(-4deg);
+}
+
+//矢印
+.c-scroll-top__arrow {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%) rotate(-4deg);
+
+    font-size:2rem;
+    font-family: "Segoe Print", cursive;
+    color: #3e2a18;
+    font-weight: var(--font-weight-bold);
+
+    text-shadow:
+        1px 1px 0 #f8f6f2,
+        -1px 1px 0 #f8f6f2,
+        1px -1px 0  #f8f6f2,
+        -1px -1px 0  #f8f6f2,
+        0 2px 4px rgba(0,0,0,.2); 
+
+    pointer-events: none;
+
+}
+
+.c-scroll-top:hover {
+    transform: translateY(-6px) scale(1.05) rotate(-4deg);
+}

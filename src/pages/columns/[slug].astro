@@ -29,18 +29,24 @@ const { data } = entry;
 const dateText = typeof data.date === 'string' ? data.date : data.date.toISOString().slice(0, 10);
 
 const imageData = data.image;
+
+const breadcrumb = [
+    { name: 'TOP', path: '/' },
+    { name: 'columns', path: '/columns' },
+    { name: data.title, path: `/columns/${slug}` }
+];
 ---
 
-<BaseLayout title={data.title}>
+<BaseLayout title={data.title} breadcrumb={breadcrumb}>
     <article class="columns-article l-wrapper pt-10 sm:pt-4" data-aos="fade-left" data-aos-delay="200">
         <div class="l-container columns-detail mb-10">
             <div class="l-inner">
-                <nav class="breadcrumb flex justify-end my-3 sm:mt-6" aria-label="パンくずリスト">
+                <!-- <nav class="breadcrumb flex justify-end my-3 sm:mt-6" aria-label="パンくずリスト">
                     <ol>
                         <li><a href={siteData.columns.path}>columns</a></li>
                         <li><span aria-current="page">{data.title}</span></li>
                     </ol>
-                </nav>
+                </nav> -->
 
                 <h1 class="font-bold mt-4 mb-2 heading-gradient">{data.title}</h1>
                 <p class="font-bold mb-6">{dateText} ／ {data.category}</p>
