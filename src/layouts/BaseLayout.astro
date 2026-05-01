@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 import type { siteDataType } from '../types/siteData';
 import AOSInit from '../components/AOSInit.jsx';
 import Breadcrumb from '../components/Breadcrumb.astro';
-// import '../styles/style.scss';
+import '../styles/style.scss';
 
 const siteData: siteDataType = {
     siteName: import.meta.env.PUBLIC_SITENAME,
@@ -120,7 +120,7 @@ const { breadcrumb = [] } = Astro.props;
         <link rel="stylesheet" href="/assets/style/slick.css" />
         <link rel="stylesheet" href="/assets/style/slick-theme.css" />
         <!-- ページ全体のcssを読み込み -->
-        <link rel="stylesheet" href="/assets/styles/style.css" />
+        <!-- <link rel="stylesheet" href="/assets/styles/style.css" /> -->
         <!-- 
         SEO用構造化データ
             ・検索エンジンにサイト情報と人物情報を伝える

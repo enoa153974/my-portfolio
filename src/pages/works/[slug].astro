@@ -1,0 +1,12 @@
+---
+import { getEntryBySlug } from 'astro:content';
+
+const { slug } = Astro.params;
+const work = await getEntryBySlug('works', slug);
+const { Content } = await work.render();
+---
+
+<h1>{work.data.title}</h1>
+<p>{work.data.overview}</p>
+
+<Content />
