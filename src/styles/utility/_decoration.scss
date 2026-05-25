@@ -93,6 +93,7 @@
     margin-bottom: 1em;
     text-align: center;
     position: relative;
+
     @include media-query(md) {
         margin-top: 1.5em;
     }
@@ -110,8 +111,9 @@
     font-family: var(--font-en);
     font-style: italic;
     z-index: -1;
+
     @include media-query(md) {
-        font-size:2.5em;
+        font-size: 2.5em;
         top: -20%;
         white-space: nowrap;
     }
@@ -206,6 +208,46 @@
     transform: scale(1.01);
 }
 
+/* 画像ズーム */
+.u-hover-zoom {
+    overflow: hidden;
+
+    img {
+        transition: transform .4s ease;
+    }
+
+    &:hover img {
+        transform: scale(1.03);
+    }
+}
+
+/* 画像ズーム＆オーバーレイ */
+.u-hover-zoom-overlay {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    transition: transform .4s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.25);
+    opacity: 0;
+    transition: .3s;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
 // ==================================================
 // ■ 装飾デザイン
 // ==================================================
@@ -213,7 +255,7 @@
 /* 付箋風のタグデザイン */
 .tag {
     display: inline-block;
-    margin: 0 .1em .6em 0;
+    margin: 0 .3em .5em 0;
     padding: .6em;
     line-height: 1;
     text-decoration: none;

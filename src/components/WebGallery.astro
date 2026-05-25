@@ -1,4 +1,42 @@
-<div class="works__section l-wrapper">
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+type WorkEntry = CollectionEntry<'works'>;
+const works = await getCollection('works');
+//フィルターでpublish:true or falseで表示切替ができる
+const webWorks: WorkEntry[]   = works.filter((work:WorkEntry) => work.data.category === 'web' && work.data.publish !== false);
+---
+
+<div class="l-container">
+    <h3 class="pt-10 heading-back-text" data-bg="web">web</h3>
+
+    {
+        webWorks.map((work:WorkEntry) => (
+            <div class="work-item l-inner py-4 mb-10">
+                <a href={`/works/${work.slug}`}>
+                    <div class="mt-10">
+                        <h4 class="font-bold py-2 hover-move-up">□ {work.data.title}</h4>
+
+                        <p class="work-overview">{work.data.overview}</p>
+                        <div class="py-2">
+                            {work.data.tags?.map((tag:WorkEntry) => (
+                                <p class="tag">{tag}</p>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div class="gallery__grid py-2 u-hover-zoom u-hover-zoom-overlay">
+                        <div class="img-wrapper img-wrapper--aspect-16/9 px-4 py-4">
+                            <img src={work.data.thumbnail.src} alt={work.data.title} class="w-full" />
+                        </div>
+                    </div>
+                </a>
+            </div>
+        ))
+    }
+</div>
+<!-- <div class="works__section l-wrapper">
     <div class="l-container">
         <div class="l-inner">
             <h3 class="pt-10 heading-back-text" data-bg="web">LP / ホームページ</h3>
@@ -51,4 +89,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

@@ -22,24 +22,16 @@ const works = defineCollection({
             title: z.string(),
             category: z.string(), // LP / Web / Banner
             tags: z.array(z.string()).optional(),
-            thumbnail: image(),
+            thumbnail: image().optional(),
             publish: z.boolean().default(true),
-
-            // 👇ここが超重要
             overview: z.string(),
-            target: z.string(),
-            problem: z.string(),
-            solution: z.string(),
-
-            // 👇スキル見せる
-            designPoints: z.string().optional(),
-            tech: z.array(z.string()).optional(),
-
-            // 👇あると強い
-            url: z.string().optional(),
+            clientName: z.string().optional(),
+            clientUrl: z.string().optional(),
+            //将来用
+            //purpose: z.string().optional(),
         }),
 });
 
 
 //コラムページ、制作物詳細ページのスキーマを定義
-export const collections = { columns , works};
+export const collections = { columns, works };

@@ -1,12 +1,91 @@
 ---
-import { getEntryBySlug } from 'astro:content';
+import { getCollection, getEntryBySlug } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
 
+type WorkEntry = CollectionEntry<'works'>;
+
+// 全 slug を静的生成
+export async function getStaticPaths() {
+    const works = await getCollection('works');
+
+    return works.map((work: WorkEntry) => ({
+        params: {
+            slug: work.slug
+        }
+    }));
+}
+
+// slug から記事取得
 const { slug } = Astro.params;
-const work = await getEntryBySlug('works', slug);
+const work: WorkEntry | undefined = await getEntryBySlug('works', slug);
+
+if (!work) {
+    throw new Error(`記事が見つかりませんでした: ${slug}`);
+}
+
+const { data } = work;
 const { Content } = await work.render();
+
+//パンくずリスト
+const breadcrumb = [
+    { name: 'TOP', path: '/' },
+    { name: 'works', path: '/works' },
+    { name: data.title, path: `/works/${slug}` }
+];
 ---
 
-<h1>{work.data.title}</h1>
-<p>{work.data.overview}</p>
+<BaseLayout title={data.title} breadcrumb={breadcrumb}>
+    <Fragment slot="main">
+        <section class="work-detail py-10 l-wrapper">
+            <div class="l-container">
+                <div class="l-inner">
+                    <!-- タイトル -->
+                    <h1>{data.title}</h1>
 
-<Content />
+                    <!-- 概要 -->
+                    <p class="work-overview">{data.overview}</p>
+
+                    <!-- クライアント（あれば表示） -->
+                    {
+                        data.clientName && (
+                            <p class="work-client">
+                                制作対象：
+                                {data.clientUrl ? (
+                                    <a href={data.clientUrl} target="_blank" rel="noopener noreferrer">
+                                        {data.clientName}
+                                    </a>
+                                ) : (
+                                    <span>{data.clientName}</span>
+                                )}
+                            </p>
+                        )
+                    }
+
+                    <!-- サムネ -->
+                    {
+                        data.thumbnail && (
+                            <div class="work-thumbnail mb-4">
+                                <img src={data.thumbnail.src} alt={data.title} />
+                            </div>
+                        )
+                    }
+
+                    <!-- タグ -->
+                    {
+                        data.tags && (
+                            <div class="work-tags">
+                                {data.tags.map((tag: WorkEntry) => (
+                                    <span class="tag">{tag}</span>
+                                ))}
+                            </div>
+                        )
+                    }
+                <!-- 本文 -->
+                <article class="work-content py-10">
+                    <Content />
+                </article>
+            </div>
+        </section>
+    </Fragment>
+</BaseLayout>
