@@ -1,3 +1,5 @@
+@use '../foundation/import.scss' as *;
+
 /* .btn           → ボタンの基本スタイル
 .btn--primary  → メインカラーで背景付きボタン
 .btn--secondary → 枠線だけのサブボタン
@@ -135,6 +137,11 @@
     pointer-events: none;
     transition: .3s;
     transform: translateY(10px) rotate(-4deg);
+
+    @include media-query(md) {
+        width: 80px;
+        height: 70px;
+    }
 }
 
 .c-scroll-top.is-visible {
@@ -150,7 +157,7 @@
     left: 40%;
     transform: translate(-50%, -50%) rotate(-4deg);
 
-    font-size:2rem;
+    font-size: 2rem;
     font-family: "Segoe Print", cursive;
     color: #3e2a18;
     font-weight: var(--font-weight-bold);
@@ -158,11 +165,16 @@
     text-shadow:
         1px 1px 0 #f8f6f2,
         -1px 1px 0 #f8f6f2,
-        1px -1px 0  #f8f6f2,
-        -1px -1px 0  #f8f6f2,
-        0 2px 4px rgba(0,0,0,.2); 
+        1px -1px 0 #f8f6f2,
+        -1px -1px 0 #f8f6f2,
+        0 2px 4px rgba(0, 0, 0, .2);
 
     pointer-events: none;
+
+
+    @include media-query(md) {
+        font-size: 1.5rem;
+    }
 
 }
 
