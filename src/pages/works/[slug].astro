@@ -2,6 +2,7 @@
 import { getCollection, getEntryBySlug } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
+import Button from '../../components/Button';
 
 type WorkEntry = CollectionEntry<'works'>;
 
@@ -44,7 +45,7 @@ const breadcrumb = [
                     <h1>{data.title}</h1>
 
                     <!-- 概要 -->
-                    <p class="work-overview">{data.overview}</p>
+                    <p class="work-overview heading-speech">{data.overview}</p>
 
                     <!-- クライアント（あれば表示） -->
                     {
@@ -81,10 +82,14 @@ const breadcrumb = [
                             </div>
                         )
                     }
-                <!-- 本文 -->
-                <article class="work-content py-10">
-                    <Content />
-                </article>
+                    <!-- 本文 -->
+                    <article class="work-content py-10">
+                        <Content />
+                        <Button href={data.clientUrl} variant="push" target="_blank" rel="noopener noreferrer">
+                            <span><i class="fa-solid fa-display pr-4"></i>運用中のサイトを見る</span>
+                        </Button>
+                    </article>
+                </div>
             </div>
         </section>
     </Fragment>

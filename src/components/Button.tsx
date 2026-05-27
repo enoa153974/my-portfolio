@@ -11,6 +11,8 @@
 
 interface ButtonProps {
     href?: string;
+    target?: '_blank' | '_self';
+    rel?: string;
     variant?: 'primary' | 'secondary' | 'link' | 'push';
     fullWidth?: boolean;
     className?: string;
@@ -21,6 +23,8 @@ interface ButtonProps {
 
 export default function Button({
     href,
+    target,
+    rel,
     variant = 'primary',
     fullWidth = false,
     className = '',
@@ -40,7 +44,12 @@ export default function Button({
 
     if (href) {
         return (
-            <a href={href} className={classes}>
+            <a
+                href={href}
+                className={classes}
+                target={target}
+                rel={rel}
+            >
                 {children}
             </a>
         );
