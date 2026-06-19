@@ -8,6 +8,7 @@ import AOSInit from '../components/AOSInit.jsx';
 import Breadcrumb from '../components/Breadcrumb.astro';
 //import '../styles/style.scss';
 
+
 const siteData: siteDataType = {
     siteName: import.meta.env.PUBLIC_SITENAME,
     // envはあくまで補助。まずはAstroの値から決める
@@ -19,6 +20,11 @@ const siteData: siteDataType = {
     type: Astro.props.type,
     path: Astro.props.path, // 例: "/works" or "/"
     ldJSON: { '@context': 'http://schema.org', '@type': 'BreadcrumbList', itemListElement: Astro.props.ldJSON }
+};
+
+type BreadcrumbItem = {
+    name: string;
+    path: string;
 };
 
 // ★ ベースURLの決定（本番: Astro.site / dev・preview: Astro.url.origin）
@@ -60,7 +66,9 @@ const isWorksPage = pathname === '/works' || pathname.startsWith('/works/');
 const { currentPath, ...otherProps } = Astro.props;
 
 //ぱんくずリスト
-const { breadcrumb = [] } = Astro.props;
+const { breadcrumb = [] } = Astro.props as {
+    breadcrumb?: BreadcrumbItem[];
+};
 ---
 
 <!doctype html>
